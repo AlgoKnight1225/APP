@@ -1,0 +1,146 @@
+[
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\layout_item_order_admin.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\layout\\item_order_admin.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\drawable_bg_search_box.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\drawable\\bg_search_box.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\menu_bottom_nav_student.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\menu\\bottom_nav_student.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\layout_fragment_admin_orders.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\layout\\fragment_admin_orders.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\drawable_ic_shopping_cart.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\drawable\\ic_shopping_cart.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\drawable_ic_add.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\drawable\\ic_add.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\drawable_ic_restaurant_menu.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\drawable\\ic_restaurant_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\drawable_bg_status_badge.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\drawable\\bg_status_badge.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\drawable_ic_delete.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\drawable\\ic_delete.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\layout_activity_cart.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\layout\\activity_cart.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\drawable_ic_edit.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\drawable\\ic_edit.xml"
+    },
+    {
+        "merged": "com.canteen.foodordering.app-merged_res-39:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.canteen.foodordering.app-main-41:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\layout_item_order_student.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\layout\\item_order_student.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\drawable_ic_history.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\drawable\\ic_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\drawable_bg_header_gradient.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\drawable\\bg_header_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\drawable_ic_person.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\drawable\\ic_person.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\layout_item_food_admin.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\layout\\item_food_admin.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\menu_bottom_nav_admin.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\menu\\bottom_nav_admin.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\layout_fragment_admin_food.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\layout\\fragment_admin_food.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\layout_fragment_profile.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\layout\\fragment_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\layout_activity_student_main.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\layout\\activity_student_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\layout_fragment_student_home.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\layout\\fragment_student_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\layout_item_order_subitem.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\layout\\item_order_subitem.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\drawable_ic_search.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\drawable\\ic_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\layout_activity_add_edit_food.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\layout\\activity_add_edit_food.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\drawable_ic_food_placeholder.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\drawable\\ic_food_placeholder.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\layout_activity_admin_main.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\layout\\activity_admin_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\layout_item_food_student.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\layout\\item_food_student.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\layout_fragment_student_orders.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\layout\\fragment_student_orders.xml"
+    },
+    {
+        "merged": "com.canteen.foodordering.app-merged_res-39:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.canteen.foodordering.app-main-41:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\layout_item_cart.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\layout\\item_cart.xml"
+    },
+    {
+        "merged": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-merged_res-39:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\nikhi\\.gradle\\daemon\\8.4\\com.canteen.foodordering.app-main-41:\\xml\\data_extraction_rules.xml"
+    }
+]

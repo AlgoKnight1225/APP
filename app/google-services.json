@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "315036251281",
+    "project_id": "canteen-order-app-de3ef",
+    "storage_bucket": "canteen-order-app-de3ef.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:315036251281:android:e0e2525ca85d0320e1fb30",
+        "android_client_info": {
+          "package_name": "com.canteen.foodordering"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJBNMyZ_tHcbSwElayvSzn171y27RfRNg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

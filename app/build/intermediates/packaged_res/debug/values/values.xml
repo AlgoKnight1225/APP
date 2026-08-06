@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent">#FF9800</color>
+    <color name="bg_main">#F8F9FA</color>
+    <color name="black">#000000</color>
+    <color name="chip_unselected_bg">#F0F0F0</color>
+    <color name="divider">#EEEEEE</color>
+    <color name="primary">#FF6F00</color>
+    <color name="primary_dark">#E65100</color>
+    <color name="primary_light">#FFE082</color>
+    <color name="red_error">#D32F2F</color>
+    <color name="status_cancelled">#F44336</color>
+    <color name="status_delivered">#4CAF50</color>
+    <color name="status_placed">#2196F3</color>
+    <color name="status_preparing">#FF9800</color>
+    <color name="status_ready">#9C27B0</color>
+    <color name="surface_card">#FFFFFF</color>
+    <color name="text_muted">#BDBDBD</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="white">#FFFFFF</color>
+    <string name="add_food_item">Add New Food Item</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="already_have_account">Already have an account? Login</string>
+    <string name="app_name">Campus Canteen</string>
+    <string name="checkout">Place Order</string>
+    <string name="delivery_notes_hint">Table No / Pickup Notes (Optional)</string>
+    <string name="dont_have_account">Don\'t have an account? Sign Up</string>
+    <string name="edit_food_item">Edit Food Item</string>
+    <string name="email">Email Address</string>
+    <string name="empty_cart">Your cart is empty!</string>
+    <string name="full_name">Full Name</string>
+    <string name="gcm_defaultSenderId" translatable="false">315036251281</string>
+    <string name="google_api_key" translatable="false">AIzaSyDJBNMyZ_tHcbSwElayvSzn171y27RfRNg</string>
+    <string name="google_app_id" translatable="false">1:315036251281:android:e0e2525ca85d0320e1fb30</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDJBNMyZ_tHcbSwElayvSzn171y27RfRNg</string>
+    <string name="google_storage_bucket" translatable="false">canteen-order-app-de3ef.firebasestorage.app</string>
+    <string name="item_available">Available for ordering</string>
+    <string name="item_category">Category</string>
+    <string name="item_description">Description</string>
+    <string name="item_name">Item Name</string>
+    <string name="item_price">Price (₹)</string>
+    <string name="login">Login</string>
+    <string name="login_sub">Sign in to order delicious meals from your canteen</string>
+    <string name="nav_admin_orders">All Orders</string>
+    <string name="nav_home">Menu</string>
+    <string name="nav_manage_menu">Manage Menu</string>
+    <string name="nav_orders">My Orders</string>
+    <string name="nav_profile">Profile</string>
+    <string name="password">Password</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="project_id" translatable="false">canteen-order-app-de3ef</string>
+    <string name="role_admin">Admin Staff</string>
+    <string name="role_student">Student</string>
+    <string name="save_item">Save Item</string>
+    <string name="search_food_hint">Search items (e.g., Burger, Coffee, Pizza)...</string>
+    <string name="select_role">Select Account Type</string>
+    <string name="signup">Sign Up</string>
+    <string name="update_status">Update Status</string>
+    <string name="view_cart">View Cart</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <style name="Base.Theme.CollegeCanteenFoodOrderingApp" parent="Theme.Material3.DayNight">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:windowBackground">@color/bg_main</item>
+    </style>
+    <style name="Theme.CollegeCanteenFoodOrderingApp" parent="Base.Theme.CollegeCanteenFoodOrderingApp"/>
+    <style name="Theme.CollegeCanteenFoodOrderingApp.NoActionBar" parent="Base.Theme.CollegeCanteenFoodOrderingApp">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources>

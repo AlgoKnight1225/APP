@@ -1,0 +1,74 @@
+[
+    {
+        "merged": "com.canteen.foodordering.app-mergeDebugResources-38:/layout/fragment_student_orders.xml",
+        "source": "com.canteen.foodordering.app-main-41:/layout/fragment_student_orders.xml"
+    },
+    {
+        "merged": "com.canteen.foodordering.app-mergeDebugResources-38:/layout/item_order_student.xml",
+        "source": "com.canteen.foodordering.app-main-41:/layout/item_order_student.xml"
+    },
+    {
+        "merged": "com.canteen.foodordering.app-mergeDebugResources-38:/layout/fragment_student_home.xml",
+        "source": "com.canteen.foodordering.app-main-41:/layout/fragment_student_home.xml"
+    },
+    {
+        "merged": "com.canteen.foodordering.app-mergeDebugResources-38:/layout/item_cart.xml",
+        "source": "com.canteen.foodordering.app-main-41:/layout/item_cart.xml"
+    },
+    {
+        "merged": "com.canteen.foodordering.app-mergeDebugResources-38:/layout/item_order_subitem.xml",
+        "source": "com.canteen.foodordering.app-main-41:/layout/item_order_subitem.xml"
+    },
+    {
+        "merged": "com.canteen.foodordering.app-mergeDebugResources-38:/layout/activity_register.xml",
+        "source": "com.canteen.foodordering.app-main-41:/layout/activity_register.xml"
+    },
+    {
+        "merged": "com.canteen.foodordering.app-mergeDebugResources-38:/layout/activity_login.xml",
+        "source": "com.canteen.foodordering.app-main-41:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.canteen.foodordering.app-mergeDebugResources-38:/layout/item_order_admin.xml",
+        "source": "com.canteen.foodordering.app-main-41:/layout/item_order_admin.xml"
+    },
+    {
+        "merged": "com.canteen.foodordering.app-mergeDebugResources-38:/layout/item_food_student.xml",
+        "source": "com.canteen.foodordering.app-main-41:/layout/item_food_student.xml"
+    },
+    {
+        "merged": "com.canteen.foodordering.app-mergeDebugResources-38:/layout/fragment_profile.xml",
+        "source": "com.canteen.foodordering.app-main-41:/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "com.canteen.foodordering.app-mergeDebugResources-38:/layout/activity_admin_main.xml",
+        "source": "com.canteen.foodordering.app-main-41:/layout/activity_admin_main.xml"
+    },
+    {
+        "merged": "com.canteen.foodordering.app-mergeDebugResources-38:/layout/activity_splash.xml",
+        "source": "com.canteen.foodordering.app-main-41:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "com.canteen.foodordering.app-mergeDebugResources-38:/layout/activity_add_edit_food.xml",
+        "source": "com.canteen.foodordering.app-main-41:/layout/activity_add_edit_food.xml"
+    },
+    {
+        "merged": "com.canteen.foodordering.app-mergeDebugResources-38:/layout/fragment_admin_food.xml",
+        "source": "com.canteen.foodordering.app-main-41:/layout/fragment_admin_food.xml"
+    },
+    {
+        "merged": "com.canteen.foodordering.app-mergeDebugResources-38:/layout/activity_cart.xml",
+        "source": "com.canteen.foodordering.app-main-41:/layout/activity_cart.xml"
+    },
+    {
+        "merged": "com.canteen.foodordering.app-mergeDebugResources-38:/layout/fragment_admin_orders.xml",
+        "source": "com.canteen.foodordering.app-main-41:/layout/fragment_admin_orders.xml"
+    },
+    {
+        "merged": "com.canteen.foodordering.app-mergeDebugResources-38:/layout/activity_student_main.xml",
+        "source": "com.canteen.foodordering.app-main-41:/layout/activity_student_main.xml"
+    },
+    {
+        "merged": "com.canteen.foodordering.app-mergeDebugResources-38:/layout/item_food_admin.xml",
+        "source": "com.canteen.foodordering.app-main-41:/layout/item_food_admin.xml"
+    }
+]

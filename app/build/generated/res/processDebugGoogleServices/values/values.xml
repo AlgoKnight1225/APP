@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">315036251281</string>
+    <string name="google_api_key" translatable="false">AIzaSyDJBNMyZ_tHcbSwElayvSzn171y27RfRNg</string>
+    <string name="google_app_id" translatable="false">1:315036251281:android:e0e2525ca85d0320e1fb30</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDJBNMyZ_tHcbSwElayvSzn171y27RfRNg</string>
+    <string name="google_storage_bucket" translatable="false">canteen-order-app-de3ef.firebasestorage.app</string>
+    <string name="project_id" translatable="false">canteen-order-app-de3ef</string>
+</resources>
