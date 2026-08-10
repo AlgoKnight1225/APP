@@ -2,26 +2,22 @@ package com.canteen.foodordering.auth;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.canteen.foodordering.admin.AdminMainActivity;
 import com.canteen.foodordering.databinding.ActivityLoginBinding;
-import com.canteen.foodordering.models.User;
 import com.canteen.foodordering.student.StudentMainActivity;
 import com.canteen.foodordering.utils.Constants;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.FirebaseFirestore;
+import com.canteen.foodordering.viewmodels.AuthViewModel;
 
 public class LoginActivity extends AppCompatActivity {
-
     private ActivityLoginBinding binding;
-    private FirebaseAuth mAuth;
-    private FirebaseFirestore db;
+    private AuthViewModel authViewModel;
+    private boolean isNavigated = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,79 +25,67 @@ public class LoginActivity extends AppCompatActivity {
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        mAuth = FirebaseAuth.getInstance();
-        db = FirebaseFirestore.getInstance();
+        authViewModel = new ViewModelProvider(this).get(AuthViewModel.class);
 
-        binding.btnLogin.setOnClickListener(v -> loginUser());
-        binding.tvSignUp.setOnClickListener(v -> {
+        observeViewModel();
+
+        binding.btnLogin.setOnClickListener(v -> handleLogin());
+        binding.tvRegisterLink.setOnClickListener(v -> {
             startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+        });
+        binding.tvForgotPassword.setOnClickListener(v -> {
+            startActivity(new Intent(LoginActivity.this, ForgotPasswordActivity.class));
         });
     }
 
-    private void loginUser() {
-        String email = binding.etEmail.getText() != null ? binding.etEmail.getText().toString().trim() : "";
-        String password = binding.etPassword.getText() != null ? binding.etPassword.getText().toString().trim() : "";
+    private void observeViewModel() {
+        authViewModel.getLoadingLiveData().observe(this, isLoading -> {
+            if (isFinishing()) return;
+            binding.progressBar.setVisibility(isLoading ? View.VISIBLE : View.GONE);
+            binding.btnLogin.setEnabled(!isLoading);
+        });
 
-        if (TextUtils.isEmpty(email)) {
-            binding.tilEmail.setError("Email is required");
-            return;
-        } else {
-            binding.tilEmail.setError(null);
-        }
+        authViewModel.getErrorLiveData().observe(this, error -> {
+            if (isFinishing()) return;
+            if (error != null && !error.isEmpty()) {
+                Toast.makeText(LoginActivity.this, error, Toast.LENGTH_LONG).show();
+            }
+        });
 
-        if (TextUtils.isEmpty(password)) {
-            binding.tilPassword.setError("Password is required");
-            return;
-        } else {
-            binding.tilPassword.setError(null);
-        }
-
-        showLoading(true);
-
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, task -> {
-                    if (task.isSuccessful()) {
-                        FirebaseUser firebaseUser = mAuth.getCurrentUser();
-                        if (firebaseUser != null) {
-                            fetchUserRoleAndNavigate(firebaseUser.getUid());
-                        } else {
-                            showLoading(false);
-                            Toast.makeText(LoginActivity.this, "Authentication failed", Toast.LENGTH_SHORT).show();
-                        }
-                    } else {
-                        showLoading(false);
-                        String errorMsg = task.getException() != null ? task.getException().getMessage() : "Login failed";
-                        Toast.makeText(LoginActivity.this, errorMsg, Toast.LENGTH_LONG).show();
-                    }
-                });
+        authViewModel.getUserProfileLiveData().observe(this, user -> {
+            if (isNavigated || isFinishing()) return;
+            if (user != null) {
+                isNavigated = true;
+                Intent intent;
+                if (Constants.ROLE_ADMIN.equalsIgnoreCase(user.getRole())) {
+                    intent = new Intent(LoginActivity.this, AdminMainActivity.class);
+                } else if (Constants.ROLE_STUDENT.equalsIgnoreCase(user.getRole())) {
+                    intent = new Intent(LoginActivity.this, StudentMainActivity.class);
+                } else {
+                    authViewModel.logout();
+                    Toast.makeText(LoginActivity.this, "Access Denied", Toast.LENGTH_LONG).show();
+                    isNavigated = false;
+                    return;
+                }
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
-    private void fetchUserRoleAndNavigate(String uid) {
-        db.collection(Constants.COLLECTION_USERS)
-                .document(uid)
-                .get()
-                .addOnSuccessListener(documentSnapshot -> {
-                    showLoading(false);
-                    if (documentSnapshot.exists()) {
-                        User user = documentSnapshot.toObject(User.class);
-                        if (user != null && Constants.ROLE_ADMIN.equalsIgnoreCase(user.getRole())) {
-                            startActivity(new Intent(LoginActivity.this, AdminMainActivity.class));
-                        } else {
-                            startActivity(new Intent(LoginActivity.this, StudentMainActivity.class));
-                        }
-                        finish();
-                    } else {
-                        Toast.makeText(LoginActivity.this, "User record not found in Firestore", Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .addOnFailureListener(e -> {
-                    showLoading(false);
-                    Toast.makeText(LoginActivity.this, "Error fetching user role: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                });
-    }
+    private void handleLogin() {
+        String email = binding.etEmail.getText().toString().trim();
+        String password = binding.etPassword.getText().toString().trim();
 
-    private void showLoading(boolean isLoading) {
-        binding.progressBar.setVisibility(isLoading ? View.VISIBLE : View.GONE);
-        binding.btnLogin.setEnabled(!isLoading);
+        if (email.isEmpty()) {
+            binding.etEmail.setError("Email is required");
+            return;
+        }
+        if (password.isEmpty()) {
+            binding.etPassword.setError("Password is required");
+            return;
+        }
+
+        authViewModel.login(email, password);
     }
 }

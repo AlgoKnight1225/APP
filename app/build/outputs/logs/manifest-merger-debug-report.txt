@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:2:1-61:12
-INJECTED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:2:1-61:12
-INJECTED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:2:1-61:12
-INJECTED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:2:1-61:12
+ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:2:1-75:12
+INJECTED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:2:1-75:12
+INJECTED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:2:1-75:12
+INJECTED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:2:1-75:12
 MERGED from [androidx.databinding:viewbinding:8.2.2] C:\Users\nikhi\.gradle\caches\transforms-3\1d00d91a341dab24a3b72eebc230c009\transformed\jetified-viewbinding-8.2.2\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\nikhi\.gradle\caches\transforms-3\c4516863a6091d4c9ba15b190e296f48\transformed\material-1.11.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\nikhi\.gradle\caches\transforms-3\1ea281c3562e25a425f624d9cf8cf3af\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
@@ -71,17 +71,17 @@ MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\nikhi\.
 MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\nikhi\.gradle\caches\transforms-3\e79c4b813da35584dbbbd70ac633c436\transformed\jetified-grpc-android-1.57.2\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\nikhi\.gradle\caches\transforms-3\c14fc690ccd0a1afc23bf961bac33017\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:2:1-11:12
 	package
-		INJECTED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml
 	xmlns:tools
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:3:5-51
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:6:5-67
+ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:6:5-67
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\nikhi\.gradle\caches\transforms-3\2d922cba6258b46eecc4d0307b29d646\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:25:5-67
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\nikhi\.gradle\caches\transforms-3\2d922cba6258b46eecc4d0307b29d646\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:25:5-67
 MERGED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\nikhi\.gradle\caches\transforms-3\da8819f64e28f43278c3961a1a14b09e\transformed\jetified-firebase-firestore-24.10.2\AndroidManifest.xml:11:5-67
@@ -91,9 +91,9 @@ MERGED from [com.google.firebase:firebase-storage:20.3.0] C:\Users\nikhi\.gradle
 MERGED from [com.google.android.recaptcha:recaptcha:18.4.0] C:\Users\nikhi\.gradle\caches\transforms-3\09809f145d6826f337b3fdb252753ab2\transformed\jetified-recaptcha-18.4.0\AndroidManifest.xml:7:5-67
 MERGED from [com.google.android.recaptcha:recaptcha:18.4.0] C:\Users\nikhi\.gradle\caches\transforms-3\09809f145d6826f337b3fdb252753ab2\transformed\jetified-recaptcha-18.4.0\AndroidManifest.xml:7:5-67
 	android:name
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:6:22-64
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:6:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:7:5-79
+ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:7:5-79
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\nikhi\.gradle\caches\transforms-3\2d922cba6258b46eecc4d0307b29d646\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:26:5-79
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\nikhi\.gradle\caches\transforms-3\2d922cba6258b46eecc4d0307b29d646\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:26:5-79
 MERGED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\nikhi\.gradle\caches\transforms-3\da8819f64e28f43278c3961a1a14b09e\transformed\jetified-firebase-firestore-24.10.2\AndroidManifest.xml:10:5-79
@@ -105,10 +105,10 @@ MERGED from [com.google.android.recaptcha:recaptcha:18.4.0] C:\Users\nikhi\.grad
 MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\nikhi\.gradle\caches\transforms-3\e79c4b813da35584dbbbd70ac633c436\transformed\jetified-grpc-android-1.57.2\AndroidManifest.xml:7:5-79
 MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\nikhi\.gradle\caches\transforms-3\e79c4b813da35584dbbbd70ac633c436\transformed\jetified-grpc-android-1.57.2\AndroidManifest.xml:7:5-79
 	android:name
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:7:22-76
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:7:22-76
 application
-ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:9:5-59:19
-INJECTED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:9:5-59:19
+ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:9:5-73:19
+INJECTED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:9:5-73:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\nikhi\.gradle\caches\transforms-3\c4516863a6091d4c9ba15b190e296f48\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\nikhi\.gradle\caches\transforms-3\c4516863a6091d4c9ba15b190e296f48\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\nikhi\.gradle\caches\transforms-3\1ea281c3562e25a425f624d9cf8cf3af\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -150,93 +150,121 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\nikhi\.gradle\cach
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\nikhi\.gradle\caches\transforms-3\585beb8879da8872a9d10abcea92c426\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\nikhi\.gradle\caches\transforms-3\585beb8879da8872a9d10abcea92c426\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 	android:extractNativeLibs
-		INJECTED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.9.0] C:\Users\nikhi\.gradle\caches\transforms-3\df03fe28d217857e465899eabc5396cc\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:16:9-35
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:16:9-35
 	android:label
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:14:9-41
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:14:9-41
 	android:fullBackupContent
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:12:9-54
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:12:9-54
 	android:roundIcon
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:15:9-57
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:15:9-54
 	tools:targetApi
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:18:9-29
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:18:9-29
 	android:icon
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:13:9-52
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:13:9-43
 	android:allowBackup
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:10:9-35
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:10:9-35
 	android:theme
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:17:9-67
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:17:9-67
 	android:dataExtractionRules
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:11:9-65
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:11:9-65
 activity#com.canteen.foodordering.auth.SplashActivity
-ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:21:9-29:20
+ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:21:9-29:20
 	android:exported
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:23:13-36
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:23:13-36
 	android:theme
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:24:13-83
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:24:13-83
 	android:name
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:22:13-48
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:22:13-48
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:25:13-28:29
+ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:25:13-28:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:26:17-69
+ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:26:17-69
 	android:name
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:26:25-66
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:26:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:27:17-77
+ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:27:17-77
 	android:name
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:27:27-74
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:27:27-74
 activity#com.canteen.foodordering.auth.LoginActivity
-ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:32:9-35:58
+ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:32:9-35:58
 	android:windowSoftInputMode
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:35:13-55
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:35:13-55
 	android:exported
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:34:13-37
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:34:13-37
 	android:name
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:33:13-47
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:33:13-47
 activity#com.canteen.foodordering.auth.RegisterActivity
-ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:36:9-39:58
+ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:36:9-39:58
 	android:windowSoftInputMode
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:39:13-55
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:39:13-55
 	android:exported
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:38:13-37
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:38:13-37
 	android:name
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:37:13-50
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:37:13-50
+activity#com.canteen.foodordering.auth.ForgotPasswordActivity
+ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:40:9-43:58
+	android:windowSoftInputMode
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:43:13-55
+	android:exported
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:42:13-37
+	android:name
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:41:13-56
 activity#com.canteen.foodordering.student.StudentMainActivity
-ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:42:9-44:40
+ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:46:9-48:40
 	android:exported
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:44:13-37
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:48:13-37
 	android:name
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:43:13-56
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:47:13-56
+activity#com.canteen.foodordering.student.ProductDetailActivity
+ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:49:9-51:40
+	android:exported
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:51:13-37
+	android:name
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:50:13-58
+activity#com.canteen.foodordering.student.OrderTrackingActivity
+ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:52:9-54:40
+	android:exported
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:54:13-37
+	android:name
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:53:13-58
 activity#com.canteen.foodordering.student.CartActivity
-ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:45:9-48:73
+ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:55:9-58:73
 	android:parentActivityName
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:48:13-70
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:58:13-70
 	android:exported
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:47:13-37
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:57:13-37
 	android:name
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:46:13-49
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:56:13-49
+activity#com.canteen.foodordering.student.CheckoutActivity
+ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:59:9-62:66
+	android:parentActivityName
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:62:13-63
+	android:exported
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:61:13-37
+	android:name
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:60:13-53
 activity#com.canteen.foodordering.admin.AdminMainActivity
-ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:51:9-53:40
+ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:65:9-67:40
 	android:exported
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:53:13-37
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:67:13-37
 	android:name
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:52:13-52
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:66:13-52
 activity#com.canteen.foodordering.admin.AddEditFoodActivity
-ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:54:9-57:69
+ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:68:9-71:69
 	android:parentActivityName
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:57:13-66
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:71:13-66
 	android:exported
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:56:13-37
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:70:13-37
 	android:name
-		ADDED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:55:13-54
+		ADDED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml:69:13-54
 uses-sdk
-INJECTED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml
+INJECTED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml
+INJECTED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml
 MERGED from [androidx.databinding:viewbinding:8.2.2] C:\Users\nikhi\.gradle\caches\transforms-3\1d00d91a341dab24a3b72eebc230c009\transformed\jetified-viewbinding-8.2.2\AndroidManifest.xml:5:5-44
 MERGED from [androidx.databinding:viewbinding:8.2.2] C:\Users\nikhi\.gradle\caches\transforms-3\1d00d91a341dab24a3b72eebc230c009\transformed\jetified-viewbinding-8.2.2\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\nikhi\.gradle\caches\transforms-3\c4516863a6091d4c9ba15b190e296f48\transformed\material-1.11.0\AndroidManifest.xml:20:5-44
@@ -372,9 +400,9 @@ MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\nik
 	tools:overrideLibrary
 		ADDED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\nikhi\.gradle\caches\transforms-3\2d922cba6258b46eecc4d0307b29d646\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:23:9-61
 	android:targetSdkVersion
-		INJECTED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Android project\CANTEEN ORDER APP\app\src\main\AndroidManifest.xml
 activity#com.google.firebase.auth.internal.GenericIdpActivity
 ADDED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\nikhi\.gradle\caches\transforms-3\2d922cba6258b46eecc4d0307b29d646\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:29:9-46:20
 	android:excludeFromRecents

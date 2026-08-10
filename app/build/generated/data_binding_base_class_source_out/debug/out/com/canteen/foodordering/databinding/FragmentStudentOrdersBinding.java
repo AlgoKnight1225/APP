@@ -23,25 +23,25 @@ public final class FragmentStudentOrdersBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final TextView layoutEmpty;
+
+  @NonNull
   public final ProgressBar progressBar;
 
   @NonNull
-  public final RecyclerView rvOrders;
+  public final RecyclerView rvStudentOrders;
 
   @NonNull
   public final SwipeRefreshLayout swipeRefreshLayout;
 
-  @NonNull
-  public final TextView tvEmptyOrders;
-
   private FragmentStudentOrdersBinding(@NonNull LinearLayout rootView,
-      @NonNull ProgressBar progressBar, @NonNull RecyclerView rvOrders,
-      @NonNull SwipeRefreshLayout swipeRefreshLayout, @NonNull TextView tvEmptyOrders) {
+      @NonNull TextView layoutEmpty, @NonNull ProgressBar progressBar,
+      @NonNull RecyclerView rvStudentOrders, @NonNull SwipeRefreshLayout swipeRefreshLayout) {
     this.rootView = rootView;
+    this.layoutEmpty = layoutEmpty;
     this.progressBar = progressBar;
-    this.rvOrders = rvOrders;
+    this.rvStudentOrders = rvStudentOrders;
     this.swipeRefreshLayout = swipeRefreshLayout;
-    this.tvEmptyOrders = tvEmptyOrders;
   }
 
   @Override
@@ -71,15 +71,21 @@ public final class FragmentStudentOrdersBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.layoutEmpty;
+      TextView layoutEmpty = ViewBindings.findChildViewById(rootView, id);
+      if (layoutEmpty == null) {
+        break missingId;
+      }
+
       id = R.id.progressBar;
       ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
       if (progressBar == null) {
         break missingId;
       }
 
-      id = R.id.rvOrders;
-      RecyclerView rvOrders = ViewBindings.findChildViewById(rootView, id);
-      if (rvOrders == null) {
+      id = R.id.rvStudentOrders;
+      RecyclerView rvStudentOrders = ViewBindings.findChildViewById(rootView, id);
+      if (rvStudentOrders == null) {
         break missingId;
       }
 
@@ -89,14 +95,8 @@ public final class FragmentStudentOrdersBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvEmptyOrders;
-      TextView tvEmptyOrders = ViewBindings.findChildViewById(rootView, id);
-      if (tvEmptyOrders == null) {
-        break missingId;
-      }
-
-      return new FragmentStudentOrdersBinding((LinearLayout) rootView, progressBar, rvOrders,
-          swipeRefreshLayout, tvEmptyOrders);
+      return new FragmentStudentOrdersBinding((LinearLayout) rootView, layoutEmpty, progressBar,
+          rvStudentOrders, swipeRefreshLayout);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

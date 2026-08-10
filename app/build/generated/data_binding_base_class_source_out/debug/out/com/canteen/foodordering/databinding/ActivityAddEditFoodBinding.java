@@ -4,17 +4,20 @@ package com.canteen.foodordering.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.canteen.foodordering.R;
-import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.switchmaterial.SwitchMaterial;
@@ -29,22 +32,28 @@ public final class ActivityAddEditFoodBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
-  public final MaterialButton btnSaveFood;
+  public final ImageButton btnBack;
 
   @NonNull
-  public final MaterialCardView cardSelectImage;
+  public final MaterialButton btnSave;
+
+  @NonNull
+  public final MaterialCardView btnSelectImage;
 
   @NonNull
   public final TextInputEditText etDescription;
 
   @NonNull
-  public final TextInputEditText etFoodName;
+  public final TextInputEditText etName;
 
   @NonNull
   public final TextInputEditText etPrice;
 
   @NonNull
-  public final ImageView ivFoodPreview;
+  public final LinearLayout headerLayout;
+
+  @NonNull
+  public final ImageView ivProductPreview;
 
   @NonNull
   public final LinearLayout layoutTapToSelect;
@@ -53,10 +62,19 @@ public final class ActivityAddEditFoodBinding implements ViewBinding {
   public final ProgressBar progressBar;
 
   @NonNull
+  public final RadioButton rbNonVeg;
+
+  @NonNull
+  public final RadioButton rbVeg;
+
+  @NonNull
+  public final RadioGroup rgVegType;
+
+  @NonNull
   public final Spinner spinnerCategory;
 
   @NonNull
-  public final SwitchMaterial switchIsAvailable;
+  public final SwitchMaterial switchAvailable;
 
   @NonNull
   public final TextInputLayout tilDescription;
@@ -68,31 +86,38 @@ public final class ActivityAddEditFoodBinding implements ViewBinding {
   public final TextInputLayout tilPrice;
 
   @NonNull
-  public final MaterialToolbar toolbarAddEdit;
+  public final TextView tvTitle;
 
-  private ActivityAddEditFoodBinding(@NonNull ScrollView rootView,
-      @NonNull MaterialButton btnSaveFood, @NonNull MaterialCardView cardSelectImage,
-      @NonNull TextInputEditText etDescription, @NonNull TextInputEditText etFoodName,
-      @NonNull TextInputEditText etPrice, @NonNull ImageView ivFoodPreview,
-      @NonNull LinearLayout layoutTapToSelect, @NonNull ProgressBar progressBar,
-      @NonNull Spinner spinnerCategory, @NonNull SwitchMaterial switchIsAvailable,
-      @NonNull TextInputLayout tilDescription, @NonNull TextInputLayout tilFoodName,
-      @NonNull TextInputLayout tilPrice, @NonNull MaterialToolbar toolbarAddEdit) {
+  private ActivityAddEditFoodBinding(@NonNull ScrollView rootView, @NonNull ImageButton btnBack,
+      @NonNull MaterialButton btnSave, @NonNull MaterialCardView btnSelectImage,
+      @NonNull TextInputEditText etDescription, @NonNull TextInputEditText etName,
+      @NonNull TextInputEditText etPrice, @NonNull LinearLayout headerLayout,
+      @NonNull ImageView ivProductPreview, @NonNull LinearLayout layoutTapToSelect,
+      @NonNull ProgressBar progressBar, @NonNull RadioButton rbNonVeg, @NonNull RadioButton rbVeg,
+      @NonNull RadioGroup rgVegType, @NonNull Spinner spinnerCategory,
+      @NonNull SwitchMaterial switchAvailable, @NonNull TextInputLayout tilDescription,
+      @NonNull TextInputLayout tilFoodName, @NonNull TextInputLayout tilPrice,
+      @NonNull TextView tvTitle) {
     this.rootView = rootView;
-    this.btnSaveFood = btnSaveFood;
-    this.cardSelectImage = cardSelectImage;
+    this.btnBack = btnBack;
+    this.btnSave = btnSave;
+    this.btnSelectImage = btnSelectImage;
     this.etDescription = etDescription;
-    this.etFoodName = etFoodName;
+    this.etName = etName;
     this.etPrice = etPrice;
-    this.ivFoodPreview = ivFoodPreview;
+    this.headerLayout = headerLayout;
+    this.ivProductPreview = ivProductPreview;
     this.layoutTapToSelect = layoutTapToSelect;
     this.progressBar = progressBar;
+    this.rbNonVeg = rbNonVeg;
+    this.rbVeg = rbVeg;
+    this.rgVegType = rgVegType;
     this.spinnerCategory = spinnerCategory;
-    this.switchIsAvailable = switchIsAvailable;
+    this.switchAvailable = switchAvailable;
     this.tilDescription = tilDescription;
     this.tilFoodName = tilFoodName;
     this.tilPrice = tilPrice;
-    this.toolbarAddEdit = toolbarAddEdit;
+    this.tvTitle = tvTitle;
   }
 
   @Override
@@ -122,15 +147,21 @@ public final class ActivityAddEditFoodBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btnSaveFood;
-      MaterialButton btnSaveFood = ViewBindings.findChildViewById(rootView, id);
-      if (btnSaveFood == null) {
+      id = R.id.btnBack;
+      ImageButton btnBack = ViewBindings.findChildViewById(rootView, id);
+      if (btnBack == null) {
         break missingId;
       }
 
-      id = R.id.cardSelectImage;
-      MaterialCardView cardSelectImage = ViewBindings.findChildViewById(rootView, id);
-      if (cardSelectImage == null) {
+      id = R.id.btnSave;
+      MaterialButton btnSave = ViewBindings.findChildViewById(rootView, id);
+      if (btnSave == null) {
+        break missingId;
+      }
+
+      id = R.id.btnSelectImage;
+      MaterialCardView btnSelectImage = ViewBindings.findChildViewById(rootView, id);
+      if (btnSelectImage == null) {
         break missingId;
       }
 
@@ -140,9 +171,9 @@ public final class ActivityAddEditFoodBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.etFoodName;
-      TextInputEditText etFoodName = ViewBindings.findChildViewById(rootView, id);
-      if (etFoodName == null) {
+      id = R.id.etName;
+      TextInputEditText etName = ViewBindings.findChildViewById(rootView, id);
+      if (etName == null) {
         break missingId;
       }
 
@@ -152,9 +183,15 @@ public final class ActivityAddEditFoodBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.ivFoodPreview;
-      ImageView ivFoodPreview = ViewBindings.findChildViewById(rootView, id);
-      if (ivFoodPreview == null) {
+      id = R.id.headerLayout;
+      LinearLayout headerLayout = ViewBindings.findChildViewById(rootView, id);
+      if (headerLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.ivProductPreview;
+      ImageView ivProductPreview = ViewBindings.findChildViewById(rootView, id);
+      if (ivProductPreview == null) {
         break missingId;
       }
 
@@ -170,15 +207,33 @@ public final class ActivityAddEditFoodBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.rbNonVeg;
+      RadioButton rbNonVeg = ViewBindings.findChildViewById(rootView, id);
+      if (rbNonVeg == null) {
+        break missingId;
+      }
+
+      id = R.id.rbVeg;
+      RadioButton rbVeg = ViewBindings.findChildViewById(rootView, id);
+      if (rbVeg == null) {
+        break missingId;
+      }
+
+      id = R.id.rgVegType;
+      RadioGroup rgVegType = ViewBindings.findChildViewById(rootView, id);
+      if (rgVegType == null) {
+        break missingId;
+      }
+
       id = R.id.spinnerCategory;
       Spinner spinnerCategory = ViewBindings.findChildViewById(rootView, id);
       if (spinnerCategory == null) {
         break missingId;
       }
 
-      id = R.id.switchIsAvailable;
-      SwitchMaterial switchIsAvailable = ViewBindings.findChildViewById(rootView, id);
-      if (switchIsAvailable == null) {
+      id = R.id.switchAvailable;
+      SwitchMaterial switchAvailable = ViewBindings.findChildViewById(rootView, id);
+      if (switchAvailable == null) {
         break missingId;
       }
 
@@ -200,16 +255,16 @@ public final class ActivityAddEditFoodBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.toolbarAddEdit;
-      MaterialToolbar toolbarAddEdit = ViewBindings.findChildViewById(rootView, id);
-      if (toolbarAddEdit == null) {
+      id = R.id.tvTitle;
+      TextView tvTitle = ViewBindings.findChildViewById(rootView, id);
+      if (tvTitle == null) {
         break missingId;
       }
 
-      return new ActivityAddEditFoodBinding((ScrollView) rootView, btnSaveFood, cardSelectImage,
-          etDescription, etFoodName, etPrice, ivFoodPreview, layoutTapToSelect, progressBar,
-          spinnerCategory, switchIsAvailable, tilDescription, tilFoodName, tilPrice,
-          toolbarAddEdit);
+      return new ActivityAddEditFoodBinding((ScrollView) rootView, btnBack, btnSave, btnSelectImage,
+          etDescription, etName, etPrice, headerLayout, ivProductPreview, layoutTapToSelect,
+          progressBar, rbNonVeg, rbVeg, rgVegType, spinnerCategory, switchAvailable, tilDescription,
+          tilFoodName, tilPrice, tvTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

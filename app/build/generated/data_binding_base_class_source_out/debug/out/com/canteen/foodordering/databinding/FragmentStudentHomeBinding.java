@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.canteen.foodordering.R;
-import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -25,39 +24,43 @@ public final class FragmentStudentHomeBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final ChipGroup chipGroupCategory;
-
-  @NonNull
-  public final EditText etSearch;
+  public final EditText etSearchFood;
 
   @NonNull
   public final FloatingActionButton fabCart;
 
   @NonNull
+  public final TextView layoutEmpty;
+
+  @NonNull
   public final ProgressBar progressBar;
+
+  @NonNull
+  public final RecyclerView rvCategories;
 
   @NonNull
   public final RecyclerView rvFoodItems;
 
   @NonNull
-  public final TextView tvEmptyState;
+  public final RecyclerView rvPromoBanners;
 
   @NonNull
-  public final TextView tvWelcomeUser;
+  public final TextView tvStudentHeaderName;
 
-  private FragmentStudentHomeBinding(@NonNull LinearLayout rootView,
-      @NonNull ChipGroup chipGroupCategory, @NonNull EditText etSearch,
-      @NonNull FloatingActionButton fabCart, @NonNull ProgressBar progressBar,
-      @NonNull RecyclerView rvFoodItems, @NonNull TextView tvEmptyState,
-      @NonNull TextView tvWelcomeUser) {
+  private FragmentStudentHomeBinding(@NonNull LinearLayout rootView, @NonNull EditText etSearchFood,
+      @NonNull FloatingActionButton fabCart, @NonNull TextView layoutEmpty,
+      @NonNull ProgressBar progressBar, @NonNull RecyclerView rvCategories,
+      @NonNull RecyclerView rvFoodItems, @NonNull RecyclerView rvPromoBanners,
+      @NonNull TextView tvStudentHeaderName) {
     this.rootView = rootView;
-    this.chipGroupCategory = chipGroupCategory;
-    this.etSearch = etSearch;
+    this.etSearchFood = etSearchFood;
     this.fabCart = fabCart;
+    this.layoutEmpty = layoutEmpty;
     this.progressBar = progressBar;
+    this.rvCategories = rvCategories;
     this.rvFoodItems = rvFoodItems;
-    this.tvEmptyState = tvEmptyState;
-    this.tvWelcomeUser = tvWelcomeUser;
+    this.rvPromoBanners = rvPromoBanners;
+    this.tvStudentHeaderName = tvStudentHeaderName;
   }
 
   @Override
@@ -87,15 +90,9 @@ public final class FragmentStudentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.chipGroupCategory;
-      ChipGroup chipGroupCategory = ViewBindings.findChildViewById(rootView, id);
-      if (chipGroupCategory == null) {
-        break missingId;
-      }
-
-      id = R.id.etSearch;
-      EditText etSearch = ViewBindings.findChildViewById(rootView, id);
-      if (etSearch == null) {
+      id = R.id.etSearchFood;
+      EditText etSearchFood = ViewBindings.findChildViewById(rootView, id);
+      if (etSearchFood == null) {
         break missingId;
       }
 
@@ -105,9 +102,21 @@ public final class FragmentStudentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.layoutEmpty;
+      TextView layoutEmpty = ViewBindings.findChildViewById(rootView, id);
+      if (layoutEmpty == null) {
+        break missingId;
+      }
+
       id = R.id.progressBar;
       ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
       if (progressBar == null) {
+        break missingId;
+      }
+
+      id = R.id.rvCategories;
+      RecyclerView rvCategories = ViewBindings.findChildViewById(rootView, id);
+      if (rvCategories == null) {
         break missingId;
       }
 
@@ -117,20 +126,20 @@ public final class FragmentStudentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvEmptyState;
-      TextView tvEmptyState = ViewBindings.findChildViewById(rootView, id);
-      if (tvEmptyState == null) {
+      id = R.id.rvPromoBanners;
+      RecyclerView rvPromoBanners = ViewBindings.findChildViewById(rootView, id);
+      if (rvPromoBanners == null) {
         break missingId;
       }
 
-      id = R.id.tvWelcomeUser;
-      TextView tvWelcomeUser = ViewBindings.findChildViewById(rootView, id);
-      if (tvWelcomeUser == null) {
+      id = R.id.tvStudentHeaderName;
+      TextView tvStudentHeaderName = ViewBindings.findChildViewById(rootView, id);
+      if (tvStudentHeaderName == null) {
         break missingId;
       }
 
-      return new FragmentStudentHomeBinding((LinearLayout) rootView, chipGroupCategory, etSearch,
-          fabCart, progressBar, rvFoodItems, tvEmptyState, tvWelcomeUser);
+      return new FragmentStudentHomeBinding((LinearLayout) rootView, etSearchFood, fabCart,
+          layoutEmpty, progressBar, rvCategories, rvFoodItems, rvPromoBanners, tvStudentHeaderName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

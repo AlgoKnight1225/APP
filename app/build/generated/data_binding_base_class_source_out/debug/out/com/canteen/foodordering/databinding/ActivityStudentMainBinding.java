@@ -6,12 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.canteen.foodordering.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.card.MaterialCardView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -24,13 +26,27 @@ public final class ActivityStudentMainBinding implements ViewBinding {
   public final BottomNavigationView bottomNavigation;
 
   @NonNull
+  public final MaterialCardView cardCartBar;
+
+  @NonNull
   public final FrameLayout fragmentContainer;
 
+  @NonNull
+  public final TextView tvCartBadgeItems;
+
+  @NonNull
+  public final TextView tvCartBadgeTotal;
+
   private ActivityStudentMainBinding(@NonNull RelativeLayout rootView,
-      @NonNull BottomNavigationView bottomNavigation, @NonNull FrameLayout fragmentContainer) {
+      @NonNull BottomNavigationView bottomNavigation, @NonNull MaterialCardView cardCartBar,
+      @NonNull FrameLayout fragmentContainer, @NonNull TextView tvCartBadgeItems,
+      @NonNull TextView tvCartBadgeTotal) {
     this.rootView = rootView;
     this.bottomNavigation = bottomNavigation;
+    this.cardCartBar = cardCartBar;
     this.fragmentContainer = fragmentContainer;
+    this.tvCartBadgeItems = tvCartBadgeItems;
+    this.tvCartBadgeTotal = tvCartBadgeTotal;
   }
 
   @Override
@@ -66,14 +82,32 @@ public final class ActivityStudentMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.cardCartBar;
+      MaterialCardView cardCartBar = ViewBindings.findChildViewById(rootView, id);
+      if (cardCartBar == null) {
+        break missingId;
+      }
+
       id = R.id.fragmentContainer;
       FrameLayout fragmentContainer = ViewBindings.findChildViewById(rootView, id);
       if (fragmentContainer == null) {
         break missingId;
       }
 
+      id = R.id.tvCartBadgeItems;
+      TextView tvCartBadgeItems = ViewBindings.findChildViewById(rootView, id);
+      if (tvCartBadgeItems == null) {
+        break missingId;
+      }
+
+      id = R.id.tvCartBadgeTotal;
+      TextView tvCartBadgeTotal = ViewBindings.findChildViewById(rootView, id);
+      if (tvCartBadgeTotal == null) {
+        break missingId;
+      }
+
       return new ActivityStudentMainBinding((RelativeLayout) rootView, bottomNavigation,
-          fragmentContainer);
+          cardCartBar, fragmentContainer, tvCartBadgeItems, tvCartBadgeTotal);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

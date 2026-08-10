@@ -1,101 +1,54 @@
 package com.canteen.foodordering.adapters;
 
-import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.GradientDrawable;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.canteen.foodordering.R;
+import com.canteen.foodordering.databinding.ItemOrderAdminBinding;
+import com.canteen.foodordering.models.CartItem;
 import com.canteen.foodordering.models.Order;
-import com.canteen.foodordering.utils.Constants;
-import com.google.android.material.button.MaterialButton;
 
-import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
-public class AdminOrderAdapter extends RecyclerView.Adapter<AdminOrderAdapter.ViewHolder> {
+public class AdminOrderAdapter extends RecyclerView.Adapter<AdminOrderAdapter.AdminOrderViewHolder> {
+    private List<Order> orderList = new ArrayList<>();
+    private final OnOrderStatusChangeListener listener;
+    private final String[] statusOptions = {"PENDING", "PREPARING", "READY", "COMPLETED", "CANCELLED"};
 
-    private final Context context;
-    private final List<Order> orderList;
-    private final OnOrderStatusUpdateListener listener;
-
-    public interface OnOrderStatusUpdateListener {
-        void onUpdateStatusClicked(Order order);
+    public interface OnOrderStatusChangeListener {
+        void onStatusChanged(Order order, String newStatus);
     }
 
-    public AdminOrderAdapter(Context context, List<Order> orderList, OnOrderStatusUpdateListener listener) {
-        this.context = context;
-        this.orderList = orderList;
+    public AdminOrderAdapter(OnOrderStatusChangeListener listener) {
         this.listener = listener;
+    }
+
+    public void setOrderList(List<Order> list) {
+        this.orderList = list != null ? list : new ArrayList<>();
+        notifyDataSetChanged();
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_order_admin, parent, false);
-        return new ViewHolder(view);
+    public AdminOrderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        ItemOrderAdminBinding binding = ItemOrderAdminBinding.inflate(
+                LayoutInflater.from(parent.getContext()), parent, false);
+        return new AdminOrderViewHolder(binding);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AdminOrderViewHolder holder, int position) {
         Order order = orderList.get(position);
-
-        holder.tvAdminStudentName.setText(String.format("Student: %s", order.getStudentName() != null ? order.getStudentName() : "Unknown"));
-        holder.tvAdminStudentPhone.setText(String.format("Phone: %s", order.getStudentPhone() != null ? order.getStudentPhone() : "N/A"));
-
-        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, hh:mm a", Locale.getDefault());
-        String shortId = order.getOrderId() != null && order.getOrderId().length() > 6 ?
-                order.getOrderId().substring(0, 6).toUpperCase() : order.getOrderId();
-        holder.tvAdminOrderId.setText(String.format("Order #%s • %s", shortId, sdf.format(new Date(order.getTimestamp()))));
-
-        holder.tvAdminStatusBadge.setText(order.getStatus());
-        setStatusBadgeColor(holder.tvAdminStatusBadge, order.getStatus());
-
-        holder.tvAdminTotalPrice.setText(String.format(Locale.getDefault(), "₹ %.2f", order.getTotalPrice()));
-
-        if (order.getNotes() != null && !order.getNotes().trim().isEmpty()) {
-            holder.tvAdminNotes.setVisibility(View.VISIBLE);
-            holder.tvAdminNotes.setText(String.format("Notes: %s", order.getNotes()));
-        } else {
-            holder.tvAdminNotes.setVisibility(View.GONE);
-        }
-
-        // Sub-adapter for items
-        OrderItemAdapter subAdapter = new OrderItemAdapter(context, order.getItems());
-        holder.rvAdminOrderItems.setLayoutManager(new LinearLayoutManager(context));
-        holder.rvAdminOrderItems.setAdapter(subAdapter);
-
-        holder.btnUpdateStatus.setOnClickListener(v -> {
-            if (listener != null) listener.onUpdateStatusClicked(order);
-        });
-    }
-
-    private void setStatusBadgeColor(TextView tvStatus, String status) {
-        GradientDrawable drawable = new GradientDrawable();
-        drawable.setCornerRadius(24f);
-
-        if (Constants.STATUS_PLACED.equalsIgnoreCase(status)) {
-            drawable.setColor(Color.parseColor("#2196F3")); // Blue
-        } else if (Constants.STATUS_PREPARING.equalsIgnoreCase(status)) {
-            drawable.setColor(Color.parseColor("#FF9800")); // Orange
-        } else if (Constants.STATUS_READY.equalsIgnoreCase(status)) {
-            drawable.setColor(Color.parseColor("#9C27B0")); // Purple
-        } else if (Constants.STATUS_DELIVERED.equalsIgnoreCase(status)) {
-            drawable.setColor(Color.parseColor("#4CAF50")); // Green
-        } else {
-            drawable.setColor(Color.parseColor("#757575")); // Grey
-        }
-
-        tvStatus.setBackground(drawable);
+        holder.bind(order, statusOptions, listener);
     }
 
     @Override
@@ -103,21 +56,68 @@ public class AdminOrderAdapter extends RecyclerView.Adapter<AdminOrderAdapter.Vi
         return orderList.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvAdminStudentName, tvAdminStudentPhone, tvAdminOrderId, tvAdminStatusBadge, tvAdminTotalPrice, tvAdminNotes;
-        RecyclerView rvAdminOrderItems;
-        MaterialButton btnUpdateStatus;
+    static class AdminOrderViewHolder extends RecyclerView.ViewHolder {
+        private final ItemOrderAdminBinding binding;
 
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            tvAdminStudentName = itemView.findViewById(R.id.tvAdminStudentName);
-            tvAdminStudentPhone = itemView.findViewById(R.id.tvAdminStudentPhone);
-            tvAdminOrderId = itemView.findViewById(R.id.tvAdminOrderId);
-            tvAdminStatusBadge = itemView.findViewById(R.id.tvAdminStatusBadge);
-            tvAdminTotalPrice = itemView.findViewById(R.id.tvAdminTotalPrice);
-            tvAdminNotes = itemView.findViewById(R.id.tvAdminNotes);
-            rvAdminOrderItems = itemView.findViewById(R.id.rvAdminOrderItems);
-            btnUpdateStatus = itemView.findViewById(R.id.btnUpdateStatus);
+        public AdminOrderViewHolder(@NonNull ItemOrderAdminBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
+        }
+
+        public void bind(Order order, String[] statusOptions, OnOrderStatusChangeListener listener) {
+            String orderIdText = "Order #" + (order.getOrderId() != null && order.getOrderId().length() > 6 ?
+                    order.getOrderId().substring(0, 6).toUpperCase() : order.getOrderId());
+            binding.tvAdminOrderId.setText(orderIdText);
+
+            String customerText = "Customer: " + (order.getStudentName() != null ? order.getStudentName() : "Student")
+                    + " (" + (order.getStudentPhone() != null ? order.getStudentPhone() : "N/A") + ")";
+            binding.tvCustomerNamePhone.setText(customerText);
+
+            String dateString = DateFormat.format("dd MMM yyyy, hh:mm a", new Date(order.getTimestamp())).toString();
+            binding.tvAdminOrderDate.setText("Placed on: " + dateString);
+            binding.tvAdminOrderTotal.setText(String.format("₹%.2f", order.getTotalPrice()));
+
+            StringBuilder sb = new StringBuilder();
+            if (order.getItems() != null) {
+                for (int i = 0; i < order.getItems().size(); i++) {
+                    CartItem item = order.getItems().get(i);
+                    sb.append(item.getQuantity()).append("x ").append(item.getFoodName());
+                    if (i < order.getItems().size() - 1) {
+                        sb.append(", ");
+                    }
+                }
+            }
+            binding.tvAdminOrderItems.setText(sb.length() > 0 ? sb.toString() : "No items");
+
+            // Setup status spinner
+            ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(binding.getRoot().getContext(),
+                    android.R.layout.simple_spinner_item, statusOptions);
+            spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            binding.spinnerStatus.setAdapter(spinnerAdapter);
+
+            int currentStatusIndex = 0;
+            String currentStatus = order.getStatus() != null ? order.getStatus().toUpperCase() : "PENDING";
+            for (int i = 0; i < statusOptions.length; i++) {
+                if (statusOptions[i].equalsIgnoreCase(currentStatus)) {
+                    currentStatusIndex = i;
+                    break;
+                }
+            }
+            binding.spinnerStatus.setSelection(currentStatusIndex, false);
+
+            final int initialIndex = currentStatusIndex;
+            binding.spinnerStatus.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    if (position != initialIndex && listener != null) {
+                        listener.onStatusChanged(order, statusOptions[position]);
+                    }
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+                }
+            });
         }
     }
 }

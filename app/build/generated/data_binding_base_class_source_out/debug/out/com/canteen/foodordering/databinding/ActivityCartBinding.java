@@ -4,7 +4,8 @@ package com.canteen.foodordering.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -13,10 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.canteen.foodordering.R;
-import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
-import com.google.android.material.textfield.TextInputEditText;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -26,42 +25,46 @@ public final class ActivityCartBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
-  public final MaterialButton btnPlaceOrder;
+  public final ImageButton btnBack;
 
   @NonNull
-  public final MaterialCardView cardBottomCheckout;
+  public final MaterialButton btnProceedCheckout;
 
   @NonNull
-  public final TextInputEditText etNotes;
+  public final MaterialCardView cardCheckoutSummary;
 
   @NonNull
-  public final ProgressBar progressBar;
+  public final LinearLayout layoutEmptyCart;
 
   @NonNull
   public final RecyclerView rvCartItems;
 
   @NonNull
-  public final MaterialToolbar toolbar;
+  public final LinearLayout toolbarLayout;
 
   @NonNull
-  public final TextView tvEmptyCart;
+  public final TextView tvSubtotal;
+
+  @NonNull
+  public final TextView tvTax;
 
   @NonNull
   public final TextView tvTotalAmount;
 
-  private ActivityCartBinding(@NonNull RelativeLayout rootView,
-      @NonNull MaterialButton btnPlaceOrder, @NonNull MaterialCardView cardBottomCheckout,
-      @NonNull TextInputEditText etNotes, @NonNull ProgressBar progressBar,
-      @NonNull RecyclerView rvCartItems, @NonNull MaterialToolbar toolbar,
-      @NonNull TextView tvEmptyCart, @NonNull TextView tvTotalAmount) {
+  private ActivityCartBinding(@NonNull RelativeLayout rootView, @NonNull ImageButton btnBack,
+      @NonNull MaterialButton btnProceedCheckout, @NonNull MaterialCardView cardCheckoutSummary,
+      @NonNull LinearLayout layoutEmptyCart, @NonNull RecyclerView rvCartItems,
+      @NonNull LinearLayout toolbarLayout, @NonNull TextView tvSubtotal, @NonNull TextView tvTax,
+      @NonNull TextView tvTotalAmount) {
     this.rootView = rootView;
-    this.btnPlaceOrder = btnPlaceOrder;
-    this.cardBottomCheckout = cardBottomCheckout;
-    this.etNotes = etNotes;
-    this.progressBar = progressBar;
+    this.btnBack = btnBack;
+    this.btnProceedCheckout = btnProceedCheckout;
+    this.cardCheckoutSummary = cardCheckoutSummary;
+    this.layoutEmptyCart = layoutEmptyCart;
     this.rvCartItems = rvCartItems;
-    this.toolbar = toolbar;
-    this.tvEmptyCart = tvEmptyCart;
+    this.toolbarLayout = toolbarLayout;
+    this.tvSubtotal = tvSubtotal;
+    this.tvTax = tvTax;
     this.tvTotalAmount = tvTotalAmount;
   }
 
@@ -92,27 +95,27 @@ public final class ActivityCartBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btnPlaceOrder;
-      MaterialButton btnPlaceOrder = ViewBindings.findChildViewById(rootView, id);
-      if (btnPlaceOrder == null) {
+      id = R.id.btnBack;
+      ImageButton btnBack = ViewBindings.findChildViewById(rootView, id);
+      if (btnBack == null) {
         break missingId;
       }
 
-      id = R.id.cardBottomCheckout;
-      MaterialCardView cardBottomCheckout = ViewBindings.findChildViewById(rootView, id);
-      if (cardBottomCheckout == null) {
+      id = R.id.btnProceedCheckout;
+      MaterialButton btnProceedCheckout = ViewBindings.findChildViewById(rootView, id);
+      if (btnProceedCheckout == null) {
         break missingId;
       }
 
-      id = R.id.etNotes;
-      TextInputEditText etNotes = ViewBindings.findChildViewById(rootView, id);
-      if (etNotes == null) {
+      id = R.id.cardCheckoutSummary;
+      MaterialCardView cardCheckoutSummary = ViewBindings.findChildViewById(rootView, id);
+      if (cardCheckoutSummary == null) {
         break missingId;
       }
 
-      id = R.id.progressBar;
-      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
-      if (progressBar == null) {
+      id = R.id.layoutEmptyCart;
+      LinearLayout layoutEmptyCart = ViewBindings.findChildViewById(rootView, id);
+      if (layoutEmptyCart == null) {
         break missingId;
       }
 
@@ -122,15 +125,21 @@ public final class ActivityCartBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.toolbar;
-      MaterialToolbar toolbar = ViewBindings.findChildViewById(rootView, id);
-      if (toolbar == null) {
+      id = R.id.toolbarLayout;
+      LinearLayout toolbarLayout = ViewBindings.findChildViewById(rootView, id);
+      if (toolbarLayout == null) {
         break missingId;
       }
 
-      id = R.id.tvEmptyCart;
-      TextView tvEmptyCart = ViewBindings.findChildViewById(rootView, id);
-      if (tvEmptyCart == null) {
+      id = R.id.tvSubtotal;
+      TextView tvSubtotal = ViewBindings.findChildViewById(rootView, id);
+      if (tvSubtotal == null) {
+        break missingId;
+      }
+
+      id = R.id.tvTax;
+      TextView tvTax = ViewBindings.findChildViewById(rootView, id);
+      if (tvTax == null) {
         break missingId;
       }
 
@@ -140,8 +149,9 @@ public final class ActivityCartBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityCartBinding((RelativeLayout) rootView, btnPlaceOrder, cardBottomCheckout,
-          etNotes, progressBar, rvCartItems, toolbar, tvEmptyCart, tvTotalAmount);
+      return new ActivityCartBinding((RelativeLayout) rootView, btnBack, btnProceedCheckout,
+          cardCheckoutSummary, layoutEmptyCart, rvCartItems, toolbarLayout, tvSubtotal, tvTax,
+          tvTotalAmount);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

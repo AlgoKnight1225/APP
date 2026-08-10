@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,6 +12,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.canteen.foodordering.R;
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -23,13 +23,13 @@ public final class ItemFoodAdminBinding implements ViewBinding {
   private final MaterialCardView rootView;
 
   @NonNull
-  public final ImageButton btnDeleteFood;
+  public final ImageButton btnDelete;
 
   @NonNull
-  public final ImageButton btnEditFood;
+  public final ImageButton btnEdit;
 
   @NonNull
-  public final ImageView ivAdminFoodImage;
+  public final ShapeableImageView ivAdminFood;
 
   @NonNull
   public final SwitchMaterial switchAvailable;
@@ -41,21 +41,20 @@ public final class ItemFoodAdminBinding implements ViewBinding {
   public final TextView tvAdminFoodName;
 
   @NonNull
-  public final TextView tvAdminPrice;
+  public final TextView tvAdminFoodPrice;
 
-  private ItemFoodAdminBinding(@NonNull MaterialCardView rootView,
-      @NonNull ImageButton btnDeleteFood, @NonNull ImageButton btnEditFood,
-      @NonNull ImageView ivAdminFoodImage, @NonNull SwitchMaterial switchAvailable,
-      @NonNull TextView tvAdminCategory, @NonNull TextView tvAdminFoodName,
-      @NonNull TextView tvAdminPrice) {
+  private ItemFoodAdminBinding(@NonNull MaterialCardView rootView, @NonNull ImageButton btnDelete,
+      @NonNull ImageButton btnEdit, @NonNull ShapeableImageView ivAdminFood,
+      @NonNull SwitchMaterial switchAvailable, @NonNull TextView tvAdminCategory,
+      @NonNull TextView tvAdminFoodName, @NonNull TextView tvAdminFoodPrice) {
     this.rootView = rootView;
-    this.btnDeleteFood = btnDeleteFood;
-    this.btnEditFood = btnEditFood;
-    this.ivAdminFoodImage = ivAdminFoodImage;
+    this.btnDelete = btnDelete;
+    this.btnEdit = btnEdit;
+    this.ivAdminFood = ivAdminFood;
     this.switchAvailable = switchAvailable;
     this.tvAdminCategory = tvAdminCategory;
     this.tvAdminFoodName = tvAdminFoodName;
-    this.tvAdminPrice = tvAdminPrice;
+    this.tvAdminFoodPrice = tvAdminFoodPrice;
   }
 
   @Override
@@ -85,21 +84,21 @@ public final class ItemFoodAdminBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btnDeleteFood;
-      ImageButton btnDeleteFood = ViewBindings.findChildViewById(rootView, id);
-      if (btnDeleteFood == null) {
+      id = R.id.btnDelete;
+      ImageButton btnDelete = ViewBindings.findChildViewById(rootView, id);
+      if (btnDelete == null) {
         break missingId;
       }
 
-      id = R.id.btnEditFood;
-      ImageButton btnEditFood = ViewBindings.findChildViewById(rootView, id);
-      if (btnEditFood == null) {
+      id = R.id.btnEdit;
+      ImageButton btnEdit = ViewBindings.findChildViewById(rootView, id);
+      if (btnEdit == null) {
         break missingId;
       }
 
-      id = R.id.ivAdminFoodImage;
-      ImageView ivAdminFoodImage = ViewBindings.findChildViewById(rootView, id);
-      if (ivAdminFoodImage == null) {
+      id = R.id.ivAdminFood;
+      ShapeableImageView ivAdminFood = ViewBindings.findChildViewById(rootView, id);
+      if (ivAdminFood == null) {
         break missingId;
       }
 
@@ -121,14 +120,14 @@ public final class ItemFoodAdminBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvAdminPrice;
-      TextView tvAdminPrice = ViewBindings.findChildViewById(rootView, id);
-      if (tvAdminPrice == null) {
+      id = R.id.tvAdminFoodPrice;
+      TextView tvAdminFoodPrice = ViewBindings.findChildViewById(rootView, id);
+      if (tvAdminFoodPrice == null) {
         break missingId;
       }
 
-      return new ItemFoodAdminBinding((MaterialCardView) rootView, btnDeleteFood, btnEditFood,
-          ivAdminFoodImage, switchAvailable, tvAdminCategory, tvAdminFoodName, tvAdminPrice);
+      return new ItemFoodAdminBinding((MaterialCardView) rootView, btnDelete, btnEdit, ivAdminFood,
+          switchAvailable, tvAdminCategory, tvAdminFoodName, tvAdminFoodPrice);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

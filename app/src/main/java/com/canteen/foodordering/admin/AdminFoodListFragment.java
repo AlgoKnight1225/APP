@@ -11,24 +11,20 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.canteen.foodordering.adapters.AdminFoodAdapter;
 import com.canteen.foodordering.databinding.FragmentAdminFoodBinding;
 import com.canteen.foodordering.models.FoodItem;
-import com.canteen.foodordering.utils.Constants;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.canteen.foodordering.viewmodels.FoodViewModel;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class AdminFoodListFragment extends Fragment {
-
+public class AdminFoodListFragment extends Fragment implements AdminFoodAdapter.OnAdminFoodActionListener {
     private FragmentAdminFoodBinding binding;
-    private FirebaseFirestore db;
-    private final List<FoodItem> foodList = new ArrayList<>();
-    private AdminFoodAdapter adapter;
+    private FoodViewModel foodViewModel;
+    private AdminFoodAdapter foodAdapter;
 
     @Nullable
     @Override
@@ -41,107 +37,60 @@ public class AdminFoodListFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        db = FirebaseFirestore.getInstance();
+        foodViewModel = new ViewModelProvider(requireActivity()).get(FoodViewModel.class);
 
-        setupRecyclerView();
+        foodAdapter = new AdminFoodAdapter(this);
+        binding.rvAdminFood.setLayoutManager(new LinearLayoutManager(requireContext()));
+        binding.rvAdminFood.setAdapter(foodAdapter);
+
+        observeFoodItems();
 
         binding.fabAddFood.setOnClickListener(v -> {
-            startActivity(new Intent(requireContext(), AddEditFoodActivity.class));
+            Intent intent = new Intent(requireActivity(), AddEditFoodActivity.class);
+            startActivity(intent);
         });
-
-        fetchFoodItems();
     }
 
-    private void setupRecyclerView() {
-        adapter = new AdminFoodAdapter(requireContext(), foodList, new AdminFoodAdapter.OnFoodActionListener() {
-            @Override
-            public void onEdit(FoodItem foodItem) {
-                Intent intent = new Intent(requireContext(), AddEditFoodActivity.class);
-                intent.putExtra("food_item", foodItem);
-                startActivity(intent);
-            }
-
-            @Override
-            public void onDelete(FoodItem foodItem) {
-                showDeleteConfirmation(foodItem);
-            }
-
-            @Override
-            public void onToggleAvailability(FoodItem foodItem, boolean isAvailable) {
-                updateAvailability(foodItem, isAvailable);
-            }
-        });
-
-        binding.rvAdminFood.setLayoutManager(new LinearLayoutManager(requireContext()));
-        binding.rvAdminFood.setAdapter(adapter);
-    }
-
-    private void fetchFoodItems() {
+    private void observeFoodItems() {
         binding.progressBar.setVisibility(View.VISIBLE);
-        db.collection(Constants.COLLECTION_FOOD)
-                .addSnapshotListener((value, error) -> {
-                    if (!isAdded()) return;
 
-                    binding.progressBar.setVisibility(View.GONE);
-                    if (error != null) {
-                        Toast.makeText(requireContext(), "Error fetching menu: " + error.getMessage(), Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-
-                    if (value != null) {
-                        foodList.clear();
-                        for (QueryDocumentSnapshot doc : value) {
-                            FoodItem item = doc.toObject(FoodItem.class);
-                            item.setId(doc.getId());
-                            foodList.add(item);
-                        }
-                        adapter.notifyDataSetChanged();
-
-                        if (foodList.isEmpty()) {
-                            binding.tvEmptyAdminFood.setVisibility(View.VISIBLE);
-                        } else {
-                            binding.tvEmptyAdminFood.setVisibility(View.GONE);
-                        }
-                    }
-                });
+        foodViewModel.getFoodItemsLiveData().observe(getViewLifecycleOwner(), items -> {
+            binding.progressBar.setVisibility(View.GONE);
+            if (items != null && !items.isEmpty()) {
+                foodAdapter.setFoodList(items);
+                binding.layoutEmpty.setVisibility(View.GONE);
+            } else {
+                foodAdapter.setFoodList(new ArrayList<>());
+                binding.layoutEmpty.setVisibility(View.VISIBLE);
+            }
+        });
     }
 
-    private void updateAvailability(FoodItem foodItem, boolean isAvailable) {
-        if (foodItem.getId() == null) return;
-        db.collection(Constants.COLLECTION_FOOD)
-                .document(foodItem.getId())
-                .update("available", isAvailable)
-                .addOnSuccessListener(aVoid -> {
-                    foodItem.setAvailable(isAvailable);
-                    Toast.makeText(requireContext(), "Availability updated", Toast.LENGTH_SHORT).show();
-                })
-                .addOnFailureListener(e -> {
-                    Toast.makeText(requireContext(), "Failed to update status: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                });
+    @Override
+    public void onEditClick(FoodItem foodItem) {
+        Intent intent = new Intent(requireActivity(), AddEditFoodActivity.class);
+        intent.putExtra("FOOD_ITEM", foodItem);
+        startActivity(intent);
     }
 
-    private void showDeleteConfirmation(FoodItem foodItem) {
+    @Override
+    public void onDeleteClick(FoodItem foodItem) {
         new AlertDialog.Builder(requireContext())
                 .setTitle("Delete Food Item")
                 .setMessage("Are you sure you want to delete '" + foodItem.getName() + "'?")
                 .setPositiveButton("Delete", (dialog, which) -> {
-                    deleteFoodItem(foodItem);
+                    foodViewModel.deleteFoodItem(foodItem.getId());
+                    Toast.makeText(requireContext(), "Item deleted", Toast.LENGTH_SHORT).show();
                 })
                 .setNegativeButton("Cancel", null)
                 .show();
     }
 
-    private void deleteFoodItem(FoodItem foodItem) {
-        if (foodItem.getId() == null) return;
-        db.collection(Constants.COLLECTION_FOOD)
-                .document(foodItem.getId())
-                .delete()
-                .addOnSuccessListener(aVoid -> {
-                    Toast.makeText(requireContext(), "Item deleted", Toast.LENGTH_SHORT).show();
-                })
-                .addOnFailureListener(e -> {
-                    Toast.makeText(requireContext(), "Error deleting item: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                });
+    @Override
+    public void onAvailabilityToggle(FoodItem foodItem, boolean isAvailable) {
+        foodItem.setAvailable(isAvailable);
+        foodViewModel.updateFoodItem(foodItem);
+        Toast.makeText(requireContext(), foodItem.getName() + (isAvailable ? " is now Available" : " marked Unavailable"), Toast.LENGTH_SHORT).show();
     }
 
     @Override

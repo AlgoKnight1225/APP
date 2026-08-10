@@ -5,8 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -29,10 +27,13 @@ public final class ActivityRegisterBinding implements ViewBinding {
   public final MaterialButton btnRegister;
 
   @NonNull
+  public final TextInputEditText etConfirmPassword;
+
+  @NonNull
   public final TextInputEditText etEmail;
 
   @NonNull
-  public final TextInputEditText etName;
+  public final TextInputEditText etFullName;
 
   @NonNull
   public final TextInputEditText etPassword;
@@ -44,13 +45,7 @@ public final class ActivityRegisterBinding implements ViewBinding {
   public final ProgressBar progressBar;
 
   @NonNull
-  public final RadioButton rbAdmin;
-
-  @NonNull
-  public final RadioButton rbStudent;
-
-  @NonNull
-  public final RadioGroup rgRole;
+  public final TextInputLayout tilConfirmPassword;
 
   @NonNull
   public final TextInputLayout tilEmail;
@@ -65,30 +60,29 @@ public final class ActivityRegisterBinding implements ViewBinding {
   public final TextInputLayout tilPhone;
 
   @NonNull
-  public final TextView tvLogin;
+  public final TextView tvLoginLink;
 
   private ActivityRegisterBinding(@NonNull ScrollView rootView, @NonNull MaterialButton btnRegister,
-      @NonNull TextInputEditText etEmail, @NonNull TextInputEditText etName,
-      @NonNull TextInputEditText etPassword, @NonNull TextInputEditText etPhone,
-      @NonNull ProgressBar progressBar, @NonNull RadioButton rbAdmin,
-      @NonNull RadioButton rbStudent, @NonNull RadioGroup rgRole, @NonNull TextInputLayout tilEmail,
+      @NonNull TextInputEditText etConfirmPassword, @NonNull TextInputEditText etEmail,
+      @NonNull TextInputEditText etFullName, @NonNull TextInputEditText etPassword,
+      @NonNull TextInputEditText etPhone, @NonNull ProgressBar progressBar,
+      @NonNull TextInputLayout tilConfirmPassword, @NonNull TextInputLayout tilEmail,
       @NonNull TextInputLayout tilName, @NonNull TextInputLayout tilPassword,
-      @NonNull TextInputLayout tilPhone, @NonNull TextView tvLogin) {
+      @NonNull TextInputLayout tilPhone, @NonNull TextView tvLoginLink) {
     this.rootView = rootView;
     this.btnRegister = btnRegister;
+    this.etConfirmPassword = etConfirmPassword;
     this.etEmail = etEmail;
-    this.etName = etName;
+    this.etFullName = etFullName;
     this.etPassword = etPassword;
     this.etPhone = etPhone;
     this.progressBar = progressBar;
-    this.rbAdmin = rbAdmin;
-    this.rbStudent = rbStudent;
-    this.rgRole = rgRole;
+    this.tilConfirmPassword = tilConfirmPassword;
     this.tilEmail = tilEmail;
     this.tilName = tilName;
     this.tilPassword = tilPassword;
     this.tilPhone = tilPhone;
-    this.tvLogin = tvLogin;
+    this.tvLoginLink = tvLoginLink;
   }
 
   @Override
@@ -124,15 +118,21 @@ public final class ActivityRegisterBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.etConfirmPassword;
+      TextInputEditText etConfirmPassword = ViewBindings.findChildViewById(rootView, id);
+      if (etConfirmPassword == null) {
+        break missingId;
+      }
+
       id = R.id.etEmail;
       TextInputEditText etEmail = ViewBindings.findChildViewById(rootView, id);
       if (etEmail == null) {
         break missingId;
       }
 
-      id = R.id.etName;
-      TextInputEditText etName = ViewBindings.findChildViewById(rootView, id);
-      if (etName == null) {
+      id = R.id.etFullName;
+      TextInputEditText etFullName = ViewBindings.findChildViewById(rootView, id);
+      if (etFullName == null) {
         break missingId;
       }
 
@@ -154,21 +154,9 @@ public final class ActivityRegisterBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.rbAdmin;
-      RadioButton rbAdmin = ViewBindings.findChildViewById(rootView, id);
-      if (rbAdmin == null) {
-        break missingId;
-      }
-
-      id = R.id.rbStudent;
-      RadioButton rbStudent = ViewBindings.findChildViewById(rootView, id);
-      if (rbStudent == null) {
-        break missingId;
-      }
-
-      id = R.id.rgRole;
-      RadioGroup rgRole = ViewBindings.findChildViewById(rootView, id);
-      if (rgRole == null) {
+      id = R.id.tilConfirmPassword;
+      TextInputLayout tilConfirmPassword = ViewBindings.findChildViewById(rootView, id);
+      if (tilConfirmPassword == null) {
         break missingId;
       }
 
@@ -196,15 +184,15 @@ public final class ActivityRegisterBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvLogin;
-      TextView tvLogin = ViewBindings.findChildViewById(rootView, id);
-      if (tvLogin == null) {
+      id = R.id.tvLoginLink;
+      TextView tvLoginLink = ViewBindings.findChildViewById(rootView, id);
+      if (tvLoginLink == null) {
         break missingId;
       }
 
-      return new ActivityRegisterBinding((ScrollView) rootView, btnRegister, etEmail, etName,
-          etPassword, etPhone, progressBar, rbAdmin, rbStudent, rgRole, tilEmail, tilName,
-          tilPassword, tilPhone, tvLogin);
+      return new ActivityRegisterBinding((ScrollView) rootView, btnRegister, etConfirmPassword,
+          etEmail, etFullName, etPassword, etPhone, progressBar, tilConfirmPassword, tilEmail,
+          tilName, tilPassword, tilPhone, tvLoginLink);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

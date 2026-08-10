@@ -4,9 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginVertical="6dp"
-    app:cardCornerRadius="12dp"
-    app:cardElevation="2dp"
-    app:strokeWidth="0dp">
+    app:cardBackgroundColor="@color/surface_card"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:strokeColor="@color/border_light"
+    app:strokeWidth="1dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,13 +17,14 @@
         android:orientation="horizontal"
         android:padding="12dp">
 
-        <ImageView
-            android:id="@+id/ivCartItemImage"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivCartFood"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_food_placeholder"
-            android:contentDescription="Cart item image" />
+            android:contentDescription="Cart item image"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -31,9 +34,11 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvCartItemName"
+                android:id="@+id/tvCartFoodName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
                 android:text="Paneer Butter Masala"
                 android:textColor="@color/text_primary"
                 android:textSize="15sp"
@@ -44,7 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:text="₹ 120.00 each"
+                android:text="Item Customization"
                 android:textColor="@color/text_secondary"
                 android:textSize="12sp" />
 
@@ -52,51 +57,40 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_chip_unselected"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingHorizontal="6dp"
+                android:paddingVertical="2dp">
 
-                <com.google.android.material.button.MaterialButton
+                <ImageButton
                     android:id="@+id/btnMinus"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:insetLeft="0dp"
-                    android:insetTop="0dp"
-                    android:insetRight="0dp"
-                    android:insetBottom="0dp"
-                    android:padding="0dp"
-                    android:text="-"
-                    android:textColor="@color/primary"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:cornerRadius="6dp" />
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Decrease"
+                    android:src="@drawable/ic_minus"
+                    app:tint="@color/primary" />
 
                 <TextView
                     android:id="@+id/tvQuantity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingHorizontal="12dp"
+                    android:paddingHorizontal="10dp"
                     android:text="1"
                     android:textColor="@color/text_primary"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
-                <com.google.android.material.button.MaterialButton
+                <ImageButton
                     android:id="@+id/btnPlus"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:insetLeft="0dp"
-                    android:insetTop="0dp"
-                    android:insetRight="0dp"
-                    android:insetBottom="0dp"
-                    android:padding="0dp"
-                    android:text="+"
-                    android:textColor="@color/primary"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:cornerRadius="6dp" />
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Increase"
+                    android:src="@drawable/ic_add"
+                    app:tint="@color/primary" />
 
             </LinearLayout>
 
@@ -109,21 +103,22 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/btnRemove"
+                android:id="@+id/btnDelete"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="Remove item"
-                android:src="@drawable/ic_delete" />
+                android:src="@drawable/ic_delete"
+                app:tint="@color/red_error" />
 
             <TextView
-                android:id="@+id/tvItemTotalPrice"
+                android:id="@+id/tvCartFoodPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="₹ 120.00"
-                android:textColor="@color/primary"
-                android:textSize="14sp"
+                android:textColor="@color/caramel"
+                android:textSize="15sp"
                 android:textStyle="bold" />
         </LinearLayout>
 

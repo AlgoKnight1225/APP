@@ -10,9 +10,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/ic_restaurant_menu"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/ic_restaurant_menu"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CollegeCanteenFoodOrderingApp"
         tools:targetApi="31">
@@ -37,15 +37,29 @@
             android:name=".auth.RegisterActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".auth.ForgotPasswordActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
 
         <!-- Student Flow Activities -->
         <activity
             android:name=".student.StudentMainActivity"
             android:exported="false" />
         <activity
+            android:name=".student.ProductDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".student.OrderTrackingActivity"
+            android:exported="false" />
+        <activity
             android:name=".student.CartActivity"
             android:exported="false"
             android:parentActivityName=".student.StudentMainActivity" />
+        <activity
+            android:name=".student.CheckoutActivity"
+            android:exported="false"
+            android:parentActivityName=".student.CartActivity" />
 
         <!-- Admin Flow Activities -->
         <activity

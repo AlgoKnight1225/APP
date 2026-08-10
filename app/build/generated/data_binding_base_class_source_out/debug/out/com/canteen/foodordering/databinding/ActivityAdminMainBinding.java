@@ -21,16 +21,17 @@ public final class ActivityAdminMainBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
-  public final BottomNavigationView bottomNavigationAdmin;
+  public final BottomNavigationView adminBottomNavigation;
 
   @NonNull
-  public final FrameLayout fragmentContainer;
+  public final FrameLayout adminFragmentContainer;
 
   private ActivityAdminMainBinding(@NonNull RelativeLayout rootView,
-      @NonNull BottomNavigationView bottomNavigationAdmin, @NonNull FrameLayout fragmentContainer) {
+      @NonNull BottomNavigationView adminBottomNavigation,
+      @NonNull FrameLayout adminFragmentContainer) {
     this.rootView = rootView;
-    this.bottomNavigationAdmin = bottomNavigationAdmin;
-    this.fragmentContainer = fragmentContainer;
+    this.adminBottomNavigation = adminBottomNavigation;
+    this.adminFragmentContainer = adminFragmentContainer;
   }
 
   @Override
@@ -60,20 +61,20 @@ public final class ActivityAdminMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.bottomNavigationAdmin;
-      BottomNavigationView bottomNavigationAdmin = ViewBindings.findChildViewById(rootView, id);
-      if (bottomNavigationAdmin == null) {
+      id = R.id.adminBottomNavigation;
+      BottomNavigationView adminBottomNavigation = ViewBindings.findChildViewById(rootView, id);
+      if (adminBottomNavigation == null) {
         break missingId;
       }
 
-      id = R.id.fragmentContainer;
-      FrameLayout fragmentContainer = ViewBindings.findChildViewById(rootView, id);
-      if (fragmentContainer == null) {
+      id = R.id.adminFragmentContainer;
+      FrameLayout adminFragmentContainer = ViewBindings.findChildViewById(rootView, id);
+      if (adminFragmentContainer == null) {
         break missingId;
       }
 
-      return new ActivityAdminMainBinding((RelativeLayout) rootView, bottomNavigationAdmin,
-          fragmentContainer);
+      return new ActivityAdminMainBinding((RelativeLayout) rootView, adminBottomNavigation,
+          adminFragmentContainer);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

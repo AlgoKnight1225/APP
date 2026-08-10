@@ -11,11 +11,12 @@ public class Constants {
     public static final String ROLE_ADMIN = "admin";
 
     // Order Statuses
-    public static final String STATUS_PLACED = "Placed";
-    public static final String STATUS_PREPARING = "Preparing";
-    public static final String STATUS_READY = "Ready";
-    public static final String STATUS_DELIVERED = "Delivered";
+    public static final String STATUS_PENDING = "PENDING";
+    public static final String STATUS_PREPARING = "PREPARING";
+    public static final String STATUS_READY = "READY";
+    public static final String STATUS_COMPLETED = "COMPLETED";
+    public static final String STATUS_CANCELLED = "CANCELLED";
 
-    // Food Categories
-    public static final String[] CATEGORIES = {"All", "Breakfast", "Meals", "Snacks", "Beverages", "Desserts"};
+    // Food Categories (Starbucks style)
+    public static final String[] CATEGORIES = {"All", "Coffee & Drinks", "Meals", "Snacks & Bakery", "Breakfast", "Desserts"};
 }

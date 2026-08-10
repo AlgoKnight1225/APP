@@ -4,7 +4,7 @@ package com.canteen.foodordering.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,16 +12,29 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.canteen.foodordering.R;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class FragmentProfileBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ScrollView rootView;
+
+  @NonNull
+  public final MaterialButton btnChangePassword;
 
   @NonNull
   public final MaterialButton btnLogout;
+
+  @NonNull
+  public final MaterialButton btnSaveProfile;
+
+  @NonNull
+  public final TextInputEditText etEditName;
+
+  @NonNull
+  public final TextInputEditText etEditPhone;
 
   @NonNull
   public final TextView tvProfileEmail;
@@ -30,25 +43,32 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final TextView tvProfileName;
 
   @NonNull
-  public final TextView tvProfilePhone;
+  public final TextView tvRoleTag;
 
   @NonNull
-  public final TextView tvProfileRole;
+  public final TextView tvTotalOrdersCount;
 
-  private FragmentProfileBinding(@NonNull LinearLayout rootView, @NonNull MaterialButton btnLogout,
-      @NonNull TextView tvProfileEmail, @NonNull TextView tvProfileName,
-      @NonNull TextView tvProfilePhone, @NonNull TextView tvProfileRole) {
+  private FragmentProfileBinding(@NonNull ScrollView rootView,
+      @NonNull MaterialButton btnChangePassword, @NonNull MaterialButton btnLogout,
+      @NonNull MaterialButton btnSaveProfile, @NonNull TextInputEditText etEditName,
+      @NonNull TextInputEditText etEditPhone, @NonNull TextView tvProfileEmail,
+      @NonNull TextView tvProfileName, @NonNull TextView tvRoleTag,
+      @NonNull TextView tvTotalOrdersCount) {
     this.rootView = rootView;
+    this.btnChangePassword = btnChangePassword;
     this.btnLogout = btnLogout;
+    this.btnSaveProfile = btnSaveProfile;
+    this.etEditName = etEditName;
+    this.etEditPhone = etEditPhone;
     this.tvProfileEmail = tvProfileEmail;
     this.tvProfileName = tvProfileName;
-    this.tvProfilePhone = tvProfilePhone;
-    this.tvProfileRole = tvProfileRole;
+    this.tvRoleTag = tvRoleTag;
+    this.tvTotalOrdersCount = tvTotalOrdersCount;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -73,9 +93,33 @@ public final class FragmentProfileBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnChangePassword;
+      MaterialButton btnChangePassword = ViewBindings.findChildViewById(rootView, id);
+      if (btnChangePassword == null) {
+        break missingId;
+      }
+
       id = R.id.btnLogout;
       MaterialButton btnLogout = ViewBindings.findChildViewById(rootView, id);
       if (btnLogout == null) {
+        break missingId;
+      }
+
+      id = R.id.btnSaveProfile;
+      MaterialButton btnSaveProfile = ViewBindings.findChildViewById(rootView, id);
+      if (btnSaveProfile == null) {
+        break missingId;
+      }
+
+      id = R.id.etEditName;
+      TextInputEditText etEditName = ViewBindings.findChildViewById(rootView, id);
+      if (etEditName == null) {
+        break missingId;
+      }
+
+      id = R.id.etEditPhone;
+      TextInputEditText etEditPhone = ViewBindings.findChildViewById(rootView, id);
+      if (etEditPhone == null) {
         break missingId;
       }
 
@@ -91,20 +135,21 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvProfilePhone;
-      TextView tvProfilePhone = ViewBindings.findChildViewById(rootView, id);
-      if (tvProfilePhone == null) {
+      id = R.id.tvRoleTag;
+      TextView tvRoleTag = ViewBindings.findChildViewById(rootView, id);
+      if (tvRoleTag == null) {
         break missingId;
       }
 
-      id = R.id.tvProfileRole;
-      TextView tvProfileRole = ViewBindings.findChildViewById(rootView, id);
-      if (tvProfileRole == null) {
+      id = R.id.tvTotalOrdersCount;
+      TextView tvTotalOrdersCount = ViewBindings.findChildViewById(rootView, id);
+      if (tvTotalOrdersCount == null) {
         break missingId;
       }
 
-      return new FragmentProfileBinding((LinearLayout) rootView, btnLogout, tvProfileEmail,
-          tvProfileName, tvProfilePhone, tvProfileRole);
+      return new FragmentProfileBinding((ScrollView) rootView, btnChangePassword, btnLogout,
+          btnSaveProfile, etEditName, etEditPhone, tvProfileEmail, tvProfileName, tvRoleTag,
+          tvTotalOrdersCount);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

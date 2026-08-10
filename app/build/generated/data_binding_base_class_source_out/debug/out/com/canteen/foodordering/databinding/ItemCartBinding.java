@@ -5,15 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.canteen.foodordering.R;
-import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.imageview.ShapeableImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -23,42 +22,42 @@ public final class ItemCartBinding implements ViewBinding {
   private final MaterialCardView rootView;
 
   @NonNull
-  public final MaterialButton btnMinus;
+  public final ImageButton btnDelete;
 
   @NonNull
-  public final MaterialButton btnPlus;
+  public final ImageButton btnMinus;
 
   @NonNull
-  public final ImageButton btnRemove;
+  public final ImageButton btnPlus;
 
   @NonNull
-  public final ImageView ivCartItemImage;
+  public final ShapeableImageView ivCartFood;
 
   @NonNull
-  public final TextView tvCartItemName;
+  public final TextView tvCartFoodName;
+
+  @NonNull
+  public final TextView tvCartFoodPrice;
 
   @NonNull
   public final TextView tvCartItemPrice;
 
   @NonNull
-  public final TextView tvItemTotalPrice;
-
-  @NonNull
   public final TextView tvQuantity;
 
-  private ItemCartBinding(@NonNull MaterialCardView rootView, @NonNull MaterialButton btnMinus,
-      @NonNull MaterialButton btnPlus, @NonNull ImageButton btnRemove,
-      @NonNull ImageView ivCartItemImage, @NonNull TextView tvCartItemName,
-      @NonNull TextView tvCartItemPrice, @NonNull TextView tvItemTotalPrice,
+  private ItemCartBinding(@NonNull MaterialCardView rootView, @NonNull ImageButton btnDelete,
+      @NonNull ImageButton btnMinus, @NonNull ImageButton btnPlus,
+      @NonNull ShapeableImageView ivCartFood, @NonNull TextView tvCartFoodName,
+      @NonNull TextView tvCartFoodPrice, @NonNull TextView tvCartItemPrice,
       @NonNull TextView tvQuantity) {
     this.rootView = rootView;
+    this.btnDelete = btnDelete;
     this.btnMinus = btnMinus;
     this.btnPlus = btnPlus;
-    this.btnRemove = btnRemove;
-    this.ivCartItemImage = ivCartItemImage;
-    this.tvCartItemName = tvCartItemName;
+    this.ivCartFood = ivCartFood;
+    this.tvCartFoodName = tvCartFoodName;
+    this.tvCartFoodPrice = tvCartFoodPrice;
     this.tvCartItemPrice = tvCartItemPrice;
-    this.tvItemTotalPrice = tvItemTotalPrice;
     this.tvQuantity = tvQuantity;
   }
 
@@ -89,33 +88,39 @@ public final class ItemCartBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnDelete;
+      ImageButton btnDelete = ViewBindings.findChildViewById(rootView, id);
+      if (btnDelete == null) {
+        break missingId;
+      }
+
       id = R.id.btnMinus;
-      MaterialButton btnMinus = ViewBindings.findChildViewById(rootView, id);
+      ImageButton btnMinus = ViewBindings.findChildViewById(rootView, id);
       if (btnMinus == null) {
         break missingId;
       }
 
       id = R.id.btnPlus;
-      MaterialButton btnPlus = ViewBindings.findChildViewById(rootView, id);
+      ImageButton btnPlus = ViewBindings.findChildViewById(rootView, id);
       if (btnPlus == null) {
         break missingId;
       }
 
-      id = R.id.btnRemove;
-      ImageButton btnRemove = ViewBindings.findChildViewById(rootView, id);
-      if (btnRemove == null) {
+      id = R.id.ivCartFood;
+      ShapeableImageView ivCartFood = ViewBindings.findChildViewById(rootView, id);
+      if (ivCartFood == null) {
         break missingId;
       }
 
-      id = R.id.ivCartItemImage;
-      ImageView ivCartItemImage = ViewBindings.findChildViewById(rootView, id);
-      if (ivCartItemImage == null) {
+      id = R.id.tvCartFoodName;
+      TextView tvCartFoodName = ViewBindings.findChildViewById(rootView, id);
+      if (tvCartFoodName == null) {
         break missingId;
       }
 
-      id = R.id.tvCartItemName;
-      TextView tvCartItemName = ViewBindings.findChildViewById(rootView, id);
-      if (tvCartItemName == null) {
+      id = R.id.tvCartFoodPrice;
+      TextView tvCartFoodPrice = ViewBindings.findChildViewById(rootView, id);
+      if (tvCartFoodPrice == null) {
         break missingId;
       }
 
@@ -125,20 +130,14 @@ public final class ItemCartBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvItemTotalPrice;
-      TextView tvItemTotalPrice = ViewBindings.findChildViewById(rootView, id);
-      if (tvItemTotalPrice == null) {
-        break missingId;
-      }
-
       id = R.id.tvQuantity;
       TextView tvQuantity = ViewBindings.findChildViewById(rootView, id);
       if (tvQuantity == null) {
         break missingId;
       }
 
-      return new ItemCartBinding((MaterialCardView) rootView, btnMinus, btnPlus, btnRemove,
-          ivCartItemImage, tvCartItemName, tvCartItemPrice, tvItemTotalPrice, tvQuantity);
+      return new ItemCartBinding((MaterialCardView) rootView, btnDelete, btnMinus, btnPlus,
+          ivCartFood, tvCartFoodName, tvCartFoodPrice, tvCartItemPrice, tvQuantity);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

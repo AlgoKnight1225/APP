@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.canteen.foodordering.R;
@@ -21,33 +20,52 @@ public final class ItemOrderStudentBinding implements ViewBinding {
   private final MaterialCardView rootView;
 
   @NonNull
-  public final RecyclerView rvOrderItems;
+  public final TextView stepCompleted;
 
   @NonNull
-  public final TextView tvDate;
+  public final TextView stepPlaced;
 
   @NonNull
-  public final TextView tvNotes;
+  public final TextView stepPreparing;
+
+  @NonNull
+  public final TextView stepReady;
+
+  @NonNull
+  public final TextView tvOrderDate;
 
   @NonNull
   public final TextView tvOrderId;
 
   @NonNull
-  public final TextView tvStatus;
+  public final TextView tvOrderItemsSummary;
 
   @NonNull
-  public final TextView tvTotalPrice;
+  public final TextView tvOrderStatus;
+
+  @NonNull
+  public final TextView tvOrderTotal;
+
+  @NonNull
+  public final TextView tvPaymentMethod;
 
   private ItemOrderStudentBinding(@NonNull MaterialCardView rootView,
-      @NonNull RecyclerView rvOrderItems, @NonNull TextView tvDate, @NonNull TextView tvNotes,
-      @NonNull TextView tvOrderId, @NonNull TextView tvStatus, @NonNull TextView tvTotalPrice) {
+      @NonNull TextView stepCompleted, @NonNull TextView stepPlaced,
+      @NonNull TextView stepPreparing, @NonNull TextView stepReady, @NonNull TextView tvOrderDate,
+      @NonNull TextView tvOrderId, @NonNull TextView tvOrderItemsSummary,
+      @NonNull TextView tvOrderStatus, @NonNull TextView tvOrderTotal,
+      @NonNull TextView tvPaymentMethod) {
     this.rootView = rootView;
-    this.rvOrderItems = rvOrderItems;
-    this.tvDate = tvDate;
-    this.tvNotes = tvNotes;
+    this.stepCompleted = stepCompleted;
+    this.stepPlaced = stepPlaced;
+    this.stepPreparing = stepPreparing;
+    this.stepReady = stepReady;
+    this.tvOrderDate = tvOrderDate;
     this.tvOrderId = tvOrderId;
-    this.tvStatus = tvStatus;
-    this.tvTotalPrice = tvTotalPrice;
+    this.tvOrderItemsSummary = tvOrderItemsSummary;
+    this.tvOrderStatus = tvOrderStatus;
+    this.tvOrderTotal = tvOrderTotal;
+    this.tvPaymentMethod = tvPaymentMethod;
   }
 
   @Override
@@ -77,21 +95,33 @@ public final class ItemOrderStudentBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.rvOrderItems;
-      RecyclerView rvOrderItems = ViewBindings.findChildViewById(rootView, id);
-      if (rvOrderItems == null) {
+      id = R.id.stepCompleted;
+      TextView stepCompleted = ViewBindings.findChildViewById(rootView, id);
+      if (stepCompleted == null) {
         break missingId;
       }
 
-      id = R.id.tvDate;
-      TextView tvDate = ViewBindings.findChildViewById(rootView, id);
-      if (tvDate == null) {
+      id = R.id.stepPlaced;
+      TextView stepPlaced = ViewBindings.findChildViewById(rootView, id);
+      if (stepPlaced == null) {
         break missingId;
       }
 
-      id = R.id.tvNotes;
-      TextView tvNotes = ViewBindings.findChildViewById(rootView, id);
-      if (tvNotes == null) {
+      id = R.id.stepPreparing;
+      TextView stepPreparing = ViewBindings.findChildViewById(rootView, id);
+      if (stepPreparing == null) {
+        break missingId;
+      }
+
+      id = R.id.stepReady;
+      TextView stepReady = ViewBindings.findChildViewById(rootView, id);
+      if (stepReady == null) {
+        break missingId;
+      }
+
+      id = R.id.tvOrderDate;
+      TextView tvOrderDate = ViewBindings.findChildViewById(rootView, id);
+      if (tvOrderDate == null) {
         break missingId;
       }
 
@@ -101,20 +131,33 @@ public final class ItemOrderStudentBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvStatus;
-      TextView tvStatus = ViewBindings.findChildViewById(rootView, id);
-      if (tvStatus == null) {
+      id = R.id.tvOrderItemsSummary;
+      TextView tvOrderItemsSummary = ViewBindings.findChildViewById(rootView, id);
+      if (tvOrderItemsSummary == null) {
         break missingId;
       }
 
-      id = R.id.tvTotalPrice;
-      TextView tvTotalPrice = ViewBindings.findChildViewById(rootView, id);
-      if (tvTotalPrice == null) {
+      id = R.id.tvOrderStatus;
+      TextView tvOrderStatus = ViewBindings.findChildViewById(rootView, id);
+      if (tvOrderStatus == null) {
         break missingId;
       }
 
-      return new ItemOrderStudentBinding((MaterialCardView) rootView, rvOrderItems, tvDate, tvNotes,
-          tvOrderId, tvStatus, tvTotalPrice);
+      id = R.id.tvOrderTotal;
+      TextView tvOrderTotal = ViewBindings.findChildViewById(rootView, id);
+      if (tvOrderTotal == null) {
+        break missingId;
+      }
+
+      id = R.id.tvPaymentMethod;
+      TextView tvPaymentMethod = ViewBindings.findChildViewById(rootView, id);
+      if (tvPaymentMethod == null) {
+        break missingId;
+      }
+
+      return new ItemOrderStudentBinding((MaterialCardView) rootView, stepCompleted, stepPlaced,
+          stepPreparing, stepReady, tvOrderDate, tvOrderId, tvOrderItemsSummary, tvOrderStatus,
+          tvOrderTotal, tvPaymentMethod);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

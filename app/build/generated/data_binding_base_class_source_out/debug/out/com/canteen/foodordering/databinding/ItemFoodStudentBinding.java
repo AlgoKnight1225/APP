@@ -4,6 +4,7 @@ package com.canteen.foodordering.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -25,10 +26,19 @@ public final class ItemFoodStudentBinding implements ViewBinding {
   public final MaterialButton btnAddToCart;
 
   @NonNull
+  public final ImageButton btnFavorite;
+
+  @NonNull
   public final ImageView ivFoodImage;
 
   @NonNull
-  public final TextView tvCategory;
+  public final ImageView ivVegIndicator;
+
+  @NonNull
+  public final TextView tvDiscountBadge;
+
+  @NonNull
+  public final TextView tvFoodCategory;
 
   @NonNull
   public final TextView tvFoodDescription;
@@ -37,22 +47,31 @@ public final class ItemFoodStudentBinding implements ViewBinding {
   public final TextView tvFoodName;
 
   @NonNull
-  public final TextView tvPrice;
+  public final TextView tvFoodPrice;
+
+  @NonNull
+  public final TextView tvRating;
 
   @NonNull
   public final TextView tvUnavailable;
 
   private ItemFoodStudentBinding(@NonNull MaterialCardView rootView,
-      @NonNull MaterialButton btnAddToCart, @NonNull ImageView ivFoodImage,
-      @NonNull TextView tvCategory, @NonNull TextView tvFoodDescription,
-      @NonNull TextView tvFoodName, @NonNull TextView tvPrice, @NonNull TextView tvUnavailable) {
+      @NonNull MaterialButton btnAddToCart, @NonNull ImageButton btnFavorite,
+      @NonNull ImageView ivFoodImage, @NonNull ImageView ivVegIndicator,
+      @NonNull TextView tvDiscountBadge, @NonNull TextView tvFoodCategory,
+      @NonNull TextView tvFoodDescription, @NonNull TextView tvFoodName,
+      @NonNull TextView tvFoodPrice, @NonNull TextView tvRating, @NonNull TextView tvUnavailable) {
     this.rootView = rootView;
     this.btnAddToCart = btnAddToCart;
+    this.btnFavorite = btnFavorite;
     this.ivFoodImage = ivFoodImage;
-    this.tvCategory = tvCategory;
+    this.ivVegIndicator = ivVegIndicator;
+    this.tvDiscountBadge = tvDiscountBadge;
+    this.tvFoodCategory = tvFoodCategory;
     this.tvFoodDescription = tvFoodDescription;
     this.tvFoodName = tvFoodName;
-    this.tvPrice = tvPrice;
+    this.tvFoodPrice = tvFoodPrice;
+    this.tvRating = tvRating;
     this.tvUnavailable = tvUnavailable;
   }
 
@@ -89,15 +108,33 @@ public final class ItemFoodStudentBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnFavorite;
+      ImageButton btnFavorite = ViewBindings.findChildViewById(rootView, id);
+      if (btnFavorite == null) {
+        break missingId;
+      }
+
       id = R.id.ivFoodImage;
       ImageView ivFoodImage = ViewBindings.findChildViewById(rootView, id);
       if (ivFoodImage == null) {
         break missingId;
       }
 
-      id = R.id.tvCategory;
-      TextView tvCategory = ViewBindings.findChildViewById(rootView, id);
-      if (tvCategory == null) {
+      id = R.id.ivVegIndicator;
+      ImageView ivVegIndicator = ViewBindings.findChildViewById(rootView, id);
+      if (ivVegIndicator == null) {
+        break missingId;
+      }
+
+      id = R.id.tvDiscountBadge;
+      TextView tvDiscountBadge = ViewBindings.findChildViewById(rootView, id);
+      if (tvDiscountBadge == null) {
+        break missingId;
+      }
+
+      id = R.id.tvFoodCategory;
+      TextView tvFoodCategory = ViewBindings.findChildViewById(rootView, id);
+      if (tvFoodCategory == null) {
         break missingId;
       }
 
@@ -113,9 +150,15 @@ public final class ItemFoodStudentBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvPrice;
-      TextView tvPrice = ViewBindings.findChildViewById(rootView, id);
-      if (tvPrice == null) {
+      id = R.id.tvFoodPrice;
+      TextView tvFoodPrice = ViewBindings.findChildViewById(rootView, id);
+      if (tvFoodPrice == null) {
+        break missingId;
+      }
+
+      id = R.id.tvRating;
+      TextView tvRating = ViewBindings.findChildViewById(rootView, id);
+      if (tvRating == null) {
         break missingId;
       }
 
@@ -125,8 +168,9 @@ public final class ItemFoodStudentBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemFoodStudentBinding((MaterialCardView) rootView, btnAddToCart, ivFoodImage,
-          tvCategory, tvFoodDescription, tvFoodName, tvPrice, tvUnavailable);
+      return new ItemFoodStudentBinding((MaterialCardView) rootView, btnAddToCart, btnFavorite,
+          ivFoodImage, ivVegIndicator, tvDiscountBadge, tvFoodCategory, tvFoodDescription,
+          tvFoodName, tvFoodPrice, tvRating, tvUnavailable);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

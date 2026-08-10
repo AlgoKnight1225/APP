@@ -3,26 +3,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_main">
+    android:background="@color/bg_cream">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbarAdminFood"
+    <LinearLayout
+        android:id="@+id/headerLayout"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/white"
-        app:elevation="4dp"
-        app:title="Canteen Food Inventory"
-        app:titleTextColor="@color/text_primary" />
+        android:layout_height="60dp"
+        android:background="@drawable/bg_header_gradient"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Canteen Food Inventory 🍲"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <ProgressBar
         android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
         android:layout_centerInParent="true"
+        android:indeterminateTint="@color/primary"
         android:visibility="gone" />
 
     <TextView
-        android:id="@+id/tvEmptyAdminFood"
+        android:id="@+id/layoutEmpty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -35,7 +45,7 @@
         android:id="@+id/rvAdminFood"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbarAdminFood"
+        android:layout_below="@id/headerLayout"
         android:clipToPadding="false"
         android:padding="12dp" />
 

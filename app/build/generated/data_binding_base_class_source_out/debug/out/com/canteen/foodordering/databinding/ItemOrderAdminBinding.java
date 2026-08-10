@@ -4,14 +4,13 @@ package com.canteen.foodordering.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.canteen.foodordering.R;
-import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -22,43 +21,34 @@ public final class ItemOrderAdminBinding implements ViewBinding {
   private final MaterialCardView rootView;
 
   @NonNull
-  public final MaterialButton btnUpdateStatus;
+  public final Spinner spinnerStatus;
 
   @NonNull
-  public final RecyclerView rvAdminOrderItems;
-
-  @NonNull
-  public final TextView tvAdminNotes;
+  public final TextView tvAdminOrderDate;
 
   @NonNull
   public final TextView tvAdminOrderId;
 
   @NonNull
-  public final TextView tvAdminStatusBadge;
+  public final TextView tvAdminOrderItems;
 
   @NonNull
-  public final TextView tvAdminStudentName;
+  public final TextView tvAdminOrderTotal;
 
   @NonNull
-  public final TextView tvAdminStudentPhone;
+  public final TextView tvCustomerNamePhone;
 
-  @NonNull
-  public final TextView tvAdminTotalPrice;
-
-  private ItemOrderAdminBinding(@NonNull MaterialCardView rootView,
-      @NonNull MaterialButton btnUpdateStatus, @NonNull RecyclerView rvAdminOrderItems,
-      @NonNull TextView tvAdminNotes, @NonNull TextView tvAdminOrderId,
-      @NonNull TextView tvAdminStatusBadge, @NonNull TextView tvAdminStudentName,
-      @NonNull TextView tvAdminStudentPhone, @NonNull TextView tvAdminTotalPrice) {
+  private ItemOrderAdminBinding(@NonNull MaterialCardView rootView, @NonNull Spinner spinnerStatus,
+      @NonNull TextView tvAdminOrderDate, @NonNull TextView tvAdminOrderId,
+      @NonNull TextView tvAdminOrderItems, @NonNull TextView tvAdminOrderTotal,
+      @NonNull TextView tvCustomerNamePhone) {
     this.rootView = rootView;
-    this.btnUpdateStatus = btnUpdateStatus;
-    this.rvAdminOrderItems = rvAdminOrderItems;
-    this.tvAdminNotes = tvAdminNotes;
+    this.spinnerStatus = spinnerStatus;
+    this.tvAdminOrderDate = tvAdminOrderDate;
     this.tvAdminOrderId = tvAdminOrderId;
-    this.tvAdminStatusBadge = tvAdminStatusBadge;
-    this.tvAdminStudentName = tvAdminStudentName;
-    this.tvAdminStudentPhone = tvAdminStudentPhone;
-    this.tvAdminTotalPrice = tvAdminTotalPrice;
+    this.tvAdminOrderItems = tvAdminOrderItems;
+    this.tvAdminOrderTotal = tvAdminOrderTotal;
+    this.tvCustomerNamePhone = tvCustomerNamePhone;
   }
 
   @Override
@@ -88,21 +78,15 @@ public final class ItemOrderAdminBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btnUpdateStatus;
-      MaterialButton btnUpdateStatus = ViewBindings.findChildViewById(rootView, id);
-      if (btnUpdateStatus == null) {
+      id = R.id.spinnerStatus;
+      Spinner spinnerStatus = ViewBindings.findChildViewById(rootView, id);
+      if (spinnerStatus == null) {
         break missingId;
       }
 
-      id = R.id.rvAdminOrderItems;
-      RecyclerView rvAdminOrderItems = ViewBindings.findChildViewById(rootView, id);
-      if (rvAdminOrderItems == null) {
-        break missingId;
-      }
-
-      id = R.id.tvAdminNotes;
-      TextView tvAdminNotes = ViewBindings.findChildViewById(rootView, id);
-      if (tvAdminNotes == null) {
+      id = R.id.tvAdminOrderDate;
+      TextView tvAdminOrderDate = ViewBindings.findChildViewById(rootView, id);
+      if (tvAdminOrderDate == null) {
         break missingId;
       }
 
@@ -112,33 +96,26 @@ public final class ItemOrderAdminBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvAdminStatusBadge;
-      TextView tvAdminStatusBadge = ViewBindings.findChildViewById(rootView, id);
-      if (tvAdminStatusBadge == null) {
+      id = R.id.tvAdminOrderItems;
+      TextView tvAdminOrderItems = ViewBindings.findChildViewById(rootView, id);
+      if (tvAdminOrderItems == null) {
         break missingId;
       }
 
-      id = R.id.tvAdminStudentName;
-      TextView tvAdminStudentName = ViewBindings.findChildViewById(rootView, id);
-      if (tvAdminStudentName == null) {
+      id = R.id.tvAdminOrderTotal;
+      TextView tvAdminOrderTotal = ViewBindings.findChildViewById(rootView, id);
+      if (tvAdminOrderTotal == null) {
         break missingId;
       }
 
-      id = R.id.tvAdminStudentPhone;
-      TextView tvAdminStudentPhone = ViewBindings.findChildViewById(rootView, id);
-      if (tvAdminStudentPhone == null) {
+      id = R.id.tvCustomerNamePhone;
+      TextView tvCustomerNamePhone = ViewBindings.findChildViewById(rootView, id);
+      if (tvCustomerNamePhone == null) {
         break missingId;
       }
 
-      id = R.id.tvAdminTotalPrice;
-      TextView tvAdminTotalPrice = ViewBindings.findChildViewById(rootView, id);
-      if (tvAdminTotalPrice == null) {
-        break missingId;
-      }
-
-      return new ItemOrderAdminBinding((MaterialCardView) rootView, btnUpdateStatus,
-          rvAdminOrderItems, tvAdminNotes, tvAdminOrderId, tvAdminStatusBadge, tvAdminStudentName,
-          tvAdminStudentPhone, tvAdminTotalPrice);
+      return new ItemOrderAdminBinding((MaterialCardView) rootView, spinnerStatus, tvAdminOrderDate,
+          tvAdminOrderId, tvAdminOrderItems, tvAdminOrderTotal, tvCustomerNamePhone);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

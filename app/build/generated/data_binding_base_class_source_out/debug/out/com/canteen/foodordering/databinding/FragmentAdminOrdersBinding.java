@@ -14,7 +14,6 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.canteen.foodordering.R;
-import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.chip.ChipGroup;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -28,6 +27,12 @@ public final class FragmentAdminOrdersBinding implements ViewBinding {
   public final ChipGroup chipGroupStatus;
 
   @NonNull
+  public final LinearLayout headerLayout;
+
+  @NonNull
+  public final TextView layoutEmpty;
+
+  @NonNull
   public final ProgressBar progressBar;
 
   @NonNull
@@ -36,23 +41,17 @@ public final class FragmentAdminOrdersBinding implements ViewBinding {
   @NonNull
   public final SwipeRefreshLayout swipeRefreshAdminOrders;
 
-  @NonNull
-  public final MaterialToolbar toolbarAdminOrders;
-
-  @NonNull
-  public final TextView tvEmptyAdminOrders;
-
   private FragmentAdminOrdersBinding(@NonNull LinearLayout rootView,
-      @NonNull ChipGroup chipGroupStatus, @NonNull ProgressBar progressBar,
-      @NonNull RecyclerView rvAdminOrders, @NonNull SwipeRefreshLayout swipeRefreshAdminOrders,
-      @NonNull MaterialToolbar toolbarAdminOrders, @NonNull TextView tvEmptyAdminOrders) {
+      @NonNull ChipGroup chipGroupStatus, @NonNull LinearLayout headerLayout,
+      @NonNull TextView layoutEmpty, @NonNull ProgressBar progressBar,
+      @NonNull RecyclerView rvAdminOrders, @NonNull SwipeRefreshLayout swipeRefreshAdminOrders) {
     this.rootView = rootView;
     this.chipGroupStatus = chipGroupStatus;
+    this.headerLayout = headerLayout;
+    this.layoutEmpty = layoutEmpty;
     this.progressBar = progressBar;
     this.rvAdminOrders = rvAdminOrders;
     this.swipeRefreshAdminOrders = swipeRefreshAdminOrders;
-    this.toolbarAdminOrders = toolbarAdminOrders;
-    this.tvEmptyAdminOrders = tvEmptyAdminOrders;
   }
 
   @Override
@@ -88,6 +87,18 @@ public final class FragmentAdminOrdersBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.headerLayout;
+      LinearLayout headerLayout = ViewBindings.findChildViewById(rootView, id);
+      if (headerLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.layoutEmpty;
+      TextView layoutEmpty = ViewBindings.findChildViewById(rootView, id);
+      if (layoutEmpty == null) {
+        break missingId;
+      }
+
       id = R.id.progressBar;
       ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
       if (progressBar == null) {
@@ -106,20 +117,8 @@ public final class FragmentAdminOrdersBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.toolbarAdminOrders;
-      MaterialToolbar toolbarAdminOrders = ViewBindings.findChildViewById(rootView, id);
-      if (toolbarAdminOrders == null) {
-        break missingId;
-      }
-
-      id = R.id.tvEmptyAdminOrders;
-      TextView tvEmptyAdminOrders = ViewBindings.findChildViewById(rootView, id);
-      if (tvEmptyAdminOrders == null) {
-        break missingId;
-      }
-
-      return new FragmentAdminOrdersBinding((LinearLayout) rootView, chipGroupStatus, progressBar,
-          rvAdminOrders, swipeRefreshAdminOrders, toolbarAdminOrders, tvEmptyAdminOrders);
+      return new FragmentAdminOrdersBinding((LinearLayout) rootView, chipGroupStatus, headerLayout,
+          layoutEmpty, progressBar, rvAdminOrders, swipeRefreshAdminOrders);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

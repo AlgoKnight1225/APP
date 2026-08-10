@@ -1,6 +1,5 @@
 package com.canteen.foodordering.student;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -12,32 +11,36 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.canteen.foodordering.R;
+import com.canteen.foodordering.adapters.CategoryAdapter;
+import com.canteen.foodordering.adapters.PromoBannerAdapter;
 import com.canteen.foodordering.adapters.StudentFoodAdapter;
 import com.canteen.foodordering.databinding.FragmentStudentHomeBinding;
+import com.canteen.foodordering.models.Category;
 import com.canteen.foodordering.models.FoodItem;
-import com.canteen.foodordering.models.User;
+import com.canteen.foodordering.models.PromoBanner;
 import com.canteen.foodordering.utils.Constants;
-import com.google.android.material.chip.Chip;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.canteen.foodordering.viewmodels.AuthViewModel;
+import com.canteen.foodordering.viewmodels.CartViewModel;
+import com.canteen.foodordering.viewmodels.FoodViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentHomeFragment extends Fragment {
-
+public class StudentHomeFragment extends Fragment implements StudentFoodAdapter.OnFoodItemClickListener {
     private FragmentStudentHomeBinding binding;
-    private FirebaseFirestore db;
-    private FirebaseAuth mAuth;
-    
-    private final List<FoodItem> allFoodList = new ArrayList<>();
-    private final List<FoodItem> filteredList = new ArrayList<>();
-    private StudentFoodAdapter adapter;
+    private FoodViewModel foodViewModel;
+    private CartViewModel cartViewModel;
+    private AuthViewModel authViewModel;
+    private StudentFoodAdapter foodAdapter;
+    private CategoryAdapter categoryAdapter;
+    private PromoBannerAdapter promoBannerAdapter;
+
+    private List<FoodItem> allFoodItems = new ArrayList<>();
+    private List<String> userFavoriteIds = new ArrayList<>();
     private String selectedCategory = "All";
     private String searchQuery = "";
 
@@ -52,74 +55,56 @@ public class StudentHomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        db = FirebaseFirestore.getInstance();
-        mAuth = FirebaseAuth.getInstance();
+        foodViewModel = new ViewModelProvider(requireActivity()).get(FoodViewModel.class);
+        cartViewModel = new ViewModelProvider(requireActivity()).get(CartViewModel.class);
+        authViewModel = new ViewModelProvider(requireActivity()).get(AuthViewModel.class);
 
-        setupRecyclerView();
-        setupCategoryChips();
+        setupPromoBanners();
+        setupCategoriesRecyclerView();
+        setupFoodRecyclerView();
         setupSearch();
-        fetchUserProfile();
-        fetchFoodItems();
-
-        binding.fabCart.setOnClickListener(v -> {
-            startActivity(new Intent(requireContext(), CartActivity.class));
-        });
+        observeViewModels();
     }
 
-    private void setupRecyclerView() {
-        adapter = new StudentFoodAdapter(requireContext(), filteredList, () -> {
-            // Callback when items added to cart
-        });
-        binding.rvFoodItems.setLayoutManager(new LinearLayoutManager(requireContext()));
-        binding.rvFoodItems.setAdapter(adapter);
+    private void setupPromoBanners() {
+        List<PromoBanner> banners = new ArrayList<>();
+        banners.add(new PromoBanner("20% OFF Morning Brews", "Special discount on all cold coffee & lattes", "BREW20", ""));
+        banners.add(new PromoBanner("Combo Meal Offer", "Buy any Sandwich & Get Iced Tea at ₹49", "MEALCOMBO", ""));
+        banners.add(new PromoBanner("Fresh Artisanal Bakery", "Freshly baked croissants & cookies daily", "FRESHBAKE", ""));
+
+        promoBannerAdapter = new PromoBannerAdapter(banners);
+        binding.rvPromoBanners.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false));
+        binding.rvPromoBanners.setAdapter(promoBannerAdapter);
     }
 
-    private void fetchUserProfile() {
-        FirebaseUser user = mAuth.getCurrentUser();
-        if (user != null) {
-            db.collection(Constants.COLLECTION_USERS)
-                    .document(user.getUid())
-                    .get()
-                    .addOnSuccessListener(documentSnapshot -> {
-                        if (documentSnapshot.exists() && isAdded()) {
-                            User u = documentSnapshot.toObject(User.class);
-                            if (u != null && u.getName() != null) {
-                                binding.tvWelcomeUser.setText(String.format("Hello, %s!", u.getName().split(" ")[0]));
-                            }
-                        }
-                    });
+    private void setupCategoriesRecyclerView() {
+        List<Category> categoryList = new ArrayList<>();
+        for (int i = 0; i < Constants.CATEGORIES.length; i++) {
+            categoryList.add(new Category(String.valueOf(i), Constants.CATEGORIES[i], i == 0));
         }
+
+        categoryAdapter = new CategoryAdapter(categoryList, category -> {
+            selectedCategory = category.getName();
+            filterAndDisplayItems();
+        });
+        binding.rvCategories.setAdapter(categoryAdapter);
     }
 
-    private void setupCategoryChips() {
-        binding.chipGroupCategory.removeAllViews();
-        for (String cat : Constants.CATEGORIES) {
-            Chip chip = new Chip(requireContext());
-            chip.setText(cat);
-            chip.setCheckable(true);
-            chip.setClickable(true);
-            if (cat.equalsIgnoreCase("All")) {
-                chip.setChecked(true);
-            }
-            chip.setOnCheckedChangeListener((buttonView, isChecked) -> {
-                if (isChecked) {
-                    selectedCategory = cat;
-                    applyFilters();
-                }
-            });
-            binding.chipGroupCategory.addView(chip);
-        }
+    private void setupFoodRecyclerView() {
+        foodAdapter = new StudentFoodAdapter(this);
+        binding.rvFoodItems.setLayoutManager(new GridLayoutManager(requireContext(), 2));
+        binding.rvFoodItems.setAdapter(foodAdapter);
     }
 
     private void setupSearch() {
-        binding.etSearch.addTextChangedListener(new TextWatcher() {
+        binding.etSearchFood.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                searchQuery = s.toString().trim();
-                applyFilters();
+                searchQuery = s.toString().trim().toLowerCase();
+                filterAndDisplayItems();
             }
 
             @Override
@@ -127,48 +112,77 @@ public class StudentHomeFragment extends Fragment {
         });
     }
 
-    private void fetchFoodItems() {
+    private void observeViewModels() {
         binding.progressBar.setVisibility(View.VISIBLE);
-        db.collection(Constants.COLLECTION_FOOD)
-                .addSnapshotListener((value, error) -> {
-                    if (!isAdded()) return;
-                    binding.progressBar.setVisibility(View.GONE);
-                    if (error != null) {
-                        Toast.makeText(requireContext(), "Error fetching menu: " + error.getMessage(), Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                    if (value != null) {
-                        allFoodList.clear();
-                        for (QueryDocumentSnapshot doc : value) {
-                            FoodItem item = doc.toObject(FoodItem.class);
-                            item.setId(doc.getId());
-                            allFoodList.add(item);
-                        }
-                        applyFilters();
-                    }
-                });
+
+        authViewModel.getUserProfileLiveData().observe(getViewLifecycleOwner(), user -> {
+            if (user != null) {
+                binding.tvStudentHeaderName.setText(user.getName() != null ? user.getName() : "Campus Canteen");
+                userFavoriteIds = user.getFavoriteIds();
+                filterAndDisplayItems();
+            }
+        });
+
+        if (authViewModel.getCurrentUser() != null) {
+            authViewModel.fetchUserProfile(authViewModel.getCurrentUser().getUid());
+        }
+
+        foodViewModel.getFoodItemsLiveData().observe(getViewLifecycleOwner(), items -> {
+            binding.progressBar.setVisibility(View.GONE);
+            allFoodItems = items != null ? items : new ArrayList<>();
+            filterAndDisplayItems();
+        });
     }
 
-    private void applyFilters() {
-        filteredList.clear();
-        for (FoodItem item : allFoodList) {
-            boolean matchesCategory = selectedCategory.equalsIgnoreCase("All") ||
+    private void filterAndDisplayItems() {
+        List<FoodItem> filtered = new ArrayList<>();
+        for (FoodItem item : allFoodItems) {
+            if (!item.isAvailable()) continue;
+
+            boolean matchesCategory = "All".equalsIgnoreCase(selectedCategory) ||
                     (item.getCategory() != null && item.getCategory().equalsIgnoreCase(selectedCategory));
 
             boolean matchesSearch = searchQuery.isEmpty() ||
-                    (item.getName() != null && item.getName().toLowerCase().contains(searchQuery.toLowerCase()));
+                    (item.getName() != null && item.getName().toLowerCase().contains(searchQuery)) ||
+                    (item.getDescription() != null && item.getDescription().toLowerCase().contains(searchQuery));
 
             if (matchesCategory && matchesSearch) {
-                filteredList.add(item);
+                item.setFavorite(userFavoriteIds.contains(item.getId()));
+                filtered.add(item);
             }
         }
-        adapter.notifyDataSetChanged();
 
-        if (filteredList.isEmpty()) {
-            binding.tvEmptyState.setVisibility(View.VISIBLE);
-        } else {
-            binding.tvEmptyState.setVisibility(View.GONE);
+        foodAdapter.setFoodList(filtered);
+        binding.layoutEmpty.setVisibility(filtered.isEmpty() ? View.VISIBLE : View.GONE);
+    }
+
+    @Override
+    public void onItemClick(FoodItem foodItem) {
+        if (foodItem != null && getContext() != null) {
+            android.content.Intent intent = new android.content.Intent(requireContext(), ProductDetailActivity.class);
+            intent.putExtra("FOOD_ITEM", foodItem);
+            startActivity(intent);
         }
+    }
+
+    @Override
+    public void onAddToCartClick(FoodItem foodItem) {
+        cartViewModel.addItem(foodItem);
+        Toast.makeText(requireContext(), foodItem.getName() + " added to cart", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onFavoriteClick(FoodItem foodItem) {
+        boolean isFav = userFavoriteIds.contains(foodItem.getId());
+        foodViewModel.toggleFavorite(foodItem.getId(), isFav);
+        if (isFav) {
+            userFavoriteIds.remove(foodItem.getId());
+            Toast.makeText(requireContext(), "Removed from Favorites", Toast.LENGTH_SHORT).show();
+        } else {
+            userFavoriteIds.add(foodItem.getId());
+            Toast.makeText(requireContext(), "Added to Favorites!", Toast.LENGTH_SHORT).show();
+        }
+        filterAndDisplayItems();
     }
 
     @Override

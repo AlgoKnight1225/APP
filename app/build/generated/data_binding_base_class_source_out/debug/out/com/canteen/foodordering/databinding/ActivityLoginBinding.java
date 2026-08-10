@@ -42,12 +42,16 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final TextInputLayout tilPassword;
 
   @NonNull
-  public final TextView tvSignUp;
+  public final TextView tvForgotPassword;
+
+  @NonNull
+  public final TextView tvRegisterLink;
 
   private ActivityLoginBinding(@NonNull ScrollView rootView, @NonNull MaterialButton btnLogin,
       @NonNull TextInputEditText etEmail, @NonNull TextInputEditText etPassword,
       @NonNull ProgressBar progressBar, @NonNull TextInputLayout tilEmail,
-      @NonNull TextInputLayout tilPassword, @NonNull TextView tvSignUp) {
+      @NonNull TextInputLayout tilPassword, @NonNull TextView tvForgotPassword,
+      @NonNull TextView tvRegisterLink) {
     this.rootView = rootView;
     this.btnLogin = btnLogin;
     this.etEmail = etEmail;
@@ -55,7 +59,8 @@ public final class ActivityLoginBinding implements ViewBinding {
     this.progressBar = progressBar;
     this.tilEmail = tilEmail;
     this.tilPassword = tilPassword;
-    this.tvSignUp = tvSignUp;
+    this.tvForgotPassword = tvForgotPassword;
+    this.tvRegisterLink = tvRegisterLink;
   }
 
   @Override
@@ -121,14 +126,20 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvSignUp;
-      TextView tvSignUp = ViewBindings.findChildViewById(rootView, id);
-      if (tvSignUp == null) {
+      id = R.id.tvForgotPassword;
+      TextView tvForgotPassword = ViewBindings.findChildViewById(rootView, id);
+      if (tvForgotPassword == null) {
+        break missingId;
+      }
+
+      id = R.id.tvRegisterLink;
+      TextView tvRegisterLink = ViewBindings.findChildViewById(rootView, id);
+      if (tvRegisterLink == null) {
         break missingId;
       }
 
       return new ActivityLoginBinding((ScrollView) rootView, btnLogin, etEmail, etPassword,
-          progressBar, tilEmail, tilPassword, tvSignUp);
+          progressBar, tilEmail, tilPassword, tvForgotPassword, tvRegisterLink);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -3,7 +3,6 @@ package com.canteen.foodordering.admin;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
@@ -11,38 +10,32 @@ import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.bumptech.glide.Glide;
 import com.canteen.foodordering.R;
+import com.canteen.foodordering.auth.LoginActivity;
 import com.canteen.foodordering.databinding.ActivityAddEditFoodBinding;
 import com.canteen.foodordering.models.FoodItem;
 import com.canteen.foodordering.utils.Constants;
-import com.google.firebase.firestore.FirebaseFirestore;
+import com.canteen.foodordering.viewmodels.AuthViewModel;
+import com.canteen.foodordering.viewmodels.FoodViewModel;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 
 public class AddEditFoodActivity extends AppCompatActivity {
-
     private ActivityAddEditFoodBinding binding;
-    private FirebaseFirestore db;
-    private FirebaseStorage storage;
+    private FoodViewModel foodViewModel;
+    private AuthViewModel authViewModel;
+    private FoodItem editingFoodItem;
+    private List<String> categoriesList;
 
     private Uri selectedImageUri = null;
-    private FoodItem existingFoodItem = null;
-    private boolean isEditMode = false;
-
-    private final ActivityResultLauncher<String> imagePickerLauncher = registerForActivityResult(
-            new ActivityResultContracts.GetContent(),
-            uri -> {
-                if (uri != null) {
-                    selectedImageUri = uri;
-                    binding.ivFoodPreview.setImageURI(uri);
-                    binding.layoutTapToSelect.setVisibility(View.GONE);
-                }
-            }
-    );
+    private ActivityResultLauncher<String> imagePickerLauncher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,137 +43,173 @@ public class AddEditFoodActivity extends AppCompatActivity {
         binding = ActivityAddEditFoodBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        db = FirebaseFirestore.getInstance();
-        storage = FirebaseStorage.getInstance();
+        foodViewModel = new ViewModelProvider(this).get(FoodViewModel.class);
+        authViewModel = new ViewModelProvider(this).get(AuthViewModel.class);
 
-        setSupportActionBar(binding.toolbarAddEdit);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
-        binding.toolbarAddEdit.setNavigationOnClickListener(v -> finish());
-
+        verifyAdminProtection();
+        setupGalleryPicker();
         setupCategorySpinner();
+        checkIntentData();
 
-        if (getIntent().hasExtra("food_item")) {
-            existingFoodItem = (FoodItem) getIntent().getSerializableExtra("food_item");
-            if (existingFoodItem != null) {
-                isEditMode = true;
-                populateExistingData();
-            }
+        binding.btnBack.setOnClickListener(v -> finish());
+        binding.btnSelectImage.setOnClickListener(v -> imagePickerLauncher.launch("image/*"));
+        binding.btnSave.setOnClickListener(v -> handleSaveProduct());
+    }
+
+    private void verifyAdminProtection() {
+        if (authViewModel.getCurrentUser() == null) {
+            redirectToLogin();
+            return;
         }
 
-        binding.cardSelectImage.setOnClickListener(v -> imagePickerLauncher.launch("image/*"));
-        binding.btnSaveFood.setOnClickListener(v -> saveFoodItem());
+        authViewModel.getUserProfileLiveData().observe(this, user -> {
+            if (user == null || !Constants.ROLE_ADMIN.equalsIgnoreCase(user.getRole())) {
+                Toast.makeText(AddEditFoodActivity.this, "Access Denied: Admin privileges required", Toast.LENGTH_LONG).show();
+                authViewModel.logout();
+                redirectToLogin();
+            }
+        });
+
+        authViewModel.fetchUserProfile(authViewModel.getCurrentUser().getUid());
+    }
+
+    private void redirectToLogin() {
+        Intent intent = new Intent(AddEditFoodActivity.this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+    }
+
+    private void setupGalleryPicker() {
+        imagePickerLauncher = registerForActivityResult(
+                new ActivityResultContracts.GetContent(),
+                uri -> {
+                    if (uri != null) {
+                        selectedImageUri = uri;
+                        Glide.with(this)
+                                .load(selectedImageUri)
+                                .placeholder(R.drawable.ic_food_placeholder)
+                                .into(binding.ivProductPreview);
+                    }
+                }
+        );
     }
 
     private void setupCategorySpinner() {
-        // Exclude "All" from creation options
-        String[] categories = Arrays.copyOfRange(Constants.CATEGORIES, 1, Constants.CATEGORIES.length);
-        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, categories);
-        binding.spinnerCategory.setAdapter(spinnerAdapter);
-    }
-
-    private void populateExistingData() {
-        binding.toolbarAddEdit.setTitle(R.string.edit_food_item);
-        binding.etFoodName.setText(existingFoodItem.getName());
-        binding.etDescription.setText(existingFoodItem.getDescription());
-        binding.etPrice.setText(String.valueOf(existingFoodItem.getPrice()));
-        binding.switchIsAvailable.setChecked(existingFoodItem.isAvailable());
-
-        if (existingFoodItem.getCategory() != null) {
-            String[] categories = Arrays.copyOfRange(Constants.CATEGORIES, 1, Constants.CATEGORIES.length);
-            for (int i = 0; i < categories.length; i++) {
-                if (categories[i].equalsIgnoreCase(existingFoodItem.getCategory())) {
-                    binding.spinnerCategory.setSelection(i);
-                    break;
-                }
+        categoriesList = new ArrayList<>();
+        for (String cat : Constants.CATEGORIES) {
+            if (!"All".equalsIgnoreCase(cat)) {
+                categoriesList.add(cat);
             }
         }
 
-        if (existingFoodItem.getImageUrl() != null && !existingFoodItem.getImageUrl().isEmpty()) {
-            binding.layoutTapToSelect.setVisibility(View.GONE);
-            Glide.with(this)
-                    .load(existingFoodItem.getImageUrl())
-                    .placeholder(R.drawable.ic_food_placeholder)
-                    .into(binding.ivFoodPreview);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, categoriesList);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        binding.spinnerCategory.setAdapter(adapter);
+    }
+
+    private void checkIntentData() {
+        if (getIntent().hasExtra("FOOD_ITEM")) {
+            editingFoodItem = (FoodItem) getIntent().getSerializableExtra("FOOD_ITEM");
+            if (editingFoodItem != null) {
+                binding.tvTitle.setText(R.string.edit_food_item);
+                binding.etName.setText(editingFoodItem.getName());
+                binding.etDescription.setText(editingFoodItem.getDescription());
+                binding.etPrice.setText(String.valueOf(editingFoodItem.getPrice()));
+                binding.switchAvailable.setChecked(editingFoodItem.isAvailable());
+                binding.rbVeg.setChecked(editingFoodItem.isVeg());
+                binding.rbNonVeg.setChecked(!editingFoodItem.isVeg());
+
+                if (editingFoodItem.getCategory() != null) {
+                    int index = categoriesList.indexOf(editingFoodItem.getCategory());
+                    if (index >= 0) {
+                        binding.spinnerCategory.setSelection(index);
+                    }
+                }
+
+                if (editingFoodItem.getImageUrl() != null && !editingFoodItem.getImageUrl().isEmpty()) {
+                    Glide.with(this)
+                            .load(editingFoodItem.getImageUrl())
+                            .placeholder(R.drawable.ic_food_placeholder)
+                            .into(binding.ivProductPreview);
+                }
+            }
         }
     }
 
-    private void saveFoodItem() {
-        String name = binding.etFoodName.getText() != null ? binding.etFoodName.getText().toString().trim() : "";
-        String description = binding.etDescription.getText() != null ? binding.etDescription.getText().toString().trim() : "";
-        String priceStr = binding.etPrice.getText() != null ? binding.etPrice.getText().toString().trim() : "";
-        String category = binding.spinnerCategory.getSelectedItem() != null ? binding.spinnerCategory.getSelectedItem().toString() : "Snacks";
-        boolean isAvailable = binding.switchIsAvailable.isChecked();
+    private void handleSaveProduct() {
+        String name = binding.etName.getText().toString().trim();
+        String description = binding.etDescription.getText().toString().trim();
+        String priceStr = binding.etPrice.getText().toString().trim();
+        String category = categoriesList.get(binding.spinnerCategory.getSelectedItemPosition());
+        boolean isAvailable = binding.switchAvailable.isChecked();
+        boolean isVeg = binding.rbVeg.isChecked();
 
-        if (TextUtils.isEmpty(name)) {
-            binding.tilFoodName.setError("Item name is required");
+        if (name.isEmpty()) {
+            binding.etName.setError("Name is required");
             return;
-        } else {
-            binding.tilFoodName.setError(null);
         }
-
-        if (TextUtils.isEmpty(priceStr)) {
-            binding.tilPrice.setError("Price is required");
-            return;
-        } else {
-            binding.tilPrice.setError(null);
-        }
-
-        double price;
-        try {
-            price = Double.parseDouble(priceStr);
-        } catch (NumberFormatException e) {
-            binding.tilPrice.setError("Enter a valid price amount");
+        if (priceStr.isEmpty()) {
+            binding.etPrice.setError("Price is required");
             return;
         }
 
-        showLoading(true);
+        double price = Double.parseDouble(priceStr);
+        binding.progressBar.setVisibility(View.VISIBLE);
+        binding.btnSave.setEnabled(false);
 
         if (selectedImageUri != null) {
-            // Upload image first
-            uploadImageAndSaveFood(name, description, price, category, isAvailable);
+            String imageId = editingFoodItem != null && editingFoodItem.getId() != null ?
+                    editingFoodItem.getId() : UUID.randomUUID().toString();
+            StorageReference storageRef = FirebaseStorage.getInstance()
+                    .getReference("food_images/" + imageId + ".jpg");
+
+            storageRef.putFile(selectedImageUri)
+                    .continueWithTask(task -> {
+                        if (!task.isSuccessful()) {
+                            throw task.getException();
+                        }
+                        return storageRef.getDownloadUrl();
+                    })
+                    .addOnCompleteListener(task -> {
+                        binding.progressBar.setVisibility(View.GONE);
+                        binding.btnSave.setEnabled(true);
+
+                        String downloadUrl = task.isSuccessful() && task.getResult() != null ?
+                                task.getResult().toString() :
+                                (editingFoodItem != null ? editingFoodItem.getImageUrl() : "");
+
+                        saveToFirestore(name, description, price, category, downloadUrl, isAvailable, isVeg);
+                    });
         } else {
-            String imageUrl = isEditMode && existingFoodItem != null ? existingFoodItem.getImageUrl() : "";
-            saveToFirestore(name, description, price, category, imageUrl, isAvailable);
+            binding.progressBar.setVisibility(View.GONE);
+            binding.btnSave.setEnabled(true);
+            String existingUrl = editingFoodItem != null ? editingFoodItem.getImageUrl() : "";
+            saveToFirestore(name, description, price, category, existingUrl, isAvailable, isVeg);
         }
     }
 
-    private void uploadImageAndSaveFood(String name, String description, double price, String category, boolean isAvailable) {
-        String fileName = "food_" + System.currentTimeMillis() + ".jpg";
-        StorageReference imageRef = storage.getReference().child("food_images/" + fileName);
+    private void saveToFirestore(String name, String description, double price, String category,
+                                  String imageUrl, boolean isAvailable, boolean isVeg) {
+        if (editingFoodItem != null) {
+            editingFoodItem.setName(name);
+            editingFoodItem.setDescription(description);
+            editingFoodItem.setPrice(price);
+            editingFoodItem.setCategory(category);
+            editingFoodItem.setImageUrl(imageUrl);
+            editingFoodItem.setAvailable(isAvailable);
+            editingFoodItem.setVeg(isVeg);
 
-        imageRef.putFile(selectedImageUri)
-                .addOnSuccessListener(taskSnapshot -> imageRef.getDownloadUrl().addOnSuccessListener(uri -> {
-                    saveToFirestore(name, description, price, category, uri.toString(), isAvailable);
-                }))
-                .addOnFailureListener(e -> {
-                    showLoading(false);
-                    Toast.makeText(AddEditFoodActivity.this, "Image upload failed: " + e.getMessage(), Toast.LENGTH_LONG).show();
-                });
-    }
+            foodViewModel.updateFoodItem(editingFoodItem);
+            Toast.makeText(this, "Product updated successfully!", Toast.LENGTH_SHORT).show();
+        } else {
+            FoodItem newItem = new FoodItem(null, name, description, price, category, imageUrl, isAvailable);
+            newItem.setVeg(isVeg);
+            foodViewModel.addFoodItem(newItem);
+            Toast.makeText(this, "Product added successfully!", Toast.LENGTH_SHORT).show();
+        }
 
-    private void saveToFirestore(String name, String description, double price, String category, String imageUrl, boolean isAvailable) {
-        String docId = isEditMode && existingFoodItem != null ? existingFoodItem.getId() : db.collection(Constants.COLLECTION_FOOD).document().getId();
-
-        FoodItem item = new FoodItem(docId, name, description, price, category, imageUrl, isAvailable);
-
-        db.collection(Constants.COLLECTION_FOOD)
-                .document(docId)
-                .set(item)
-                .addOnSuccessListener(aVoid -> {
-                    showLoading(false);
-                    Toast.makeText(AddEditFoodActivity.this, isEditMode ? "Food item updated!" : "Food item added!", Toast.LENGTH_SHORT).show();
-                    finish();
-                })
-                .addOnFailureListener(e -> {
-                    showLoading(false);
-                    Toast.makeText(AddEditFoodActivity.this, "Failed to save item: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                });
-    }
-
-    private void showLoading(boolean isLoading) {
-        binding.progressBar.setVisibility(isLoading ? View.VISIBLE : View.GONE);
-        binding.btnSaveFood.setEnabled(!isLoading);
+        finish();
     }
 }

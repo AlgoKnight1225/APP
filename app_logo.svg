@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="1024" height="1024">
+  <defs>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F766E" />
+      <stop offset="100%" stop-color="#14B8A6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Emerald Teal Gradient Outer Circle -->
+  <circle cx="54" cy="54" r="48" fill="url(#emeraldGrad)" />
+
+  <!-- Thin Amber Accent Ring -->
+  <circle cx="54" cy="54" r="44" fill="none" stroke="#F59E0B" stroke-width="2" />
+
+  <!-- Minimal Food Tray Cloche Dome -->
+  <path d="M34,60 C34,42 74,42 74,60" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" />
+
+  <!-- Dome Top Handle -->
+  <circle cx="54" cy="41" r="3.5" fill="#F59E0B" />
+
+  <!-- Platter Base Line -->
+  <path d="M26,64 L82,64" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" />
+
+  <!-- Left Fork Motif -->
+  <path d="M38,28 L38,36 M42,28 L42,36 M40,36 L40,46" fill="none" stroke="#CCFBF1" stroke-width="2.5" stroke-linecap="round" />
+
+  <!-- Right Spoon Motif -->
+  <ellipse cx="66" cy="32" rx="2.5" ry="4" fill="#CCFBF1" />
+  <path d="M66,35 L66,46" fill="none" stroke="#CCFBF1" stroke-width="2.5" stroke-linecap="round" />
+
+  <!-- Steam Accent Waves -->
+  <path d="M48,24 C50,21 48,19 50,16 M58,24 C60,21 58,19 60,16" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" />
+</svg>

@@ -1,6 +1,6 @@
-com.canteen.foodordering.test.app-jetified-annotation-experimental-1.3.0-0 C:\Users\nikhi\.gradle\caches\transforms-3\95e4e2f7300664618d6d177b21df8f10\transformed\jetified-annotation-experimental-1.3.0\res
-com.canteen.foodordering.test.app-jetified-core-1.5.0-1 C:\Users\nikhi\.gradle\caches\transforms-3\987554f469846ec90b8d69f4116679b8\transformed\jetified-core-1.5.0\res
-com.canteen.foodordering.test.app-androidTest-2 C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\build\generated\res\resValues\androidTest\debug
-com.canteen.foodordering.test.app-mergeDebugAndroidTestResources-3 C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
-com.canteen.foodordering.test.app-mergeDebugAndroidTestResources-4 C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
-com.canteen.foodordering.test.app-merged_res-5 C:\Users\nikhi\OneDrive\Desktop\CANTEEN ORDER APP\app\build\intermediates\merged_res\debugAndroidTest
+com.canteen.foodordering.test.app-androidTest-0 C:\Android project\CANTEEN ORDER APP\app\build\generated\res\resValues\androidTest\debug
+com.canteen.foodordering.test.app-mergeDebugAndroidTestResources-1 C:\Android project\CANTEEN ORDER APP\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.canteen.foodordering.test.app-mergeDebugAndroidTestResources-2 C:\Android project\CANTEEN ORDER APP\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.canteen.foodordering.test.app-merged_res-3 C:\Android project\CANTEEN ORDER APP\app\build\intermediates\merged_res\debugAndroidTest
+com.canteen.foodordering.test.app-jetified-annotation-experimental-1.3.0-4 C:\Users\nikhi\.gradle\caches\transforms-3\95e4e2f7300664618d6d177b21df8f10\transformed\jetified-annotation-experimental-1.3.0\res
+com.canteen.foodordering.test.app-jetified-core-1.5.0-5 C:\Users\nikhi\.gradle\caches\transforms-3\987554f469846ec90b8d69f4116679b8\transformed\jetified-core-1.5.0\res

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.canteen.foodordering.app-mergeDebugResources-37:/values-lv/values-lv.xml",
+            "outputFile": "com.canteen.foodordering.app-mergeDebugResources-3:/values-lv/values-lv.xml",
             "map": [
                 {
                     "source": "C:\\Users\\nikhi\\.gradle\\caches\\transforms-3\\d1874ddb2fd4f75328b3dd679af5d403\\transformed\\jetified-play-services-base-18.1.0\\res\\values-lv\\values.xml",

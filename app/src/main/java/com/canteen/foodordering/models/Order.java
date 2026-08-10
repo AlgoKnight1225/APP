@@ -1,6 +1,7 @@
 package com.canteen.foodordering.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Order implements Serializable {
@@ -10,24 +11,35 @@ public class Order implements Serializable {
     private String studentPhone;
     private List<CartItem> items;
     private double totalPrice;
-    private String status; // "Placed", "Preparing", "Ready", "Delivered"
+    private double subtotal;
+    private double tax;
+    private String status; // "PENDING", "PREPARING", "READY", "COMPLETED", "CANCELLED"
     private long timestamp;
     private String notes;
+    private String paymentMethod;
 
     public Order() {
+        this.items = new ArrayList<>();
+        this.status = "PENDING";
+        this.timestamp = System.currentTimeMillis();
+        this.paymentMethod = "Cash";
     }
 
     public Order(String orderId, String studentId, String studentName, String studentPhone,
-                 List<CartItem> items, double totalPrice, String status, long timestamp, String notes) {
+                 List<CartItem> items, double totalPrice, double subtotal, double tax,
+                 String status, long timestamp, String notes, String paymentMethod) {
         this.orderId = orderId;
         this.studentId = studentId;
         this.studentName = studentName;
         this.studentPhone = studentPhone;
         this.items = items;
         this.totalPrice = totalPrice;
+        this.subtotal = subtotal;
+        this.tax = tax;
         this.status = status;
         this.timestamp = timestamp;
         this.notes = notes;
+        this.paymentMethod = paymentMethod;
     }
 
     public String getOrderId() {
@@ -63,6 +75,9 @@ public class Order implements Serializable {
     }
 
     public List<CartItem> getItems() {
+        if (items == null) {
+            items = new ArrayList<>();
+        }
         return items;
     }
 
@@ -76,6 +91,22 @@ public class Order implements Serializable {
 
     public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    public double getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(double subtotal) {
+        this.subtotal = subtotal;
+    }
+
+    public double getTax() {
+        return tax;
+    }
+
+    public void setTax(double tax) {
+        this.tax = tax;
     }
 
     public String getStatus() {
@@ -100,5 +131,13 @@ public class Order implements Serializable {
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+
+    public String getPaymentMethod() {
+        return paymentMethod == null ? "Cash" : paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 }

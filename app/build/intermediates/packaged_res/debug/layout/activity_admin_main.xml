@@ -6,20 +6,22 @@
     android:background="@color/bg_main">
 
     <FrameLayout
-        android:id="@+id/fragmentContainer"
+        android:id="@+id/adminFragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottomNavigationAdmin" />
+        android:layout_above="@id/adminBottomNavigation" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationAdmin"
+        android:id="@+id/adminBottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/white"
+        android:background="@color/surface_card"
         app:elevation="8dp"
-        app:itemIconTint="@color/primary"
-        app:itemTextColor="@color/primary"
+        app:itemActiveIndicatorStyle="@style/Widget.App.BottomNavActiveIndicator"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemRippleColor="@color/bg_light_cream"
+        app:itemTextColor="@color/nav_item_color"
         app:menu="@menu/bottom_nav_admin" />
 
 </RelativeLayout>

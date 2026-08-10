@@ -4,6 +4,7 @@ package com.canteen.foodordering.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -13,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.canteen.foodordering.R;
-import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -27,27 +27,27 @@ public final class FragmentAdminFoodBinding implements ViewBinding {
   public final FloatingActionButton fabAddFood;
 
   @NonNull
+  public final LinearLayout headerLayout;
+
+  @NonNull
+  public final TextView layoutEmpty;
+
+  @NonNull
   public final ProgressBar progressBar;
 
   @NonNull
   public final RecyclerView rvAdminFood;
 
-  @NonNull
-  public final MaterialToolbar toolbarAdminFood;
-
-  @NonNull
-  public final TextView tvEmptyAdminFood;
-
   private FragmentAdminFoodBinding(@NonNull RelativeLayout rootView,
-      @NonNull FloatingActionButton fabAddFood, @NonNull ProgressBar progressBar,
-      @NonNull RecyclerView rvAdminFood, @NonNull MaterialToolbar toolbarAdminFood,
-      @NonNull TextView tvEmptyAdminFood) {
+      @NonNull FloatingActionButton fabAddFood, @NonNull LinearLayout headerLayout,
+      @NonNull TextView layoutEmpty, @NonNull ProgressBar progressBar,
+      @NonNull RecyclerView rvAdminFood) {
     this.rootView = rootView;
     this.fabAddFood = fabAddFood;
+    this.headerLayout = headerLayout;
+    this.layoutEmpty = layoutEmpty;
     this.progressBar = progressBar;
     this.rvAdminFood = rvAdminFood;
-    this.toolbarAdminFood = toolbarAdminFood;
-    this.tvEmptyAdminFood = tvEmptyAdminFood;
   }
 
   @Override
@@ -83,6 +83,18 @@ public final class FragmentAdminFoodBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.headerLayout;
+      LinearLayout headerLayout = ViewBindings.findChildViewById(rootView, id);
+      if (headerLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.layoutEmpty;
+      TextView layoutEmpty = ViewBindings.findChildViewById(rootView, id);
+      if (layoutEmpty == null) {
+        break missingId;
+      }
+
       id = R.id.progressBar;
       ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
       if (progressBar == null) {
@@ -95,20 +107,8 @@ public final class FragmentAdminFoodBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.toolbarAdminFood;
-      MaterialToolbar toolbarAdminFood = ViewBindings.findChildViewById(rootView, id);
-      if (toolbarAdminFood == null) {
-        break missingId;
-      }
-
-      id = R.id.tvEmptyAdminFood;
-      TextView tvEmptyAdminFood = ViewBindings.findChildViewById(rootView, id);
-      if (tvEmptyAdminFood == null) {
-        break missingId;
-      }
-
-      return new FragmentAdminFoodBinding((RelativeLayout) rootView, fabAddFood, progressBar,
-          rvAdminFood, toolbarAdminFood, tvEmptyAdminFood);
+      return new FragmentAdminFoodBinding((RelativeLayout) rootView, fabAddFood, headerLayout,
+          layoutEmpty, progressBar, rvAdminFood);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
