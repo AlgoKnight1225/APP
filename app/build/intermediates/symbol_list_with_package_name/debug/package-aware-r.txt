@@ -3121,9 +3121,11 @@ drawable ic_restaurant_menu
 drawable ic_search
 drawable ic_search_black_24
 drawable ic_shopping_cart
+drawable ic_splash_logo
 drawable ic_star
 drawable ic_users
 drawable ic_veg
+drawable logo
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
 drawable m3_bottom_sheet_drag_handle
@@ -3325,16 +3327,16 @@ id btnPlus
 id btnProceedCheckout
 id btnRegister
 id btnSave
+id btnSaveAdminPhoto
 id btnSaveProfile
-id btnSelectImage
 id btnSendReset
-id btnUploadAdminPhoto
 id buttonPanel
 id cache_measures
 id callMeasure
 id cancel_button
 id cardCartBar
 id cardCheckoutSummary
+id cardImagePreview
 id carryVelocity
 id cbExtraCheese
 id cbExtraMushroom
@@ -3416,12 +3418,14 @@ id end
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
+id etAdminProfileImageUrl
 id etConfirmPassword
 id etDescription
 id etEditName
 id etEditPhone
 id etEmail
 id etFullName
+id etImageUrl
 id etName
 id etPassword
 id etPhone
@@ -3497,6 +3501,7 @@ id ivStepConfirmed
 id ivStepPlaced
 id ivStepPreparing
 id ivStepReady
+id ivStudentProfilePic
 id ivUserAvatar
 id ivVegIndicator
 id jumpToEnd
@@ -3506,7 +3511,6 @@ id layout
 id layoutCategoryChip
 id layoutEmpty
 id layoutEmptyCart
-id layoutTapToSelect
 id left
 id leftToRight
 id legacy
@@ -3635,7 +3639,6 @@ id parent_matrix
 id password_toggle
 id path
 id pathRelative
-id pbAdminPhoto
 id peekHeight
 id percent
 id pin
@@ -3782,6 +3785,7 @@ id tilConfirmPassword
 id tilDescription
 id tilEmail
 id tilFoodName
+id tilImageUrl
 id tilName
 id tilPassword
 id tilPhone

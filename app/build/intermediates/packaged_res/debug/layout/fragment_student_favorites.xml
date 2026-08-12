@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="Quick access to your favorite canteen food"
+            android:text="Quick access to your favorite FIRST BITE food"
             android:textColor="#F7EBD3"
             android:textSize="13sp" />
     </LinearLayout>

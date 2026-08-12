@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:gravity="center"
-                android:text="Order fresh meals from your campus canteen"
+                android:text="Order fresh meals from FIRST BITE"
                 android:textColor="#F7EBD3"
                 android:textSize="13sp" />
         </LinearLayout>

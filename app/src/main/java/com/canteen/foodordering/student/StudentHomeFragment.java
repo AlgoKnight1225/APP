@@ -117,7 +117,7 @@ public class StudentHomeFragment extends Fragment implements StudentFoodAdapter.
 
         authViewModel.getUserProfileLiveData().observe(getViewLifecycleOwner(), user -> {
             if (user != null) {
-                binding.tvStudentHeaderName.setText(user.getName() != null ? user.getName() : "Campus Canteen");
+                binding.tvStudentHeaderName.setText(user.getName() != null ? user.getName() : "FIRST BITE");
                 userFavoriteIds = user.getFavoriteIds();
                 filterAndDisplayItems();
             }

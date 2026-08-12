@@ -58,9 +58,10 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
             binding.tvUserRole.setText("Role: " + (user.getRole() != null ? user.getRole().toUpperCase() : "STUDENT"));
             binding.tvUserOrdersCount.setText(user.getTotalOrders() + " Orders");
 
-            if (user.getProfileImage() != null && !user.getProfileImage().isEmpty()) {
+            if (user.getProfileImage() != null && !user.getProfileImage().trim().isEmpty()) {
+                binding.ivUserAvatar.setImageTintList(null);
                 Glide.with(binding.getRoot().getContext())
-                        .load(user.getProfileImage())
+                        .load(user.getProfileImage().trim())
                         .placeholder(R.drawable.ic_person)
                         .error(R.drawable.ic_person)
                         .into(binding.ivUserAvatar);

@@ -1,15 +1,12 @@
 package com.canteen.foodordering.admin;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -24,29 +21,13 @@ import com.canteen.foodordering.models.User;
 import com.canteen.foodordering.viewmodels.AuthViewModel;
 import com.canteen.foodordering.viewmodels.FoodViewModel;
 import com.canteen.foodordering.viewmodels.OrderViewModel;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 public class AdminDashboardFragment extends Fragment {
     private FragmentAdminDashboardBinding binding;
     private OrderViewModel orderViewModel;
     private FoodViewModel foodViewModel;
     private AuthViewModel authViewModel;
-    private ActivityResultLauncher<String> imagePickerLauncher;
     private User currentAdminUser;
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        imagePickerLauncher = registerForActivityResult(
-                new ActivityResultContracts.GetContent(),
-                uri -> {
-                    if (uri != null) {
-                        uploadAdminProfileImage(uri);
-                    }
-                }
-        );
-    }
 
     @Nullable
     @Override
@@ -65,7 +46,7 @@ public class AdminDashboardFragment extends Fragment {
 
         observeDashboardMetrics();
 
-        binding.btnUploadAdminPhoto.setOnClickListener(v -> imagePickerLauncher.launch("image/*"));
+        binding.btnSaveAdminPhoto.setOnClickListener(v -> saveAdminProfilePhotoUrl());
         binding.btnAdminLogout.setOnClickListener(v -> handleLogout());
     }
 
@@ -76,12 +57,20 @@ public class AdminDashboardFragment extends Fragment {
                 binding.tvAdminName.setText(user.getName() != null ? user.getName() : "Admin Manager");
                 binding.tvAdminEmail.setText(user.getEmail() != null ? user.getEmail() : "");
 
-                if (user.getProfileImage() != null && !user.getProfileImage().isEmpty() && isAdded()) {
+                String currentImage = user.getProfileImage() != null ? user.getProfileImage() : "";
+                if (binding.etAdminProfileImageUrl.getText() == null || binding.etAdminProfileImageUrl.getText().toString().isEmpty()) {
+                    binding.etAdminProfileImageUrl.setText(currentImage);
+                }
+
+                if (!currentImage.trim().isEmpty() && isAdded()) {
+                    binding.ivAdminProfilePic.setImageTintList(null);
                     Glide.with(requireContext())
-                            .load(user.getProfileImage())
+                            .load(currentImage.trim())
                             .placeholder(R.drawable.ic_person)
                             .error(R.drawable.ic_person)
                             .into(binding.ivAdminProfilePic);
+                } else {
+                    binding.ivAdminProfilePic.setImageResource(R.drawable.ic_person);
                 }
             }
         });
@@ -120,33 +109,26 @@ public class AdminDashboardFragment extends Fragment {
         });
     }
 
-    private void uploadAdminProfileImage(Uri imageUri) {
+    private void saveAdminProfilePhotoUrl() {
         if (authViewModel.getCurrentUser() == null) return;
-        String uid = authViewModel.getCurrentUser().getUid();
 
-        binding.pbAdminPhoto.setVisibility(View.VISIBLE);
-        binding.btnUploadAdminPhoto.setEnabled(false);
+        String photoUrl = binding.etAdminProfileImageUrl.getText() != null ? binding.etAdminProfileImageUrl.getText().toString().trim() : "";
+        String name = currentAdminUser != null && currentAdminUser.getName() != null ? currentAdminUser.getName() : "Admin Manager";
+        String phone = currentAdminUser != null && currentAdminUser.getPhone() != null ? currentAdminUser.getPhone() : "";
 
-        StorageReference profileRef = FirebaseStorage.getInstance().getReference("admin_profiles/" + uid + ".jpg");
-        profileRef.putFile(imageUri)
-                .addOnSuccessListener(taskSnapshot -> profileRef.getDownloadUrl().addOnSuccessListener(downloadUri -> {
-                    if (!isAdded()) return;
-                    binding.pbAdminPhoto.setVisibility(View.GONE);
-                    binding.btnUploadAdminPhoto.setEnabled(true);
-                    String photoUrl = downloadUri.toString();
+        authViewModel.updateProfile(name, phone, photoUrl);
+        Toast.makeText(requireContext(), "Profile photo URL saved successfully!", Toast.LENGTH_SHORT).show();
 
-                    String name = currentAdminUser != null ? currentAdminUser.getName() : "Admin Manager";
-                    String phone = currentAdminUser != null ? currentAdminUser.getPhone() : "";
-
-                    authViewModel.updateProfile(name, phone, photoUrl);
-                    Toast.makeText(requireContext(), "Admin profile photo updated! 📸", Toast.LENGTH_SHORT).show();
-                }))
-                .addOnFailureListener(e -> {
-                    if (!isAdded()) return;
-                    binding.pbAdminPhoto.setVisibility(View.GONE);
-                    binding.btnUploadAdminPhoto.setEnabled(true);
-                    Toast.makeText(requireContext(), "Failed to upload photo: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                });
+        if (!photoUrl.isEmpty() && isAdded()) {
+            binding.ivAdminProfilePic.setImageTintList(null);
+            Glide.with(requireContext())
+                    .load(photoUrl)
+                    .placeholder(R.drawable.ic_person)
+                    .error(R.drawable.ic_person)
+                    .into(binding.ivAdminProfilePic);
+        } else {
+            binding.ivAdminProfilePic.setImageResource(R.drawable.ic_person);
+        }
     }
 
     private void handleLogout() {

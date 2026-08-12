@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Campus Canteen</string>
+    <string name="app_name">FIRST BITE</string>
     <string name="welcome_back">Welcome Back!</string>
-    <string name="login_sub">Sign in to order delicious meals from your canteen</string>
+    <string name="login_sub">Sign in to order delicious meals from FIRST BITE</string>
     <string name="email">Email Address</string>
     <string name="password">Password</string>
     <string name="full_name">Full Name</string>

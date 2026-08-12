@@ -21,8 +21,10 @@
             android:padding="20dp">
 
             <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivStudentProfilePic"
                 android:layout_width="68dp"
                 android:layout_height="68dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/ic_person"
                 android:contentDescription="Profile Icon"
                 app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"

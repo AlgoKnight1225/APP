@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="48dp"
-        android:text="You have not placed any canteen orders yet."
+        android:text="You have not placed any FIRST BITE orders yet."
         android:textColor="@color/text_secondary"
         android:textSize="15sp"
         android:visibility="gone" />

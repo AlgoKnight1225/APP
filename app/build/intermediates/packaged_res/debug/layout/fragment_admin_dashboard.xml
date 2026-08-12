@@ -36,14 +36,6 @@
                     app:strokeColor="@color/white"
                     app:strokeWidth="3dp"
                     app:tint="@color/white" />
-
-                <ProgressBar
-                    android:id="@+id/pbAdminPhoto"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_centerInParent="true"
-                    android:indeterminateTint="@color/white"
-                    android:visibility="gone" />
             </RelativeLayout>
 
             <TextView
@@ -65,21 +57,45 @@
                 android:textColor="#F7EBD3"
                 android:textSize="13sp" />
 
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:hint="Profile Photo URL"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="#F7EBD3"
+                app:startIconDrawable="@drawable/ic_add"
+                app:startIconTint="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etAdminProfileImageUrl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Paste image URL here"
+                    android:inputType="textUri"
+                    android:textColor="@color/white"
+                    android:textColorHint="#D1C7B7"
+                    android:textSize="13sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnUploadAdminPhoto"
+                android:id="@+id/btnSaveAdminPhoto"
                 style="@style/Widget.Material3.Button.OutlinedButton"
                 android:layout_width="wrap_content"
-                android:layout_height="36dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
-                android:paddingHorizontal="14dp"
-                android:text="Upload Profile Photo"
+                android:paddingHorizontal="20dp"
+                android:text="Save Profile Photo"
                 android:textColor="@color/white"
-                android:textSize="12sp"
-                app:cornerRadius="18dp"
-                app:icon="@drawable/ic_add"
-                app:iconTint="@color/white"
+                android:textSize="13sp"
+                app:cornerRadius="20dp"
                 app:strokeColor="@color/white" />
 
         </LinearLayout>

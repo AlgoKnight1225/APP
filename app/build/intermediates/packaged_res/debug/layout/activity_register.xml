@@ -39,7 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Join your campus canteen network"
+                android:text="Join the FIRST BITE network"
                 android:textColor="#F7EBD3"
                 android:textSize="13sp" />
         </LinearLayout>

@@ -4,7 +4,6 @@ package com.canteen.foodordering.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -14,6 +13,7 @@ import androidx.viewbinding.ViewBindings;
 import com.canteen.foodordering.R;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.imageview.ShapeableImageView;
+import com.google.android.material.textfield.TextInputEditText;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -26,13 +26,13 @@ public final class FragmentAdminDashboardBinding implements ViewBinding {
   public final MaterialButton btnAdminLogout;
 
   @NonNull
-  public final MaterialButton btnUploadAdminPhoto;
+  public final MaterialButton btnSaveAdminPhoto;
+
+  @NonNull
+  public final TextInputEditText etAdminProfileImageUrl;
 
   @NonNull
   public final ShapeableImageView ivAdminProfilePic;
-
-  @NonNull
-  public final ProgressBar pbAdminPhoto;
 
   @NonNull
   public final TextView tvActiveOrders;
@@ -53,16 +53,17 @@ public final class FragmentAdminDashboardBinding implements ViewBinding {
   public final TextView tvTotalRevenue;
 
   private FragmentAdminDashboardBinding(@NonNull ScrollView rootView,
-      @NonNull MaterialButton btnAdminLogout, @NonNull MaterialButton btnUploadAdminPhoto,
-      @NonNull ShapeableImageView ivAdminProfilePic, @NonNull ProgressBar pbAdminPhoto,
-      @NonNull TextView tvActiveOrders, @NonNull TextView tvAdminEmail,
-      @NonNull TextView tvAdminName, @NonNull TextView tvMenuItemsCount,
-      @NonNull TextView tvTotalOrders, @NonNull TextView tvTotalRevenue) {
+      @NonNull MaterialButton btnAdminLogout, @NonNull MaterialButton btnSaveAdminPhoto,
+      @NonNull TextInputEditText etAdminProfileImageUrl,
+      @NonNull ShapeableImageView ivAdminProfilePic, @NonNull TextView tvActiveOrders,
+      @NonNull TextView tvAdminEmail, @NonNull TextView tvAdminName,
+      @NonNull TextView tvMenuItemsCount, @NonNull TextView tvTotalOrders,
+      @NonNull TextView tvTotalRevenue) {
     this.rootView = rootView;
     this.btnAdminLogout = btnAdminLogout;
-    this.btnUploadAdminPhoto = btnUploadAdminPhoto;
+    this.btnSaveAdminPhoto = btnSaveAdminPhoto;
+    this.etAdminProfileImageUrl = etAdminProfileImageUrl;
     this.ivAdminProfilePic = ivAdminProfilePic;
-    this.pbAdminPhoto = pbAdminPhoto;
     this.tvActiveOrders = tvActiveOrders;
     this.tvAdminEmail = tvAdminEmail;
     this.tvAdminName = tvAdminName;
@@ -104,21 +105,21 @@ public final class FragmentAdminDashboardBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btnUploadAdminPhoto;
-      MaterialButton btnUploadAdminPhoto = ViewBindings.findChildViewById(rootView, id);
-      if (btnUploadAdminPhoto == null) {
+      id = R.id.btnSaveAdminPhoto;
+      MaterialButton btnSaveAdminPhoto = ViewBindings.findChildViewById(rootView, id);
+      if (btnSaveAdminPhoto == null) {
+        break missingId;
+      }
+
+      id = R.id.etAdminProfileImageUrl;
+      TextInputEditText etAdminProfileImageUrl = ViewBindings.findChildViewById(rootView, id);
+      if (etAdminProfileImageUrl == null) {
         break missingId;
       }
 
       id = R.id.ivAdminProfilePic;
       ShapeableImageView ivAdminProfilePic = ViewBindings.findChildViewById(rootView, id);
       if (ivAdminProfilePic == null) {
-        break missingId;
-      }
-
-      id = R.id.pbAdminPhoto;
-      ProgressBar pbAdminPhoto = ViewBindings.findChildViewById(rootView, id);
-      if (pbAdminPhoto == null) {
         break missingId;
       }
 
@@ -159,8 +160,8 @@ public final class FragmentAdminDashboardBinding implements ViewBinding {
       }
 
       return new FragmentAdminDashboardBinding((ScrollView) rootView, btnAdminLogout,
-          btnUploadAdminPhoto, ivAdminProfilePic, pbAdminPhoto, tvActiveOrders, tvAdminEmail,
-          tvAdminName, tvMenuItemsCount, tvTotalOrders, tvTotalRevenue);
+          btnSaveAdminPhoto, etAdminProfileImageUrl, ivAdminProfilePic, tvActiveOrders,
+          tvAdminEmail, tvAdminName, tvMenuItemsCount, tvTotalOrders, tvTotalRevenue);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

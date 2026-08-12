@@ -12,6 +12,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.canteen.foodordering.R;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.textfield.TextInputEditText;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -37,6 +38,9 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final TextInputEditText etEditPhone;
 
   @NonNull
+  public final ShapeableImageView ivStudentProfilePic;
+
+  @NonNull
   public final TextView tvProfileEmail;
 
   @NonNull
@@ -51,15 +55,16 @@ public final class FragmentProfileBinding implements ViewBinding {
   private FragmentProfileBinding(@NonNull ScrollView rootView,
       @NonNull MaterialButton btnChangePassword, @NonNull MaterialButton btnLogout,
       @NonNull MaterialButton btnSaveProfile, @NonNull TextInputEditText etEditName,
-      @NonNull TextInputEditText etEditPhone, @NonNull TextView tvProfileEmail,
-      @NonNull TextView tvProfileName, @NonNull TextView tvRoleTag,
-      @NonNull TextView tvTotalOrdersCount) {
+      @NonNull TextInputEditText etEditPhone, @NonNull ShapeableImageView ivStudentProfilePic,
+      @NonNull TextView tvProfileEmail, @NonNull TextView tvProfileName,
+      @NonNull TextView tvRoleTag, @NonNull TextView tvTotalOrdersCount) {
     this.rootView = rootView;
     this.btnChangePassword = btnChangePassword;
     this.btnLogout = btnLogout;
     this.btnSaveProfile = btnSaveProfile;
     this.etEditName = etEditName;
     this.etEditPhone = etEditPhone;
+    this.ivStudentProfilePic = ivStudentProfilePic;
     this.tvProfileEmail = tvProfileEmail;
     this.tvProfileName = tvProfileName;
     this.tvRoleTag = tvRoleTag;
@@ -123,6 +128,12 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.ivStudentProfilePic;
+      ShapeableImageView ivStudentProfilePic = ViewBindings.findChildViewById(rootView, id);
+      if (ivStudentProfilePic == null) {
+        break missingId;
+      }
+
       id = R.id.tvProfileEmail;
       TextView tvProfileEmail = ViewBindings.findChildViewById(rootView, id);
       if (tvProfileEmail == null) {
@@ -148,8 +159,8 @@ public final class FragmentProfileBinding implements ViewBinding {
       }
 
       return new FragmentProfileBinding((ScrollView) rootView, btnChangePassword, btnLogout,
-          btnSaveProfile, etEditName, etEditPhone, tvProfileEmail, tvProfileName, tvRoleTag,
-          tvTotalOrdersCount);
+          btnSaveProfile, etEditName, etEditPhone, ivStudentProfilePic, tvProfileEmail,
+          tvProfileName, tvRoleTag, tvTotalOrdersCount);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

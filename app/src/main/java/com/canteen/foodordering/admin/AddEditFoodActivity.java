@@ -1,14 +1,13 @@
 package com.canteen.foodordering.admin;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -20,12 +19,9 @@ import com.canteen.foodordering.models.FoodItem;
 import com.canteen.foodordering.utils.Constants;
 import com.canteen.foodordering.viewmodels.AuthViewModel;
 import com.canteen.foodordering.viewmodels.FoodViewModel;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class AddEditFoodActivity extends AppCompatActivity {
     private ActivityAddEditFoodBinding binding;
@@ -33,9 +29,6 @@ public class AddEditFoodActivity extends AppCompatActivity {
     private AuthViewModel authViewModel;
     private FoodItem editingFoodItem;
     private List<String> categoriesList;
-
-    private Uri selectedImageUri = null;
-    private ActivityResultLauncher<String> imagePickerLauncher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,12 +40,11 @@ public class AddEditFoodActivity extends AppCompatActivity {
         authViewModel = new ViewModelProvider(this).get(AuthViewModel.class);
 
         verifyAdminProtection();
-        setupGalleryPicker();
+        setupImageUrlWatcher();
         setupCategorySpinner();
         checkIntentData();
 
         binding.btnBack.setOnClickListener(v -> finish());
-        binding.btnSelectImage.setOnClickListener(v -> imagePickerLauncher.launch("image/*"));
         binding.btnSave.setOnClickListener(v -> handleSaveProduct());
     }
 
@@ -80,19 +72,28 @@ public class AddEditFoodActivity extends AppCompatActivity {
         finish();
     }
 
-    private void setupGalleryPicker() {
-        imagePickerLauncher = registerForActivityResult(
-                new ActivityResultContracts.GetContent(),
-                uri -> {
-                    if (uri != null) {
-                        selectedImageUri = uri;
-                        Glide.with(this)
-                                .load(selectedImageUri)
-                                .placeholder(R.drawable.ic_food_placeholder)
-                                .into(binding.ivProductPreview);
-                    }
+    private void setupImageUrlWatcher() {
+        binding.etImageUrl.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String url = s.toString().trim();
+                if (!url.isEmpty()) {
+                    Glide.with(AddEditFoodActivity.this)
+                            .load(url)
+                            .placeholder(R.drawable.ic_food_placeholder)
+                            .error(R.drawable.ic_food_placeholder)
+                            .into(binding.ivProductPreview);
+                } else {
+                    binding.ivProductPreview.setImageResource(R.drawable.ic_food_placeholder);
                 }
-        );
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
     }
 
     private void setupCategorySpinner() {
@@ -117,6 +118,7 @@ public class AddEditFoodActivity extends AppCompatActivity {
                 binding.etName.setText(editingFoodItem.getName());
                 binding.etDescription.setText(editingFoodItem.getDescription());
                 binding.etPrice.setText(String.valueOf(editingFoodItem.getPrice()));
+                binding.etImageUrl.setText(editingFoodItem.getImageUrl() != null ? editingFoodItem.getImageUrl() : "");
                 binding.switchAvailable.setChecked(editingFoodItem.isAvailable());
                 binding.rbVeg.setChecked(editingFoodItem.isVeg());
                 binding.rbNonVeg.setChecked(!editingFoodItem.isVeg());
@@ -132,6 +134,7 @@ public class AddEditFoodActivity extends AppCompatActivity {
                     Glide.with(this)
                             .load(editingFoodItem.getImageUrl())
                             .placeholder(R.drawable.ic_food_placeholder)
+                            .error(R.drawable.ic_food_placeholder)
                             .into(binding.ivProductPreview);
                 }
             }
@@ -142,6 +145,7 @@ public class AddEditFoodActivity extends AppCompatActivity {
         String name = binding.etName.getText().toString().trim();
         String description = binding.etDescription.getText().toString().trim();
         String priceStr = binding.etPrice.getText().toString().trim();
+        String imageUrl = binding.etImageUrl.getText().toString().trim();
         String category = categoriesList.get(binding.spinnerCategory.getSelectedItemPosition());
         boolean isAvailable = binding.switchAvailable.isChecked();
         boolean isVeg = binding.rbVeg.isChecked();
@@ -154,40 +158,20 @@ public class AddEditFoodActivity extends AppCompatActivity {
             binding.etPrice.setError("Price is required");
             return;
         }
-
-        double price = Double.parseDouble(priceStr);
-        binding.progressBar.setVisibility(View.VISIBLE);
-        binding.btnSave.setEnabled(false);
-
-        if (selectedImageUri != null) {
-            String imageId = editingFoodItem != null && editingFoodItem.getId() != null ?
-                    editingFoodItem.getId() : UUID.randomUUID().toString();
-            StorageReference storageRef = FirebaseStorage.getInstance()
-                    .getReference("food_images/" + imageId + ".jpg");
-
-            storageRef.putFile(selectedImageUri)
-                    .continueWithTask(task -> {
-                        if (!task.isSuccessful()) {
-                            throw task.getException();
-                        }
-                        return storageRef.getDownloadUrl();
-                    })
-                    .addOnCompleteListener(task -> {
-                        binding.progressBar.setVisibility(View.GONE);
-                        binding.btnSave.setEnabled(true);
-
-                        String downloadUrl = task.isSuccessful() && task.getResult() != null ?
-                                task.getResult().toString() :
-                                (editingFoodItem != null ? editingFoodItem.getImageUrl() : "");
-
-                        saveToFirestore(name, description, price, category, downloadUrl, isAvailable, isVeg);
-                    });
-        } else {
-            binding.progressBar.setVisibility(View.GONE);
-            binding.btnSave.setEnabled(true);
-            String existingUrl = editingFoodItem != null ? editingFoodItem.getImageUrl() : "";
-            saveToFirestore(name, description, price, category, existingUrl, isAvailable, isVeg);
+        if (imageUrl.isEmpty()) {
+            binding.etImageUrl.setError("Image URL is required");
+            return;
         }
+
+        double price;
+        try {
+            price = Double.parseDouble(priceStr);
+        } catch (NumberFormatException e) {
+            binding.etPrice.setError("Invalid price format");
+            return;
+        }
+
+        saveToFirestore(name, description, price, category, imageUrl, isAvailable, isVeg);
     }
 
     private void saveToFirestore(String name, String description, double price, String category,

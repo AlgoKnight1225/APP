@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tvStudentHeaderName"
             android:layout_marginTop="2dp"
-            android:text="Order fresh meals from your campus canteen"
+            android:text="Order fresh meals from FIRST BITE"
             android:textColor="#F5F5F5"
             android:textSize="13sp" />
 

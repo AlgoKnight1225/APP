@@ -239,7 +239,7 @@
                             android:layout_centerVertical="true"
                             android:layout_marginStart="12dp"
                             android:layout_toEndOf="@id/ivStepConfirmed"
-                            android:text="Confirmed by Canteen"
+                            android:text="Confirmed by FIRST BITE"
                             android:textColor="@color/text_secondary"
                             android:textSize="14sp" />
                     </RelativeLayout>

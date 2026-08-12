@@ -12,14 +12,18 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.bumptech.glide.Glide;
+import com.canteen.foodordering.R;
 import com.canteen.foodordering.auth.LoginActivity;
 import com.canteen.foodordering.databinding.FragmentProfileBinding;
+import com.canteen.foodordering.models.User;
 import com.canteen.foodordering.viewmodels.AuthViewModel;
 
 public class StudentProfileFragment extends Fragment {
     private FragmentProfileBinding binding;
     private AuthViewModel authViewModel;
     private String currentUserEmail = "";
+    private User currentUserProfile;
 
     @Nullable
     @Override
@@ -44,6 +48,7 @@ public class StudentProfileFragment extends Fragment {
     private void observeUserProfile() {
         authViewModel.getUserProfileLiveData().observe(getViewLifecycleOwner(), user -> {
             if (user != null) {
+                currentUserProfile = user;
                 currentUserEmail = user.getEmail() != null ? user.getEmail() : "";
                 binding.tvProfileName.setText(user.getName() != null ? user.getName() : "Student");
                 binding.tvProfileEmail.setText(currentUserEmail);
@@ -52,6 +57,17 @@ public class StudentProfileFragment extends Fragment {
 
                 binding.etEditName.setText(user.getName());
                 binding.etEditPhone.setText(user.getPhone());
+
+                if (user.getProfileImage() != null && !user.getProfileImage().trim().isEmpty() && isAdded()) {
+                    binding.ivStudentProfilePic.setImageTintList(null);
+                    Glide.with(requireContext())
+                            .load(user.getProfileImage().trim())
+                            .placeholder(R.drawable.ic_person)
+                            .error(R.drawable.ic_person)
+                            .into(binding.ivStudentProfilePic);
+                } else {
+                    binding.ivStudentProfilePic.setImageResource(R.drawable.ic_person);
+                }
             }
         });
 
@@ -75,7 +91,10 @@ public class StudentProfileFragment extends Fragment {
             return;
         }
 
-        authViewModel.updateProfile(name, phone, "");
+        String existingPhotoUrl = (currentUserProfile != null && currentUserProfile.getProfileImage() != null)
+                ? currentUserProfile.getProfileImage() : "";
+
+        authViewModel.updateProfile(name, phone, existingPhotoUrl);
         Toast.makeText(requireContext(), "Profile updated successfully!", Toast.LENGTH_SHORT).show();
     }
 
