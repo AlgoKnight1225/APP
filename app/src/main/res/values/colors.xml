@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Canteen Premium Brown + Cream + Caramel Palette -->
+    <color name="primary_dark">#4A2C20</color>
+    <color name="primary">#6B4226</color>
+    <color name="primary_light">#8B5E3C</color>
+    <color name="caramel">#B97843</color>
+    <color name="accent">#B97843</color>
+    <color name="accent_caramel">#B97843</color>
+    <color name="accent_gold">#D4A574</color>
+    
+    <!-- Background & Card Colors -->
+    <color name="bg_cream">#FFF8E7</color>
+    <color name="bg_light_cream">#F7EBD3</color>
+    <color name="bg_main">#FFF8E7</color>
+    <color name="surface_card">#FFFCF5</color>
+    <color name="surface_variant">#F7EBD3</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#2B1B14</color>
+    <color name="text_secondary">#795548</color>
+    <color name="text_muted">#795548</color>
+    <color name="text_on_primary">#FFFFFF</color>
+    <color name="text_on_cream">#2B1B14</color>
+    
+    <!-- UI Element Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#2B1B14</color>
+    <color name="divider">#E0D5C1</color>
+    <color name="border_light">#E0D5C1</color>
+    <color name="favorite_red">#B3261E</color>
+    <color name="red_error">#B3261E</color>
+    <color name="star_gold">#D4A574</color>
+    <color name="transparent">#00000000</color>
+    <color name="chip_unselected_bg">#F7EBD3</color>
+    <color name="success">#5C7A29</color>
+    <color name="error">#B3261E</color>
+    
+    <!-- Status Badges in Cohesive Brown/Caramel/Cream Tones -->
+    <color name="status_placed">#6B4226</color>
+    <color name="status_pending_bg">#F7EBD3</color>
+    <color name="status_pending_text">#6B4226</color>
+
+    <color name="status_preparing">#B97843</color>
+    <color name="status_preparing_bg">#FFF8E7</color>
+    <color name="status_preparing_text">#8B5E3C</color>
+
+    <color name="status_ready">#8B5E3C</color>
+    <color name="status_ready_bg">#F7EBD3</color>
+    <color name="status_ready_text">#4A2C20</color>
+
+    <color name="status_completed_bg">#E8EFE0</color>
+    <color name="status_completed_text">#5C7A29</color>
+    <color name="status_delivered">#5C7A29</color>
+
+    <color name="status_cancelled">#B3261E</color>
+    <color name="status_cancelled_bg">#FCEBEA</color>
+    <color name="status_cancelled_text">#B3261E</color>
+</resources>

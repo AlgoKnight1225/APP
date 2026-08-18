@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent">#B97843</color>
+    <color name="accent_caramel">#B97843</color>
+    <color name="accent_gold">#D4A574</color>
+    <color name="bg_cream">#FFF8E7</color>
+    <color name="bg_light_cream">#F7EBD3</color>
+    <color name="bg_main">#FFF8E7</color>
+    <color name="black">#2B1B14</color>
+    <color name="border_light">#E0D5C1</color>
+    <color name="caramel">#B97843</color>
+    <color name="chip_unselected_bg">#F7EBD3</color>
+    <color name="divider">#E0D5C1</color>
+    <color name="error">#B3261E</color>
+    <color name="favorite_red">#B3261E</color>
+    <color name="primary">#6B4226</color>
+    <color name="primary_dark">#4A2C20</color>
+    <color name="primary_light">#8B5E3C</color>
+    <color name="red_error">#B3261E</color>
+    <color name="star_gold">#D4A574</color>
+    <color name="status_cancelled">#B3261E</color>
+    <color name="status_cancelled_bg">#FCEBEA</color>
+    <color name="status_cancelled_text">#B3261E</color>
+    <color name="status_completed_bg">#E8EFE0</color>
+    <color name="status_completed_text">#5C7A29</color>
+    <color name="status_delivered">#5C7A29</color>
+    <color name="status_pending_bg">#F7EBD3</color>
+    <color name="status_pending_text">#6B4226</color>
+    <color name="status_placed">#6B4226</color>
+    <color name="status_preparing">#B97843</color>
+    <color name="status_preparing_bg">#FFF8E7</color>
+    <color name="status_preparing_text">#8B5E3C</color>
+    <color name="status_ready">#8B5E3C</color>
+    <color name="status_ready_bg">#F7EBD3</color>
+    <color name="status_ready_text">#4A2C20</color>
+    <color name="success">#5C7A29</color>
+    <color name="surface_card">#FFFCF5</color>
+    <color name="surface_variant">#F7EBD3</color>
+    <color name="text_muted">#795548</color>
+    <color name="text_on_cream">#2B1B14</color>
+    <color name="text_on_primary">#FFFFFF</color>
+    <color name="text_primary">#2B1B14</color>
+    <color name="text_secondary">#795548</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFF</color>
+    <string name="add_food_item">Add New Food Item</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="already_have_account">Already have an account? Login</string>
+    <string name="app_name">FIRST BITE</string>
+    <string name="checkout">Place Order</string>
+    <string name="delivery_notes_hint">Table No / Pickup Notes (Optional)</string>
+    <string name="dont_have_account">Don\'t have an account? Sign Up</string>
+    <string name="edit_food_item">Edit Food Item</string>
+    <string name="email">Email Address</string>
+    <string name="empty_cart">Your cart is empty!</string>
+    <string name="full_name">Full Name</string>
+    <string name="gcm_defaultSenderId" translatable="false">315036251281</string>
+    <string name="google_api_key" translatable="false">AIzaSyDJBNMyZ_tHcbSwElayvSzn171y27RfRNg</string>
+    <string name="google_app_id" translatable="false">1:315036251281:android:e0e2525ca85d0320e1fb30</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDJBNMyZ_tHcbSwElayvSzn171y27RfRNg</string>
+    <string name="google_storage_bucket" translatable="false">canteen-order-app-de3ef.firebasestorage.app</string>
+    <string name="item_available">Available for ordering</string>
+    <string name="item_category">Category</string>
+    <string name="item_description">Description</string>
+    <string name="item_name">Item Name</string>
+    <string name="item_price">Price (₹)</string>
+    <string name="login">Login</string>
+    <string name="login_sub">Sign in to order delicious meals from FIRST BITE</string>
+    <string name="nav_admin_orders">All Orders</string>
+    <string name="nav_home">Menu</string>
+    <string name="nav_manage_menu">Manage Menu</string>
+    <string name="nav_orders">My Orders</string>
+    <string name="nav_profile">Profile</string>
+    <string name="password">Password</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="project_id" translatable="false">canteen-order-app-de3ef</string>
+    <string name="role_admin">Admin Staff</string>
+    <string name="role_student">Student</string>
+    <string name="save_item">Save Item</string>
+    <string name="search_food_hint">Search items (e.g., Burger, Coffee, Pizza)...</string>
+    <string name="select_role">Select Account Type</string>
+    <string name="signup">Sign Up</string>
+    <string name="update_status">Update Status</string>
+    <string name="view_cart">View Cart</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <style name="Base.Theme.CollegeCanteenFoodOrderingApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:windowBackground">@drawable/bg_cafe_theme</item>
+    </style>
+    <style name="TextAppearance.App.Body" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+    <style name="TextAppearance.App.Button" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_on_primary</item>
+    </style>
+    <style name="TextAppearance.App.Heading" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    <style name="TextAppearance.App.Price" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/primary</item>
+    </style>
+    <style name="TextAppearance.App.SubHeading" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    <style name="Theme.CollegeCanteenFoodOrderingApp" parent="Base.Theme.CollegeCanteenFoodOrderingApp"/>
+    <style name="Theme.CollegeCanteenFoodOrderingApp.NoActionBar" parent="Base.Theme.CollegeCanteenFoodOrderingApp">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Widget.App.BottomNavActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/bg_light_cream</item>
+    </style>
+    <style name="Widget.Starbucks.Button" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/primary</item>
+        <item name="android:textColor">@color/text_on_primary</item>
+        <item name="cornerRadius">24dp</item>
+        <item name="android:paddingVertical">14dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="Widget.Starbucks.Button.Gradient" parent="Widget.Material3.Button">
+        <item name="background">@drawable/bg_gradient_brown_caramel</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:textColor">@color/text_on_primary</item>
+        <item name="cornerRadius">24dp</item>
+        <item name="android:paddingVertical">14dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="Widget.Starbucks.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardBackgroundColor">@color/surface_card</item>
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="strokeColor">@color/border_light</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+    <style name="Widget.Starbucks.Chip" parent="Widget.Material3.Chip.Filter">
+        <item name="chipBackgroundColor">@color/surface_card</item>
+        <item name="chipCornerRadius">20dp</item>
+        <item name="chipStrokeColor">@color/border_light</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+</resources>

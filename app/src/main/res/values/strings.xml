@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">FIRST BITE</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="login_sub">Sign in to order delicious meals from FIRST BITE</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="full_name">Full Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="login">Login</string>
+    <string name="signup">Sign Up</string>
+    <string name="dont_have_account">Don\'t have an account? Sign Up</string>
+    <string name="already_have_account">Already have an account? Login</string>
+    <string name="select_role">Select Account Type</string>
+    <string name="role_student">Student</string>
+    <string name="role_admin">Admin Staff</string>
+    
+    <!-- Student Strings -->
+    <string name="nav_home">Menu</string>
+    <string name="nav_orders">My Orders</string>
+    <string name="nav_profile">Profile</string>
+    <string name="search_food_hint">Search items (e.g., Burger, Coffee, Pizza)...</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="view_cart">View Cart</string>
+    <string name="checkout">Place Order</string>
+    <string name="empty_cart">Your cart is empty!</string>
+    <string name="delivery_notes_hint">Table No / Pickup Notes (Optional)</string>
+    
+    <!-- Admin Strings -->
+    <string name="nav_manage_menu">Manage Menu</string>
+    <string name="nav_admin_orders">All Orders</string>
+    <string name="add_food_item">Add New Food Item</string>
+    <string name="edit_food_item">Edit Food Item</string>
+    <string name="item_name">Item Name</string>
+    <string name="item_description">Description</string>
+    <string name="item_price">Price (₹)</string>
+    <string name="item_category">Category</string>
+    <string name="item_available">Available for ordering</string>
+    <string name="save_item">Save Item</string>
+    <string name="update_status">Update Status</string>
+</resources>

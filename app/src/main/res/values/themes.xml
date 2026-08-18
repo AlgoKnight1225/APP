@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.CollegeCanteenFoodOrderingApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:windowBackground">@drawable/bg_cafe_theme</item>
+    </style>
+
+    <style name="Theme.CollegeCanteenFoodOrderingApp" parent="Base.Theme.CollegeCanteenFoodOrderingApp" />
+
+    <style name="Theme.CollegeCanteenFoodOrderingApp.NoActionBar" parent="Base.Theme.CollegeCanteenFoodOrderingApp">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources>
