@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.canteen.foodordering.app-mergeDebugResources-37:/values-uk/values-uk.xml",
+            "outputFile": "com.canteen.foodordering.app-mergeDebugResources-41:/values-uk/values-uk.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Shubrit\\.gradle\\caches\\transforms-3\\d1874ddb2fd4f75328b3dd679af5d403\\transformed\\jetified-play-services-base-18.1.0\\res\\values-uk\\values.xml",
+                    "source": "C:\\Users\\Shubrit\\.gradle\\caches\\transforms-3\\df2f3d0ef404ad600f8a0f906cc5fb9d\\transformed\\jetified-play-services-base-18.3.0\\res\\values-uk\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -37,6 +37,23 @@
                         "endLines": "7,35,36,37,38,39,40,41,42,62,63,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124",
                         "endColumns": "12,77,77,87,107,90,95,115,82,66,90,65,62,87,61,66,57,70,58,53,113,59,62,53,72,118,85,82,138,84,86,132,87,77,56,50,65,71,75,89,82,72,76,80,73,108,89,78,90,95,73,80,94,53,81,65,86,85,61,63,62,72,106,109,97,105,60,54,81",
                         "endOffsets": "419,3221,3299,3387,3495,3586,3682,3798,3881,6284,6375,6776,6839,6927,6989,7056,7114,7185,7244,7298,7412,7472,7535,7589,7662,7781,7867,7950,8089,8174,8261,8394,8482,8560,8617,8668,8734,8806,8882,8972,9055,9128,9205,9286,9360,9469,9559,9638,9729,9825,9899,9980,10075,10129,10211,10277,10364,10450,10512,10576,10639,10712,10819,10929,11027,11133,11194,11249,11331"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Shubrit\\.gradle\\caches\\transforms-3\\a3c90d36ef038ba50a872dee11ea069e\\transformed\\jetified-play-services-wallet-18.1.3\\res\\values-uk\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "202",
+                        "endColumns": "81",
+                        "endOffsets": "283"
+                    },
+                    "to": {
+                        "startLines": "127",
+                        "startColumns": "4",
+                        "startOffsets": "11519",
+                        "endColumns": "85",
+                        "endOffsets": "11600"
                     }
                 },
                 {

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.canteen.foodordering.app-mergeDebugResources-37:/values-my/values-my.xml",
+            "outputFile": "com.canteen.foodordering.app-mergeDebugResources-41:/values-my/values-my.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Shubrit\\.gradle\\caches\\transforms-3\\5070b0b4118ee8cac214a2c2ee78048e\\transformed\\jetified-play-services-basement-18.3.0\\res\\values-my\\values.xml",
@@ -18,6 +18,23 @@
                         "startOffsets": "4895",
                         "endColumns": "153",
                         "endOffsets": "5044"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Shubrit\\.gradle\\caches\\transforms-3\\a3c90d36ef038ba50a872dee11ea069e\\transformed\\jetified-play-services-wallet-18.1.3\\res\\values-my\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "202",
+                        "endColumns": "72",
+                        "endOffsets": "274"
+                    },
+                    "to": {
+                        "startLines": "125",
+                        "startColumns": "4",
+                        "startOffsets": "11617",
+                        "endColumns": "76",
+                        "endOffsets": "11689"
                     }
                 },
                 {
@@ -38,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Shubrit\\.gradle\\caches\\transforms-3\\d1874ddb2fd4f75328b3dd679af5d403\\transformed\\jetified-play-services-base-18.1.0\\res\\values-my\\values.xml",
+                    "source": "C:\\Users\\Shubrit\\.gradle\\caches\\transforms-3\\df2f3d0ef404ad600f8a0f906cc5fb9d\\transformed\\jetified-play-services-base-18.3.0\\res\\values-my\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",

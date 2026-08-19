@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:2:1-76:12
-INJECTED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:2:1-76:12
-INJECTED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:2:1-76:12
-INJECTED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:2:1-76:12
+ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:2:1-84:12
+INJECTED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:2:1-84:12
+INJECTED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:2:1-84:12
+INJECTED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:2:1-84:12
 MERGED from [androidx.databinding:viewbinding:8.2.2] C:\Users\Shubrit\.gradle\caches\transforms-3\1d00d91a341dab24a3b72eebc230c009\transformed\jetified-viewbinding-8.2.2\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\Shubrit\.gradle\caches\transforms-3\c4516863a6091d4c9ba15b190e296f48\transformed\material-1.11.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Shubrit\.gradle\caches\transforms-3\1ea281c3562e25a425f624d9cf8cf3af\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
@@ -16,6 +16,7 @@ MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\Shub
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\Shubrit\.gradle\caches\transforms-3\2d922cba6258b46eecc4d0307b29d646\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:17:1-75:12
 MERGED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\Shubrit\.gradle\caches\transforms-3\da8819f64e28f43278c3961a1a14b09e\transformed\jetified-firebase-firestore-24.10.2\AndroidManifest.xml:2:1-26:12
 MERGED from [com.google.firebase:firebase-storage:20.3.0] C:\Users\Shubrit\.gradle\caches\transforms-3\cc71cbf2132731959004fbe3f1fcb305\transformed\jetified-firebase-storage-20.3.0\AndroidManifest.xml:15:1-39:12
+MERGED from [com.razorpay:checkout:1.6.40] C:\Users\Shubrit\.gradle\caches\transforms-3\06d2bf75d0430af6a22825e1c51f9ffa\transformed\jetified-checkout-1.6.40\AndroidManifest.xml:2:1-7:12
 MERGED from [com.github.bumptech.glide:glide:4.16.0] C:\Users\Shubrit\.gradle\caches\transforms-3\97c1d3210c58e982f90a398e09486d44\transformed\jetified-glide-4.16.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-appcheck:17.1.2] C:\Users\Shubrit\.gradle\caches\transforms-3\6a7774d64e8304c8e381a6f30946addc\transformed\jetified-firebase-appcheck-17.1.2\AndroidManifest.xml:15:1-34:12
 MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\Shubrit\.gradle\caches\transforms-3\c6a47b42b84a60983718c700f4ae4e58\transformed\jetified-firebase-common-ktx-20.4.2\AndroidManifest.xml:2:1-18:12
@@ -23,26 +24,32 @@ MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\Shubrit\
 MERGED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Shubrit\.gradle\caches\transforms-3\d019571ef2abaad77d1edd8a6671d4e0\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:15:1-41:12
 MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\Shubrit\.gradle\caches\transforms-3\3b4f4dd239acfc1e5409d186c5f57a8f\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Shubrit\.gradle\caches\transforms-3\dbcee3e5e1daa1b7fccf2b6dc73eed54\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:17:1-35:12
-MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] C:\Users\Shubrit\.gradle\caches\transforms-3\a90a3b718a860a71313e47b0c744912b\transformed\jetified-play-services-auth-api-phone-17.4.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:2:1-76:12
+MERGED from [com.google.android.gms:play-services-auth:21.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\d759f98139b72a79c15638d2f5ba7e0b\transformed\jetified-play-services-auth-21.1.0\AndroidManifest.xml:17:1-40:12
+MERGED from [com.google.android.gms:play-services-wallet:18.1.3] C:\Users\Shubrit\.gradle\caches\transforms-3\a3c90d36ef038ba50a872dee11ea069e\transformed\jetified-play-services-wallet-18.1.3\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.2] C:\Users\Shubrit\.gradle\caches\transforms-3\5e205341a69d9e5a6958fc4413ef0f8c\transformed\jetified-play-services-auth-api-phone-18.0.2\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-database-collection:18.0.1] C:\Users\Shubrit\.gradle\caches\transforms-3\f7ca55ba346648812cbe184fc66f38d5\transformed\jetified-firebase-database-collection-18.0.1\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-appcheck-interop:17.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\ff70ac15c18a74ff093d35c1a2f860fd\transformed\jetified-firebase-appcheck-interop-17.1.0\AndroidManifest.xml:15:1-23:12
-MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\d1874ddb2fd4f75328b3dd679af5d403\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.10] C:\Users\Shubrit\.gradle\caches\transforms-3\eb320e308e1173d096f617c51ad5e00b\transformed\jetified-play-services-auth-base-18.0.10\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-fido:20.0.1] C:\Users\Shubrit\.gradle\caches\transforms-3\c9963fee36a593860e27e041f0afa80c\transformed\jetified-play-services-fido-20.0.1\AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-identity:17.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\3ecc06a20c66d191a679b6386f77f2ef\transformed\jetified-play-services-identity-17.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\6767f5611a04352894c224a55f577fb4\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:17:1-38:12
+MERGED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\Shubrit\.gradle\caches\transforms-3\df2f3d0ef404ad600f8a0f906cc5fb9d\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:16:1-24:12
 MERGED from [com.google.android.recaptcha:recaptcha:18.4.0] C:\Users\Shubrit\.gradle\caches\transforms-3\09809f145d6826f337b3fdb252753ab2\transformed\jetified-recaptcha-18.4.0\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.play:integrity:1.2.0] C:\Users\Shubrit\.gradle\caches\transforms-3\6b5f1b43cd57f304c00395cb928ce802\transformed\jetified-integrity-1.2.0\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.activity:activity:1.8.0] C:\Users\Shubrit\.gradle\caches\transforms-3\17d77a0d32016f8e23f9b39b93d004ae\transformed\jetified-activity-1.8.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\92b6267eb0637c86331ba239f62b1afc\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\35bd6714dae97a597f7ed755e42bfd02\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\fcc7b66039ffe974159b520e79729a5c\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\03cccda6eb059d622c3088df989384af\transformed\loader-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\Shubrit\.gradle\caches\transforms-3\c7e8dbf91d7ff1b4b05f086737ed2879\transformed\jetified-savedstate-1.2.1\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Shubrit\.gradle\caches\transforms-3\1baa870ab29f9133906af488daced467\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] C:\Users\Shubrit\.gradle\caches\transforms-3\388ae5badce0efd01531dae11b85abfc\transformed\lifecycle-livedata-core-2.6.1\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] C:\Users\Shubrit\.gradle\caches\transforms-3\cbeb76cce667d5274e0ef93e8aef7f08\transformed\lifecycle-livedata-2.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Shubrit\.gradle\caches\transforms-3\1baa870ab29f9133906af488daced467\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] C:\Users\Shubrit\.gradle\caches\transforms-3\aae29d372876e0a3117c5f6a77edb51e\transformed\lifecycle-viewmodel-2.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] C:\Users\Shubrit\.gradle\caches\transforms-3\709ce4ad7b462f5e68d5bb24267dfe2b\transformed\lifecycle-runtime-2.6.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] C:\Users\Shubrit\.gradle\caches\transforms-3\905c2409299d5f98f8dae357da38c951\transformed\jetified-lifecycle-viewmodel-savedstate-2.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\4509675200ad382dd790a75e483bab48\transformed\jetified-play-services-tasks-18.1.0\AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\Shubrit\.gradle\caches\transforms-3\5070b0b4118ee8cac214a2c2ee78048e\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:16:1-26:12
-MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\Shubrit\.gradle\caches\transforms-3\185ca06b09f9d584d4bed7e5b4930298\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.5.7] C:\Users\Shubrit\.gradle\caches\transforms-3\6f2fb8049f384e82605466b52490fef2\transformed\fragment-1.5.7\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.8.0] C:\Users\Shubrit\.gradle\caches\transforms-3\17d77a0d32016f8e23f9b39b93d004ae\transformed\jetified-activity-1.8.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Shubrit\.gradle\caches\transforms-3\2b672b3536062f8fac622b6286f1a091\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\16d5ff228d36dd69f143ce57c6af84bd\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.transition:transition:1.2.0] C:\Users\Shubrit\.gradle\caches\transforms-3\75765192978f2baa5f783c89df9cc25f\transformed\transition-1.2.0\AndroidManifest.xml:17:1-24:12
@@ -70,6 +77,7 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\Shubrit\.gradle\caches\transfo
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\Shubrit\.gradle\caches\transforms-3\95e4e2f7300664618d6d177b21df8f10\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
 MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\Shubrit\.gradle\caches\transforms-3\e79c4b813da35584dbbbd70ac633c436\transformed\jetified-grpc-android-1.57.2\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\c14fc690ccd0a1afc23bf961bac33017\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:2:1-11:12
+MERGED from [com.razorpay:core:1.0.18] C:\Users\Shubrit\.gradle\caches\transforms-3\17b6db8a4a80a50102f1802ebf6ea9c0\transformed\jetified-core-1.0.18\AndroidManifest.xml:2:1-46:12
 	package
 		INJECTED from C:\college project\APP-main\app\src\main\AndroidManifest.xml
 	android:versionName
@@ -88,8 +96,14 @@ MERGED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\Shubrit\.g
 MERGED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\Shubrit\.gradle\caches\transforms-3\da8819f64e28f43278c3961a1a14b09e\transformed\jetified-firebase-firestore-24.10.2\AndroidManifest.xml:11:5-67
 MERGED from [com.google.firebase:firebase-storage:20.3.0] C:\Users\Shubrit\.gradle\caches\transforms-3\cc71cbf2132731959004fbe3f1fcb305\transformed\jetified-firebase-storage-20.3.0\AndroidManifest.xml:24:5-67
 MERGED from [com.google.firebase:firebase-storage:20.3.0] C:\Users\Shubrit\.gradle\caches\transforms-3\cc71cbf2132731959004fbe3f1fcb305\transformed\jetified-firebase-storage-20.3.0\AndroidManifest.xml:24:5-67
+MERGED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:8:5-67
+MERGED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:8:5-67
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\6767f5611a04352894c224a55f577fb4\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\6767f5611a04352894c224a55f577fb4\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:24:5-67
 MERGED from [com.google.android.recaptcha:recaptcha:18.4.0] C:\Users\Shubrit\.gradle\caches\transforms-3\09809f145d6826f337b3fdb252753ab2\transformed\jetified-recaptcha-18.4.0\AndroidManifest.xml:7:5-67
 MERGED from [com.google.android.recaptcha:recaptcha:18.4.0] C:\Users\Shubrit\.gradle\caches\transforms-3\09809f145d6826f337b3fdb252753ab2\transformed\jetified-recaptcha-18.4.0\AndroidManifest.xml:7:5-67
+MERGED from [com.razorpay:core:1.0.18] C:\Users\Shubrit\.gradle\caches\transforms-3\17b6db8a4a80a50102f1802ebf6ea9c0\transformed\jetified-core-1.0.18\AndroidManifest.xml:7:5-67
+MERGED from [com.razorpay:core:1.0.18] C:\Users\Shubrit\.gradle\caches\transforms-3\17b6db8a4a80a50102f1802ebf6ea9c0\transformed\jetified-core-1.0.18\AndroidManifest.xml:7:5-67
 	android:name
 		ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:6:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
@@ -100,15 +114,19 @@ MERGED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\Shubrit\.g
 MERGED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\Shubrit\.gradle\caches\transforms-3\da8819f64e28f43278c3961a1a14b09e\transformed\jetified-firebase-firestore-24.10.2\AndroidManifest.xml:10:5-79
 MERGED from [com.google.firebase:firebase-storage:20.3.0] C:\Users\Shubrit\.gradle\caches\transforms-3\cc71cbf2132731959004fbe3f1fcb305\transformed\jetified-firebase-storage-20.3.0\AndroidManifest.xml:23:5-79
 MERGED from [com.google.firebase:firebase-storage:20.3.0] C:\Users\Shubrit\.gradle\caches\transforms-3\cc71cbf2132731959004fbe3f1fcb305\transformed\jetified-firebase-storage-20.3.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\6767f5611a04352894c224a55f577fb4\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\6767f5611a04352894c224a55f577fb4\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:23:5-79
 MERGED from [com.google.android.recaptcha:recaptcha:18.4.0] C:\Users\Shubrit\.gradle\caches\transforms-3\09809f145d6826f337b3fdb252753ab2\transformed\jetified-recaptcha-18.4.0\AndroidManifest.xml:8:5-79
 MERGED from [com.google.android.recaptcha:recaptcha:18.4.0] C:\Users\Shubrit\.gradle\caches\transforms-3\09809f145d6826f337b3fdb252753ab2\transformed\jetified-recaptcha-18.4.0\AndroidManifest.xml:8:5-79
 MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\Shubrit\.gradle\caches\transforms-3\e79c4b813da35584dbbbd70ac633c436\transformed\jetified-grpc-android-1.57.2\AndroidManifest.xml:7:5-79
 MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\Shubrit\.gradle\caches\transforms-3\e79c4b813da35584dbbbd70ac633c436\transformed\jetified-grpc-android-1.57.2\AndroidManifest.xml:7:5-79
+MERGED from [com.razorpay:core:1.0.18] C:\Users\Shubrit\.gradle\caches\transforms-3\17b6db8a4a80a50102f1802ebf6ea9c0\transformed\jetified-core-1.0.18\AndroidManifest.xml:8:5-79
+MERGED from [com.razorpay:core:1.0.18] C:\Users\Shubrit\.gradle\caches\transforms-3\17b6db8a4a80a50102f1802ebf6ea9c0\transformed\jetified-core-1.0.18\AndroidManifest.xml:8:5-79
 	android:name
 		ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:7:22-76
 application
-ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:9:5-74:19
-INJECTED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:9:5-74:19
+ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:9:5-82:19
+INJECTED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:9:5-82:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\Shubrit\.gradle\caches\transforms-3\c4516863a6091d4c9ba15b190e296f48\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\Shubrit\.gradle\caches\transforms-3\c4516863a6091d4c9ba15b190e296f48\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Shubrit\.gradle\caches\transforms-3\1ea281c3562e25a425f624d9cf8cf3af\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -129,10 +147,20 @@ MERGED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Shubrit\.gradl
 MERGED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Shubrit\.gradle\caches\transforms-3\d019571ef2abaad77d1edd8a6671d4e0\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:22:5-39:19
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Shubrit\.gradle\caches\transforms-3\dbcee3e5e1daa1b7fccf2b6dc73eed54\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Shubrit\.gradle\caches\transforms-3\dbcee3e5e1daa1b7fccf2b6dc73eed54\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
+MERGED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:46:5-74:19
+MERGED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:46:5-74:19
+MERGED from [com.google.android.gms:play-services-auth:21.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\d759f98139b72a79c15638d2f5ba7e0b\transformed\jetified-play-services-auth-21.1.0\AndroidManifest.xml:22:5-38:19
+MERGED from [com.google.android.gms:play-services-auth:21.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\d759f98139b72a79c15638d2f5ba7e0b\transformed\jetified-play-services-auth-21.1.0\AndroidManifest.xml:22:5-38:19
 MERGED from [com.google.firebase:firebase-appcheck-interop:17.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\ff70ac15c18a74ff093d35c1a2f860fd\transformed\jetified-firebase-appcheck-interop-17.1.0\AndroidManifest.xml:21:5-20
 MERGED from [com.google.firebase:firebase-appcheck-interop:17.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\ff70ac15c18a74ff093d35c1a2f860fd\transformed\jetified-firebase-appcheck-interop-17.1.0\AndroidManifest.xml:21:5-20
-MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\d1874ddb2fd4f75328b3dd679af5d403\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:19:5-23:19
-MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\d1874ddb2fd4f75328b3dd679af5d403\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-fido:20.0.1] C:\Users\Shubrit\.gradle\caches\transforms-3\c9963fee36a593860e27e041f0afa80c\transformed\jetified-play-services-fido-20.0.1\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-fido:20.0.1] C:\Users\Shubrit\.gradle\caches\transforms-3\c9963fee36a593860e27e041f0afa80c\transformed\jetified-play-services-fido-20.0.1\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-identity:17.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\3ecc06a20c66d191a679b6386f77f2ef\transformed\jetified-play-services-identity-17.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-identity:17.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\3ecc06a20c66d191a679b6386f77f2ef\transformed\jetified-play-services-identity-17.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\6767f5611a04352894c224a55f577fb4\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:30:5-36:19
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\6767f5611a04352894c224a55f577fb4\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:30:5-36:19
+MERGED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\Shubrit\.gradle\caches\transforms-3\df2f3d0ef404ad600f8a0f906cc5fb9d\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\Shubrit\.gradle\caches\transforms-3\df2f3d0ef404ad600f8a0f906cc5fb9d\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:19:5-23:19
 MERGED from [com.google.android.play:integrity:1.2.0] C:\Users\Shubrit\.gradle\caches\transforms-3\6b5f1b43cd57f304c00395cb928ce802\transformed\jetified-integrity-1.2.0\AndroidManifest.xml:5:5-6:19
 MERGED from [com.google.android.play:integrity:1.2.0] C:\Users\Shubrit\.gradle\caches\transforms-3\6b5f1b43cd57f304c00395cb928ce802\transformed\jetified-integrity-1.2.0\AndroidManifest.xml:5:5-6:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Shubrit\.gradle\caches\transforms-3\1baa870ab29f9133906af488daced467\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:23:5-33:19
@@ -149,6 +177,8 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Shubrit\.gradle\ca
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Shubrit\.gradle\caches\transforms-3\f4ca90143c218eed34f5d216a32853df\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Shubrit\.gradle\caches\transforms-3\585beb8879da8872a9d10abcea92c426\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Shubrit\.gradle\caches\transforms-3\585beb8879da8872a9d10abcea92c426\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [com.razorpay:core:1.0.18] C:\Users\Shubrit\.gradle\caches\transforms-3\17b6db8a4a80a50102f1802ebf6ea9c0\transformed\jetified-core-1.0.18\AndroidManifest.xml:24:5-44:19
+MERGED from [com.razorpay:core:1.0.18] C:\Users\Shubrit\.gradle\caches\transforms-3\17b6db8a4a80a50102f1802ebf6ea9c0\transformed\jetified-core-1.0.18\AndroidManifest.xml:24:5-44:19
 	android:extractNativeLibs
 		INJECTED from C:\college project\APP-main\app\src\main\AndroidManifest.xml
 	android:appComponentFactory
@@ -249,20 +279,32 @@ ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:60:9-63:
 		ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:62:13-37
 	android:name
 		ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:61:13-53
+activity#com.razorpay.PaymentActivity
+ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:66:9-71:45
+	android:exported
+		ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:69:13-37
+	android:configChanges
+		ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:68:13-83
+	android:theme
+		ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:70:13-83
+	tools:replace
+		ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:71:13-42
+	android:name
+		ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:67:13-56
 activity#com.canteen.foodordering.admin.AdminMainActivity
-ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:66:9-68:40
+ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:74:9-76:40
 	android:exported
-		ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:68:13-37
+		ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:76:13-37
 	android:name
-		ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:67:13-52
+		ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:75:13-52
 activity#com.canteen.foodordering.admin.AddEditFoodActivity
-ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:69:9-72:69
+ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:77:9-80:69
 	android:parentActivityName
-		ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:72:13-66
+		ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:80:13-66
 	android:exported
-		ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:71:13-37
+		ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:79:13-37
 	android:name
-		ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:70:13-54
+		ADDED from C:\college project\APP-main\app\src\main\AndroidManifest.xml:78:13-54
 uses-sdk
 INJECTED from C:\college project\APP-main\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\college project\APP-main\app\src\main\AndroidManifest.xml
@@ -291,6 +333,8 @@ MERGED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\Shubrit\.g
 MERGED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\Shubrit\.gradle\caches\transforms-3\da8819f64e28f43278c3961a1a14b09e\transformed\jetified-firebase-firestore-24.10.2\AndroidManifest.xml:6:5-44
 MERGED from [com.google.firebase:firebase-storage:20.3.0] C:\Users\Shubrit\.gradle\caches\transforms-3\cc71cbf2132731959004fbe3f1fcb305\transformed\jetified-firebase-storage-20.3.0\AndroidManifest.xml:19:5-44
 MERGED from [com.google.firebase:firebase-storage:20.3.0] C:\Users\Shubrit\.gradle\caches\transforms-3\cc71cbf2132731959004fbe3f1fcb305\transformed\jetified-firebase-storage-20.3.0\AndroidManifest.xml:19:5-44
+MERGED from [com.razorpay:checkout:1.6.40] C:\Users\Shubrit\.gradle\caches\transforms-3\06d2bf75d0430af6a22825e1c51f9ffa\transformed\jetified-checkout-1.6.40\AndroidManifest.xml:5:5-44
+MERGED from [com.razorpay:checkout:1.6.40] C:\Users\Shubrit\.gradle\caches\transforms-3\06d2bf75d0430af6a22825e1c51f9ffa\transformed\jetified-checkout-1.6.40\AndroidManifest.xml:5:5-44
 MERGED from [com.github.bumptech.glide:glide:4.16.0] C:\Users\Shubrit\.gradle\caches\transforms-3\97c1d3210c58e982f90a398e09486d44\transformed\jetified-glide-4.16.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.bumptech.glide:glide:4.16.0] C:\Users\Shubrit\.gradle\caches\transforms-3\97c1d3210c58e982f90a398e09486d44\transformed\jetified-glide-4.16.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:firebase-appcheck:17.1.2] C:\Users\Shubrit\.gradle\caches\transforms-3\6a7774d64e8304c8e381a6f30946addc\transformed\jetified-firebase-appcheck-17.1.2\AndroidManifest.xml:18:5-44
@@ -305,34 +349,44 @@ MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\Shubrit\.gradle
 MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\Shubrit\.gradle\caches\transforms-3\3b4f4dd239acfc1e5409d186c5f57a8f\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Shubrit\.gradle\caches\transforms-3\dbcee3e5e1daa1b7fccf2b6dc73eed54\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:21:5-44
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Shubrit\.gradle\caches\transforms-3\dbcee3e5e1daa1b7fccf2b6dc73eed54\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:21:5-44
-MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] C:\Users\Shubrit\.gradle\caches\transforms-3\a90a3b718a860a71313e47b0c744912b\transformed\jetified-play-services-auth-api-phone-17.4.0\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] C:\Users\Shubrit\.gradle\caches\transforms-3\a90a3b718a860a71313e47b0c744912b\transformed\jetified-play-services-auth-api-phone-17.4.0\AndroidManifest.xml:5:5-44
+MERGED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:6:5-44
+MERGED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:6:5-44
+MERGED from [com.google.android.gms:play-services-auth:21.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\d759f98139b72a79c15638d2f5ba7e0b\transformed\jetified-play-services-auth-21.1.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:21.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\d759f98139b72a79c15638d2f5ba7e0b\transformed\jetified-play-services-auth-21.1.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-wallet:18.1.3] C:\Users\Shubrit\.gradle\caches\transforms-3\a3c90d36ef038ba50a872dee11ea069e\transformed\jetified-play-services-wallet-18.1.3\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-wallet:18.1.3] C:\Users\Shubrit\.gradle\caches\transforms-3\a3c90d36ef038ba50a872dee11ea069e\transformed\jetified-play-services-wallet-18.1.3\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.2] C:\Users\Shubrit\.gradle\caches\transforms-3\5e205341a69d9e5a6958fc4413ef0f8c\transformed\jetified-play-services-auth-api-phone-18.0.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.2] C:\Users\Shubrit\.gradle\caches\transforms-3\5e205341a69d9e5a6958fc4413ef0f8c\transformed\jetified-play-services-auth-api-phone-18.0.2\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-database-collection:18.0.1] C:\Users\Shubrit\.gradle\caches\transforms-3\f7ca55ba346648812cbe184fc66f38d5\transformed\jetified-firebase-database-collection-18.0.1\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:firebase-database-collection:18.0.1] C:\Users\Shubrit\.gradle\caches\transforms-3\f7ca55ba346648812cbe184fc66f38d5\transformed\jetified-firebase-database-collection-18.0.1\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:firebase-appcheck-interop:17.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\ff70ac15c18a74ff093d35c1a2f860fd\transformed\jetified-firebase-appcheck-interop-17.1.0\AndroidManifest.xml:18:5-44
 MERGED from [com.google.firebase:firebase-appcheck-interop:17.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\ff70ac15c18a74ff093d35c1a2f860fd\transformed\jetified-firebase-appcheck-interop-17.1.0\AndroidManifest.xml:18:5-44
-MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\d1874ddb2fd4f75328b3dd679af5d403\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:18:5-43
-MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\d1874ddb2fd4f75328b3dd679af5d403\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.10] C:\Users\Shubrit\.gradle\caches\transforms-3\eb320e308e1173d096f617c51ad5e00b\transformed\jetified-play-services-auth-base-18.0.10\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.10] C:\Users\Shubrit\.gradle\caches\transforms-3\eb320e308e1173d096f617c51ad5e00b\transformed\jetified-play-services-auth-base-18.0.10\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-fido:20.0.1] C:\Users\Shubrit\.gradle\caches\transforms-3\c9963fee36a593860e27e041f0afa80c\transformed\jetified-play-services-fido-20.0.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-fido:20.0.1] C:\Users\Shubrit\.gradle\caches\transforms-3\c9963fee36a593860e27e041f0afa80c\transformed\jetified-play-services-fido-20.0.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-identity:17.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\3ecc06a20c66d191a679b6386f77f2ef\transformed\jetified-play-services-identity-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-identity:17.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\3ecc06a20c66d191a679b6386f77f2ef\transformed\jetified-play-services-identity-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\6767f5611a04352894c224a55f577fb4\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\6767f5611a04352894c224a55f577fb4\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\Shubrit\.gradle\caches\transforms-3\df2f3d0ef404ad600f8a0f906cc5fb9d\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\Shubrit\.gradle\caches\transforms-3\df2f3d0ef404ad600f8a0f906cc5fb9d\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:18:5-43
 MERGED from [com.google.android.recaptcha:recaptcha:18.4.0] C:\Users\Shubrit\.gradle\caches\transforms-3\09809f145d6826f337b3fdb252753ab2\transformed\jetified-recaptcha-18.4.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.recaptcha:recaptcha:18.4.0] C:\Users\Shubrit\.gradle\caches\transforms-3\09809f145d6826f337b3fdb252753ab2\transformed\jetified-recaptcha-18.4.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.play:integrity:1.2.0] C:\Users\Shubrit\.gradle\caches\transforms-3\6b5f1b43cd57f304c00395cb928ce802\transformed\jetified-integrity-1.2.0\AndroidManifest.xml:4:5-44
 MERGED from [com.google.android.play:integrity:1.2.0] C:\Users\Shubrit\.gradle\caches\transforms-3\6b5f1b43cd57f304c00395cb928ce802\transformed\jetified-integrity-1.2.0\AndroidManifest.xml:4:5-44
-MERGED from [androidx.activity:activity:1.8.0] C:\Users\Shubrit\.gradle\caches\transforms-3\17d77a0d32016f8e23f9b39b93d004ae\transformed\jetified-activity-1.8.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.activity:activity:1.8.0] C:\Users\Shubrit\.gradle\caches\transforms-3\17d77a0d32016f8e23f9b39b93d004ae\transformed\jetified-activity-1.8.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\92b6267eb0637c86331ba239f62b1afc\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\92b6267eb0637c86331ba239f62b1afc\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\35bd6714dae97a597f7ed755e42bfd02\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\35bd6714dae97a597f7ed755e42bfd02\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\fcc7b66039ffe974159b520e79729a5c\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\fcc7b66039ffe974159b520e79729a5c\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\03cccda6eb059d622c3088df989384af\transformed\loader-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.loader:loader:1.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\03cccda6eb059d622c3088df989384af\transformed\loader-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\Shubrit\.gradle\caches\transforms-3\c7e8dbf91d7ff1b4b05f086737ed2879\transformed\jetified-savedstate-1.2.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\Shubrit\.gradle\caches\transforms-3\c7e8dbf91d7ff1b4b05f086737ed2879\transformed\jetified-savedstate-1.2.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Shubrit\.gradle\caches\transforms-3\1baa870ab29f9133906af488daced467\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:21:5-44
-MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Shubrit\.gradle\caches\transforms-3\1baa870ab29f9133906af488daced467\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:21:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] C:\Users\Shubrit\.gradle\caches\transforms-3\388ae5badce0efd01531dae11b85abfc\transformed\lifecycle-livedata-core-2.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] C:\Users\Shubrit\.gradle\caches\transforms-3\388ae5badce0efd01531dae11b85abfc\transformed\lifecycle-livedata-core-2.6.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] C:\Users\Shubrit\.gradle\caches\transforms-3\cbeb76cce667d5274e0ef93e8aef7f08\transformed\lifecycle-livedata-2.6.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] C:\Users\Shubrit\.gradle\caches\transforms-3\cbeb76cce667d5274e0ef93e8aef7f08\transformed\lifecycle-livedata-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Shubrit\.gradle\caches\transforms-3\1baa870ab29f9133906af488daced467\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Shubrit\.gradle\caches\transforms-3\1baa870ab29f9133906af488daced467\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:21:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] C:\Users\Shubrit\.gradle\caches\transforms-3\aae29d372876e0a3117c5f6a77edb51e\transformed\lifecycle-viewmodel-2.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] C:\Users\Shubrit\.gradle\caches\transforms-3\aae29d372876e0a3117c5f6a77edb51e\transformed\lifecycle-viewmodel-2.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] C:\Users\Shubrit\.gradle\caches\transforms-3\709ce4ad7b462f5e68d5bb24267dfe2b\transformed\lifecycle-runtime-2.6.1\AndroidManifest.xml:5:5-44
@@ -343,8 +397,10 @@ MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\Shubrit
 MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\4509675200ad382dd790a75e483bab48\transformed\jetified-play-services-tasks-18.1.0\AndroidManifest.xml:4:5-43
 MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\Shubrit\.gradle\caches\transforms-3\5070b0b4118ee8cac214a2c2ee78048e\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:18:5-43
 MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\Shubrit\.gradle\caches\transforms-3\5070b0b4118ee8cac214a2c2ee78048e\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:18:5-43
-MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\Shubrit\.gradle\caches\transforms-3\185ca06b09f9d584d4bed7e5b4930298\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\Shubrit\.gradle\caches\transforms-3\185ca06b09f9d584d4bed7e5b4930298\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.7] C:\Users\Shubrit\.gradle\caches\transforms-3\6f2fb8049f384e82605466b52490fef2\transformed\fragment-1.5.7\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.7] C:\Users\Shubrit\.gradle\caches\transforms-3\6f2fb8049f384e82605466b52490fef2\transformed\fragment-1.5.7\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.8.0] C:\Users\Shubrit\.gradle\caches\transforms-3\17d77a0d32016f8e23f9b39b93d004ae\transformed\jetified-activity-1.8.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.0] C:\Users\Shubrit\.gradle\caches\transforms-3\17d77a0d32016f8e23f9b39b93d004ae\transformed\jetified-activity-1.8.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Shubrit\.gradle\caches\transforms-3\2b672b3536062f8fac622b6286f1a091\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Shubrit\.gradle\caches\transforms-3\2b672b3536062f8fac622b6286f1a091\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\16d5ff228d36dd69f143ce57c6af84bd\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -399,6 +455,8 @@ MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\Shubrit\.gradle\caches\transf
 MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\Shubrit\.gradle\caches\transforms-3\e79c4b813da35584dbbbd70ac633c436\transformed\jetified-grpc-android-1.57.2\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\c14fc690ccd0a1afc23bf961bac33017\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\c14fc690ccd0a1afc23bf961bac33017\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.razorpay:core:1.0.18] C:\Users\Shubrit\.gradle\caches\transforms-3\17b6db8a4a80a50102f1802ebf6ea9c0\transformed\jetified-core-1.0.18\AndroidManifest.xml:5:5-44
+MERGED from [com.razorpay:core:1.0.18] C:\Users\Shubrit\.gradle\caches\transforms-3\17b6db8a4a80a50102f1802ebf6ea9c0\transformed\jetified-core-1.0.18\AndroidManifest.xml:5:5-44
 	tools:overrideLibrary
 		ADDED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\Shubrit\.gradle\caches\transforms-3\2d922cba6258b46eecc4d0307b29d646\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:23:9-61
 	android:targetSdkVersion
@@ -541,6 +599,8 @@ ADDED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Shubrit\.gradle
 		ADDED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Shubrit\.gradle\caches\transforms-3\d019571ef2abaad77d1edd8a6671d4e0\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:36:17-109
 provider#androidx.startup.InitializationProvider
 ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Shubrit\.gradle\caches\transforms-3\dbcee3e5e1daa1b7fccf2b6dc73eed54\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+MERGED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:57:9-68:20
+MERGED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:57:9-68:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Shubrit\.gradle\caches\transforms-3\1baa870ab29f9133906af488daced467\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:24:9-32:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Shubrit\.gradle\caches\transforms-3\1baa870ab29f9133906af488daced467\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:24:9-32:20
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Shubrit\.gradle\caches\transforms-3\fda0b303d1970346be7c48040ee9a8e9\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:24:9-32:20
@@ -561,14 +621,110 @@ ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Shubrit\.gradle\caches\transf
 		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Shubrit\.gradle\caches\transforms-3\dbcee3e5e1daa1b7fccf2b6dc73eed54\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
 	android:name
 		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Shubrit\.gradle\caches\transforms-3\dbcee3e5e1daa1b7fccf2b6dc73eed54\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
-activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\d1874ddb2fd4f75328b3dd679af5d403\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
-	android:exported
-		ADDED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\d1874ddb2fd4f75328b3dd679af5d403\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:22:19-43
-	android:theme
-		ADDED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\d1874ddb2fd4f75328b3dd679af5d403\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:21:19-78
+uses-permission#android.permission.NFC
+ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:9:5-62
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\d1874ddb2fd4f75328b3dd679af5d403\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:20:19-85
+		ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:9:22-59
+uses-feature#android.hardware.nfc
+ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:11:5-13:36
+	android:required
+		ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:13:9-33
+	android:name
+		ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:12:9-44
+queries
+ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:15:5-44:15
+MERGED from [com.razorpay:core:1.0.18] C:\Users\Shubrit\.gradle\caches\transforms-3\17b6db8a4a80a50102f1802ebf6ea9c0\transformed\jetified-core-1.0.18\AndroidManifest.xml:16:5-22:15
+MERGED from [com.razorpay:core:1.0.18] C:\Users\Shubrit\.gradle\caches\transforms-3\17b6db8a4a80a50102f1802ebf6ea9c0\transformed\jetified-core-1.0.18\AndroidManifest.xml:16:5-22:15
+intent#action:name:android.intent.action.VIEW+data:mimeType:*/*+data:scheme:*
+ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:16:9-22:18
+intent#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+data:host:pay+data:mimeType:*/*+data:scheme:upi
+ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:23:9-32:18
+intent#action:name:android.intent.action.MAIN
+ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:33:9-35:18
+intent#action:name:android.intent.action.SEND+data:mimeType:*/*
+ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:36:9-40:18
+action#android.intent.action.SEND
+ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:37:13-65
+	android:name
+		ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:37:21-62
+intent#action:name:rzp.device_token.share
+ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:41:9-43:18
+action#rzp.device_token.share
+ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:42:13-61
+	android:name
+		ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:42:21-58
+activity#com.razorpay.CheckoutActivity
+ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:47:9-55:20
+	android:exported
+		ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:50:13-37
+	android:configChanges
+		ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:49:13-83
+	android:theme
+		ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:51:13-49
+	android:name
+		ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:48:13-57
+intent-filter#action:name:android.intent.action.MAIN
+ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:52:13-54:29
+meta-data#com.razorpay.RazorpayInitializer
+ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:62:13-64:52
+	android:value
+		ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:64:17-49
+	android:name
+		ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:63:17-64
+meta-data#com.razorpay.CoreInitializer
+ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:65:13-67:52
+	android:value
+		ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:67:17-49
+	android:name
+		ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:66:17-60
+activity#com.razorpay.MagicXActivity
+ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:70:9-73:75
+	android:exported
+		ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:72:13-37
+	android:theme
+		ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:73:13-72
+	android:name
+		ADDED from [com.razorpay:standard-core:1.7.18] C:\Users\Shubrit\.gradle\caches\transforms-3\e3a4c291fd8ab4f071f68f57a337c947\transformed\jetified-standard-core-1.7.18\AndroidManifest.xml:71:13-55
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:21.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\d759f98139b72a79c15638d2f5ba7e0b\transformed\jetified-play-services-auth-21.1.0\AndroidManifest.xml:23:9-27:75
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:21.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\d759f98139b72a79c15638d2f5ba7e0b\transformed\jetified-play-services-auth-21.1.0\AndroidManifest.xml:25:13-46
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:21.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\d759f98139b72a79c15638d2f5ba7e0b\transformed\jetified-play-services-auth-21.1.0\AndroidManifest.xml:26:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:21.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\d759f98139b72a79c15638d2f5ba7e0b\transformed\jetified-play-services-auth-21.1.0\AndroidManifest.xml:27:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:21.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\d759f98139b72a79c15638d2f5ba7e0b\transformed\jetified-play-services-auth-21.1.0\AndroidManifest.xml:24:13-93
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:21.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\d759f98139b72a79c15638d2f5ba7e0b\transformed\jetified-play-services-auth-21.1.0\AndroidManifest.xml:33:9-37:51
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:21.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\d759f98139b72a79c15638d2f5ba7e0b\transformed\jetified-play-services-auth-21.1.0\AndroidManifest.xml:35:13-36
+	android:visibleToInstantApps
+		ADDED from [com.google.android.gms:play-services-auth:21.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\d759f98139b72a79c15638d2f5ba7e0b\transformed\jetified-play-services-auth-21.1.0\AndroidManifest.xml:37:13-48
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:21.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\d759f98139b72a79c15638d2f5ba7e0b\transformed\jetified-play-services-auth-21.1.0\AndroidManifest.xml:36:13-107
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:21.1.0] C:\Users\Shubrit\.gradle\caches\transforms-3\d759f98139b72a79c15638d2f5ba7e0b\transformed\jetified-play-services-auth-21.1.0\AndroidManifest.xml:34:13-89
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\6767f5611a04352894c224a55f577fb4\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:26:5-28:35
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\6767f5611a04352894c224a55f577fb4\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:27:9-41
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\6767f5611a04352894c224a55f577fb4\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
+uses-library#org.apache.http.legacy
+ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\6767f5611a04352894c224a55f577fb4\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\6767f5611a04352894c224a55f577fb4\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Shubrit\.gradle\caches\transforms-3\6767f5611a04352894c224a55f577fb4\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\Shubrit\.gradle\caches\transforms-3\df2f3d0ef404ad600f8a0f906cc5fb9d\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\Shubrit\.gradle\caches\transforms-3\df2f3d0ef404ad600f8a0f906cc5fb9d\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\Shubrit\.gradle\caches\transforms-3\df2f3d0ef404ad600f8a0f906cc5fb9d\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\Shubrit\.gradle\caches\transforms-3\df2f3d0ef404ad600f8a0f906cc5fb9d\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:20:19-85
 uses-permission#com.google.android.providers.gsf.permission.READ_GSERVICES
 ADDED from [com.google.android.recaptcha:recaptcha:18.4.0] C:\Users\Shubrit\.gradle\caches\transforms-3\09809f145d6826f337b3fdb252753ab2\transformed\jetified-recaptcha-18.4.0\AndroidManifest.xml:9:5-98
 	android:name
@@ -647,3 +803,27 @@ action#androidx.profileinstaller.action.BENCHMARK_OPERATION
 ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Shubrit\.gradle\caches\transforms-3\fda0b303d1970346be7c48040ee9a8e9\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
 	android:name
 		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Shubrit\.gradle\caches\transforms-3\fda0b303d1970346be7c48040ee9a8e9\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+uses-permission#android.permission.READ_BASIC_PHONE_STATE
+ADDED from [com.razorpay:core:1.0.18] C:\Users\Shubrit\.gradle\caches\transforms-3\17b6db8a4a80a50102f1802ebf6ea9c0\transformed\jetified-core-1.0.18\AndroidManifest.xml:10:5-81
+	android:name
+		ADDED from [com.razorpay:core:1.0.18] C:\Users\Shubrit\.gradle\caches\transforms-3\17b6db8a4a80a50102f1802ebf6ea9c0\transformed\jetified-core-1.0.18\AndroidManifest.xml:10:22-78
+intent#action:name:android.intent.action.VIEW+data:scheme:upi
+ADDED from [com.razorpay:core:1.0.18] C:\Users\Shubrit\.gradle\caches\transforms-3\17b6db8a4a80a50102f1802ebf6ea9c0\transformed\jetified-core-1.0.18\AndroidManifest.xml:17:9-21:18
+activity#com.razorpay.DeeplinkActivity
+ADDED from [com.razorpay:core:1.0.18] C:\Users\Shubrit\.gradle\caches\transforms-3\17b6db8a4a80a50102f1802ebf6ea9c0\transformed\jetified-core-1.0.18\AndroidManifest.xml:25:9-39:20
+	android:exported
+		ADDED from [com.razorpay:core:1.0.18] C:\Users\Shubrit\.gradle\caches\transforms-3\17b6db8a4a80a50102f1802ebf6ea9c0\transformed\jetified-core-1.0.18\AndroidManifest.xml:27:13-36
+	android:theme
+		ADDED from [com.razorpay:core:1.0.18] C:\Users\Shubrit\.gradle\caches\transforms-3\17b6db8a4a80a50102f1802ebf6ea9c0\transformed\jetified-core-1.0.18\AndroidManifest.xml:28:13-49
+	android:name
+		ADDED from [com.razorpay:core:1.0.18] C:\Users\Shubrit\.gradle\caches\transforms-3\17b6db8a4a80a50102f1802ebf6ea9c0\transformed\jetified-core-1.0.18\AndroidManifest.xml:26:13-57
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:${applicationId}+data:scheme:razorpay
+ADDED from [com.razorpay:core:1.0.18] C:\Users\Shubrit\.gradle\caches\transforms-3\17b6db8a4a80a50102f1802ebf6ea9c0\transformed\jetified-core-1.0.18\AndroidManifest.xml:29:13-38:29
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:com.canteen.foodordering+data:scheme:razorpay
+ADDED from [com.razorpay:core:1.0.18] C:\Users\Shubrit\.gradle\caches\transforms-3\17b6db8a4a80a50102f1802ebf6ea9c0\transformed\jetified-core-1.0.18\AndroidManifest.xml:29:13-38:29
+receiver#com.razorpay.UpiChooserSelectionReceiver
+ADDED from [com.razorpay:core:1.0.18] C:\Users\Shubrit\.gradle\caches\transforms-3\17b6db8a4a80a50102f1802ebf6ea9c0\transformed\jetified-core-1.0.18\AndroidManifest.xml:41:9-43:40
+	android:exported
+		ADDED from [com.razorpay:core:1.0.18] C:\Users\Shubrit\.gradle\caches\transforms-3\17b6db8a4a80a50102f1802ebf6ea9c0\transformed\jetified-core-1.0.18\AndroidManifest.xml:43:13-37
+	android:name
+		ADDED from [com.razorpay:core:1.0.18] C:\Users\Shubrit\.gradle\caches\transforms-3\17b6db8a4a80a50102f1802ebf6ea9c0\transformed\jetified-core-1.0.18\AndroidManifest.xml:42:13-68

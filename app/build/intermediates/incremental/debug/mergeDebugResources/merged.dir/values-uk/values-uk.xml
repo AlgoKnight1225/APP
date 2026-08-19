@@ -125,4 +125,5 @@
     <string name="password_toggle_content_description">Показувати пароль</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Пошук"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="wallet_buy_button_place_holder">Купити за допомогою Google</string>
 </resources>
