@@ -4,7 +4,6 @@ package com.canteen.foodordering.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -19,9 +18,7 @@ import androidx.viewbinding.ViewBindings;
 import com.canteen.foodordering.R;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
-import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -34,34 +31,13 @@ public final class ActivityCheckoutBinding implements ViewBinding {
   public final MaterialCardView bottomBar;
 
   @NonNull
-  public final MaterialButton btnApplyCoupon;
-
-  @NonNull
   public final ImageButton btnBack;
 
   @NonNull
   public final MaterialButton btnConfirmOrder;
 
   @NonNull
-  public final MaterialButton btnRemoveCoupon;
-
-  @NonNull
-  public final MaterialCardView cardCoupon;
-
-  @NonNull
-  public final ChipGroup chipGroupCoupons;
-
-  @NonNull
-  public final TextInputEditText etCouponCode;
-
-  @NonNull
   public final TextInputEditText etPickupNotes;
-
-  @NonNull
-  public final LinearLayout layoutAppliedCoupon;
-
-  @NonNull
-  public final LinearLayout layoutCouponInput;
 
   @NonNull
   public final ProgressBar progressBar;
@@ -82,34 +58,13 @@ public final class ActivityCheckoutBinding implements ViewBinding {
   public final RadioGroup rgPayment;
 
   @NonNull
-  public final RelativeLayout rowDiscount;
-
-  @NonNull
-  public final HorizontalScrollView scrollCouponSuggestions;
-
-  @NonNull
-  public final TextInputLayout tilCouponCode;
-
-  @NonNull
   public final LinearLayout topBar;
 
   @NonNull
   public final TextView tvAddress;
 
   @NonNull
-  public final TextView tvAppliedCouponCode;
-
-  @NonNull
-  public final TextView tvAppliedCouponSavings;
-
-  @NonNull
   public final TextView tvCheckoutTotal;
-
-  @NonNull
-  public final TextView tvCouponStatus;
-
-  @NonNull
-  public final TextView tvCouponSuggestionsLabel;
 
   @NonNull
   public final TextView tvCustomerName;
@@ -117,74 +72,29 @@ public final class ActivityCheckoutBinding implements ViewBinding {
   @NonNull
   public final TextView tvCustomerPhone;
 
-  @NonNull
-  public final TextView tvDiscountLabel;
-
-  @NonNull
-  public final TextView tvSummaryDiscount;
-
-  @NonNull
-  public final TextView tvSummaryGrandTotal;
-
-  @NonNull
-  public final TextView tvSummarySubtotal;
-
-  @NonNull
-  public final TextView tvSummaryTax;
-
   private ActivityCheckoutBinding(@NonNull RelativeLayout rootView,
-      @NonNull MaterialCardView bottomBar, @NonNull MaterialButton btnApplyCoupon,
-      @NonNull ImageButton btnBack, @NonNull MaterialButton btnConfirmOrder,
-      @NonNull MaterialButton btnRemoveCoupon, @NonNull MaterialCardView cardCoupon,
-      @NonNull ChipGroup chipGroupCoupons, @NonNull TextInputEditText etCouponCode,
-      @NonNull TextInputEditText etPickupNotes, @NonNull LinearLayout layoutAppliedCoupon,
-      @NonNull LinearLayout layoutCouponInput, @NonNull ProgressBar progressBar,
-      @NonNull RadioButton rbCard, @NonNull RadioButton rbCash, @NonNull RadioButton rbUPI,
-      @NonNull RadioButton rbWallet, @NonNull RadioGroup rgPayment,
-      @NonNull RelativeLayout rowDiscount, @NonNull HorizontalScrollView scrollCouponSuggestions,
-      @NonNull TextInputLayout tilCouponCode, @NonNull LinearLayout topBar,
-      @NonNull TextView tvAddress, @NonNull TextView tvAppliedCouponCode,
-      @NonNull TextView tvAppliedCouponSavings, @NonNull TextView tvCheckoutTotal,
-      @NonNull TextView tvCouponStatus, @NonNull TextView tvCouponSuggestionsLabel,
-      @NonNull TextView tvCustomerName, @NonNull TextView tvCustomerPhone,
-      @NonNull TextView tvDiscountLabel, @NonNull TextView tvSummaryDiscount,
-      @NonNull TextView tvSummaryGrandTotal, @NonNull TextView tvSummarySubtotal,
-      @NonNull TextView tvSummaryTax) {
+      @NonNull MaterialCardView bottomBar, @NonNull ImageButton btnBack,
+      @NonNull MaterialButton btnConfirmOrder, @NonNull TextInputEditText etPickupNotes,
+      @NonNull ProgressBar progressBar, @NonNull RadioButton rbCard, @NonNull RadioButton rbCash,
+      @NonNull RadioButton rbUPI, @NonNull RadioButton rbWallet, @NonNull RadioGroup rgPayment,
+      @NonNull LinearLayout topBar, @NonNull TextView tvAddress, @NonNull TextView tvCheckoutTotal,
+      @NonNull TextView tvCustomerName, @NonNull TextView tvCustomerPhone) {
     this.rootView = rootView;
     this.bottomBar = bottomBar;
-    this.btnApplyCoupon = btnApplyCoupon;
     this.btnBack = btnBack;
     this.btnConfirmOrder = btnConfirmOrder;
-    this.btnRemoveCoupon = btnRemoveCoupon;
-    this.cardCoupon = cardCoupon;
-    this.chipGroupCoupons = chipGroupCoupons;
-    this.etCouponCode = etCouponCode;
     this.etPickupNotes = etPickupNotes;
-    this.layoutAppliedCoupon = layoutAppliedCoupon;
-    this.layoutCouponInput = layoutCouponInput;
     this.progressBar = progressBar;
     this.rbCard = rbCard;
     this.rbCash = rbCash;
     this.rbUPI = rbUPI;
     this.rbWallet = rbWallet;
     this.rgPayment = rgPayment;
-    this.rowDiscount = rowDiscount;
-    this.scrollCouponSuggestions = scrollCouponSuggestions;
-    this.tilCouponCode = tilCouponCode;
     this.topBar = topBar;
     this.tvAddress = tvAddress;
-    this.tvAppliedCouponCode = tvAppliedCouponCode;
-    this.tvAppliedCouponSavings = tvAppliedCouponSavings;
     this.tvCheckoutTotal = tvCheckoutTotal;
-    this.tvCouponStatus = tvCouponStatus;
-    this.tvCouponSuggestionsLabel = tvCouponSuggestionsLabel;
     this.tvCustomerName = tvCustomerName;
     this.tvCustomerPhone = tvCustomerPhone;
-    this.tvDiscountLabel = tvDiscountLabel;
-    this.tvSummaryDiscount = tvSummaryDiscount;
-    this.tvSummaryGrandTotal = tvSummaryGrandTotal;
-    this.tvSummarySubtotal = tvSummarySubtotal;
-    this.tvSummaryTax = tvSummaryTax;
   }
 
   @Override
@@ -220,12 +130,6 @@ public final class ActivityCheckoutBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btnApplyCoupon;
-      MaterialButton btnApplyCoupon = ViewBindings.findChildViewById(rootView, id);
-      if (btnApplyCoupon == null) {
-        break missingId;
-      }
-
       id = R.id.btnBack;
       ImageButton btnBack = ViewBindings.findChildViewById(rootView, id);
       if (btnBack == null) {
@@ -238,45 +142,9 @@ public final class ActivityCheckoutBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btnRemoveCoupon;
-      MaterialButton btnRemoveCoupon = ViewBindings.findChildViewById(rootView, id);
-      if (btnRemoveCoupon == null) {
-        break missingId;
-      }
-
-      id = R.id.cardCoupon;
-      MaterialCardView cardCoupon = ViewBindings.findChildViewById(rootView, id);
-      if (cardCoupon == null) {
-        break missingId;
-      }
-
-      id = R.id.chipGroupCoupons;
-      ChipGroup chipGroupCoupons = ViewBindings.findChildViewById(rootView, id);
-      if (chipGroupCoupons == null) {
-        break missingId;
-      }
-
-      id = R.id.etCouponCode;
-      TextInputEditText etCouponCode = ViewBindings.findChildViewById(rootView, id);
-      if (etCouponCode == null) {
-        break missingId;
-      }
-
       id = R.id.etPickupNotes;
       TextInputEditText etPickupNotes = ViewBindings.findChildViewById(rootView, id);
       if (etPickupNotes == null) {
-        break missingId;
-      }
-
-      id = R.id.layoutAppliedCoupon;
-      LinearLayout layoutAppliedCoupon = ViewBindings.findChildViewById(rootView, id);
-      if (layoutAppliedCoupon == null) {
-        break missingId;
-      }
-
-      id = R.id.layoutCouponInput;
-      LinearLayout layoutCouponInput = ViewBindings.findChildViewById(rootView, id);
-      if (layoutCouponInput == null) {
         break missingId;
       }
 
@@ -316,24 +184,6 @@ public final class ActivityCheckoutBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.rowDiscount;
-      RelativeLayout rowDiscount = ViewBindings.findChildViewById(rootView, id);
-      if (rowDiscount == null) {
-        break missingId;
-      }
-
-      id = R.id.scrollCouponSuggestions;
-      HorizontalScrollView scrollCouponSuggestions = ViewBindings.findChildViewById(rootView, id);
-      if (scrollCouponSuggestions == null) {
-        break missingId;
-      }
-
-      id = R.id.tilCouponCode;
-      TextInputLayout tilCouponCode = ViewBindings.findChildViewById(rootView, id);
-      if (tilCouponCode == null) {
-        break missingId;
-      }
-
       id = R.id.topBar;
       LinearLayout topBar = ViewBindings.findChildViewById(rootView, id);
       if (topBar == null) {
@@ -346,33 +196,9 @@ public final class ActivityCheckoutBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvAppliedCouponCode;
-      TextView tvAppliedCouponCode = ViewBindings.findChildViewById(rootView, id);
-      if (tvAppliedCouponCode == null) {
-        break missingId;
-      }
-
-      id = R.id.tvAppliedCouponSavings;
-      TextView tvAppliedCouponSavings = ViewBindings.findChildViewById(rootView, id);
-      if (tvAppliedCouponSavings == null) {
-        break missingId;
-      }
-
       id = R.id.tvCheckoutTotal;
       TextView tvCheckoutTotal = ViewBindings.findChildViewById(rootView, id);
       if (tvCheckoutTotal == null) {
-        break missingId;
-      }
-
-      id = R.id.tvCouponStatus;
-      TextView tvCouponStatus = ViewBindings.findChildViewById(rootView, id);
-      if (tvCouponStatus == null) {
-        break missingId;
-      }
-
-      id = R.id.tvCouponSuggestionsLabel;
-      TextView tvCouponSuggestionsLabel = ViewBindings.findChildViewById(rootView, id);
-      if (tvCouponSuggestionsLabel == null) {
         break missingId;
       }
 
@@ -388,43 +214,9 @@ public final class ActivityCheckoutBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvDiscountLabel;
-      TextView tvDiscountLabel = ViewBindings.findChildViewById(rootView, id);
-      if (tvDiscountLabel == null) {
-        break missingId;
-      }
-
-      id = R.id.tvSummaryDiscount;
-      TextView tvSummaryDiscount = ViewBindings.findChildViewById(rootView, id);
-      if (tvSummaryDiscount == null) {
-        break missingId;
-      }
-
-      id = R.id.tvSummaryGrandTotal;
-      TextView tvSummaryGrandTotal = ViewBindings.findChildViewById(rootView, id);
-      if (tvSummaryGrandTotal == null) {
-        break missingId;
-      }
-
-      id = R.id.tvSummarySubtotal;
-      TextView tvSummarySubtotal = ViewBindings.findChildViewById(rootView, id);
-      if (tvSummarySubtotal == null) {
-        break missingId;
-      }
-
-      id = R.id.tvSummaryTax;
-      TextView tvSummaryTax = ViewBindings.findChildViewById(rootView, id);
-      if (tvSummaryTax == null) {
-        break missingId;
-      }
-
-      return new ActivityCheckoutBinding((RelativeLayout) rootView, bottomBar, btnApplyCoupon,
-          btnBack, btnConfirmOrder, btnRemoveCoupon, cardCoupon, chipGroupCoupons, etCouponCode,
-          etPickupNotes, layoutAppliedCoupon, layoutCouponInput, progressBar, rbCard, rbCash, rbUPI,
-          rbWallet, rgPayment, rowDiscount, scrollCouponSuggestions, tilCouponCode, topBar,
-          tvAddress, tvAppliedCouponCode, tvAppliedCouponSavings, tvCheckoutTotal, tvCouponStatus,
-          tvCouponSuggestionsLabel, tvCustomerName, tvCustomerPhone, tvDiscountLabel,
-          tvSummaryDiscount, tvSummaryGrandTotal, tvSummarySubtotal, tvSummaryTax);
+      return new ActivityCheckoutBinding((RelativeLayout) rootView, bottomBar, btnBack,
+          btnConfirmOrder, etPickupNotes, progressBar, rbCard, rbCash, rbUPI, rbWallet, rgPayment,
+          topBar, tvAddress, tvCheckoutTotal, tvCustomerName, tvCustomerPhone);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

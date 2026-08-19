@@ -4,13 +4,13 @@ package com.canteen.foodordering.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -29,7 +29,7 @@ import java.lang.String;
 
 public final class ActivityAddEditFoodBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final ScrollView rootView;
 
   @NonNull
   public final ImageButton btnBack;
@@ -91,7 +91,7 @@ public final class ActivityAddEditFoodBinding implements ViewBinding {
   @NonNull
   public final TextView tvTitle;
 
-  private ActivityAddEditFoodBinding(@NonNull FrameLayout rootView, @NonNull ImageButton btnBack,
+  private ActivityAddEditFoodBinding(@NonNull ScrollView rootView, @NonNull ImageButton btnBack,
       @NonNull MaterialButton btnSave, @NonNull MaterialCardView cardImagePreview,
       @NonNull TextInputEditText etDescription, @NonNull TextInputEditText etImageUrl,
       @NonNull TextInputEditText etName, @NonNull TextInputEditText etPrice,
@@ -126,7 +126,7 @@ public final class ActivityAddEditFoodBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public FrameLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -271,7 +271,7 @@ public final class ActivityAddEditFoodBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityAddEditFoodBinding((FrameLayout) rootView, btnBack, btnSave,
+      return new ActivityAddEditFoodBinding((ScrollView) rootView, btnBack, btnSave,
           cardImagePreview, etDescription, etImageUrl, etName, etPrice, headerLayout,
           ivProductPreview, progressBar, rbNonVeg, rbVeg, rgVegType, spinnerCategory,
           switchAvailable, tilDescription, tilFoodName, tilImageUrl, tilPrice, tvTitle);

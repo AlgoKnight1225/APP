@@ -7,10 +7,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.canteen.foodordering.R;
 import com.canteen.foodordering.databinding.ItemFoodStudentBinding;
 import com.canteen.foodordering.models.FoodItem;
-import com.canteen.foodordering.utils.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -83,7 +83,15 @@ public class StudentFoodAdapter extends RecyclerView.Adapter<StudentFoodAdapter.
                 binding.tvDiscountBadge.setVisibility(View.GONE);
             }
 
-            ImageLoader.loadFoodImage(binding.ivFoodImage, item.getImageUrl());
+            if (item.getImageUrl() != null && !item.getImageUrl().isEmpty()) {
+                Glide.with(binding.getRoot().getContext())
+                        .load(item.getImageUrl())
+                        .placeholder(R.drawable.ic_food_placeholder)
+                        .error(R.drawable.ic_food_placeholder)
+                        .into(binding.ivFoodImage);
+            } else {
+                binding.ivFoodImage.setImageResource(R.drawable.ic_food_placeholder);
+            }
 
             if (item.isFavorite()) {
                 binding.btnFavorite.setImageResource(R.drawable.ic_favorite_filled);

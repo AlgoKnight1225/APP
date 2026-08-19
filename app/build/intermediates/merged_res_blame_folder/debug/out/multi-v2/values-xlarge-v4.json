@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.canteen.foodordering.app-mergeDebugResources-41:/values-xlarge-v4/values-xlarge-v4.xml",
+            "outputFile": "com.canteen.foodordering.app-mergeDebugResources-3:/values-xlarge-v4/values-xlarge-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Shubrit\\.gradle\\caches\\transforms-3\\2521cf9838b7877393f3d2311b665d55\\transformed\\appcompat-1.6.1\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
+                    "source": "C:\\Users\\nikhi\\.gradle\\caches\\transforms-3\\2521cf9838b7877393f3d2311b665d55\\transformed\\appcompat-1.6.1\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",

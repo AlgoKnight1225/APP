@@ -17,16 +17,12 @@ public class Order implements Serializable {
     private long timestamp;
     private String notes;
     private String paymentMethod;
-    private String couponCode;
-    private double discount;
 
     public Order() {
         this.items = new ArrayList<>();
         this.status = "PENDING";
         this.timestamp = System.currentTimeMillis();
         this.paymentMethod = "Cash";
-        this.couponCode = "";
-        this.discount = 0.0;
     }
 
     public Order(String orderId, String studentId, String studentName, String studentPhone,
@@ -143,21 +139,5 @@ public class Order implements Serializable {
 
     public void setPaymentMethod(String paymentMethod) {
         this.paymentMethod = paymentMethod;
-    }
-
-    public String getCouponCode() {
-        return couponCode;
-    }
-
-    public void setCouponCode(String couponCode) {
-        this.couponCode = couponCode;
-    }
-
-    public double getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(double discount) {
-        this.discount = discount;
     }
 }

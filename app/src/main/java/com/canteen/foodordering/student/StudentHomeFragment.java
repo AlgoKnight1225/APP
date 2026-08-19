@@ -64,10 +64,6 @@ public class StudentHomeFragment extends Fragment implements StudentFoodAdapter.
         setupFoodRecyclerView();
         setupSearch();
         observeViewModels();
-
-        binding.fabCart.setOnClickListener(v -> {
-            startActivity(new android.content.Intent(requireContext(), CartActivity.class));
-        });
     }
 
     private void setupPromoBanners() {
@@ -81,72 +77,22 @@ public class StudentHomeFragment extends Fragment implements StudentFoodAdapter.
         binding.rvPromoBanners.setAdapter(promoBannerAdapter);
     }
 
-    private List<Category> getInitialCategoryList() {
+    private void setupCategoriesRecyclerView() {
         List<Category> categoryList = new ArrayList<>();
         for (int i = 0; i < Constants.CATEGORIES.length; i++) {
             categoryList.add(new Category(String.valueOf(i), Constants.CATEGORIES[i], i == 0));
         }
-        return categoryList;
-    }
 
-    private void setupCategoriesRecyclerView() {
-        categoryAdapter = new CategoryAdapter(getInitialCategoryList(), category -> {
+        categoryAdapter = new CategoryAdapter(categoryList, category -> {
             selectedCategory = category.getName();
             filterAndDisplayItems();
         });
-        binding.rvCategories.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false));
         binding.rvCategories.setAdapter(categoryAdapter);
-    }
-
-    private void updateCategoriesList(List<FoodItem> foodItems) {
-        List<String> dynamicCategories = new ArrayList<>();
-        dynamicCategories.add("All");
-
-        // Add standard categories from Constants (which matches Admin)
-        for (String cat : Constants.CATEGORIES) {
-            if (!"All".equalsIgnoreCase(cat) && !containsCategory(dynamicCategories, cat)) {
-                dynamicCategories.add(cat);
-            }
-        }
-
-        // Dynamically add any additional categories created in food items
-        if (foodItems != null) {
-            for (FoodItem item : foodItems) {
-                if (item.getCategory() != null && !item.getCategory().trim().isEmpty()) {
-                    String cat = item.getCategory().trim();
-                    if (!containsCategory(dynamicCategories, cat)) {
-                        dynamicCategories.add(cat);
-                    }
-                }
-            }
-        }
-
-        List<Category> categoryList = new ArrayList<>();
-        for (int i = 0; i < dynamicCategories.size(); i++) {
-            String catName = dynamicCategories.get(i);
-            boolean isSelected = catName.equalsIgnoreCase(selectedCategory);
-            categoryList.add(new Category(String.valueOf(i), catName, isSelected));
-        }
-
-        if (categoryAdapter != null) {
-            categoryAdapter.setCategories(categoryList, selectedCategory);
-        }
-    }
-
-    private boolean containsCategory(List<String> list, String value) {
-        if (list == null || value == null) return false;
-        for (String item : list) {
-            if (item != null && (item.equalsIgnoreCase(value) || isCategoryMatch(item, value))) {
-                return true;
-            }
-        }
-        return false;
     }
 
     private void setupFoodRecyclerView() {
         foodAdapter = new StudentFoodAdapter(this);
         binding.rvFoodItems.setLayoutManager(new GridLayoutManager(requireContext(), 2));
-        binding.rvFoodItems.setNestedScrollingEnabled(false);
         binding.rvFoodItems.setAdapter(foodAdapter);
     }
 
@@ -184,39 +130,8 @@ public class StudentHomeFragment extends Fragment implements StudentFoodAdapter.
         foodViewModel.getFoodItemsLiveData().observe(getViewLifecycleOwner(), items -> {
             binding.progressBar.setVisibility(View.GONE);
             allFoodItems = items != null ? items : new ArrayList<>();
-            updateCategoriesList(allFoodItems);
             filterAndDisplayItems();
         });
-    }
-
-    private boolean isCategoryMatch(String itemCategory, String targetCategory) {
-        if (itemCategory == null || targetCategory == null) return false;
-        String item = itemCategory.trim().toLowerCase();
-        String target = targetCategory.trim().toLowerCase();
-
-        if (item.equals(target)) return true;
-
-        // Handle "Dessert" vs "Desserts"
-        if ((target.equals("dessert") && item.equals("desserts")) ||
-            (target.equals("desserts") && item.equals("dessert"))) {
-            return true;
-        }
-
-        // Handle "Coffee & Drinks" matching "Drinks", "Coffee", "Beverages"
-        if (target.contains("coffee") && (target.contains("drinks") || target.contains("drink"))) {
-            if (item.contains("coffee") || item.contains("drink") || item.contains("beverage")) {
-                return true;
-            }
-        }
-
-        // Handle "Snacks & Bakery" matching "Snacks", "Bakery"
-        if (target.contains("snacks") && target.contains("bakery")) {
-            if (item.contains("snack") || item.contains("bakery")) {
-                return true;
-            }
-        }
-
-        return false;
     }
 
     private void filterAndDisplayItems() {
@@ -225,7 +140,7 @@ public class StudentHomeFragment extends Fragment implements StudentFoodAdapter.
             if (!item.isAvailable()) continue;
 
             boolean matchesCategory = "All".equalsIgnoreCase(selectedCategory) ||
-                    isCategoryMatch(item.getCategory(), selectedCategory);
+                    (item.getCategory() != null && item.getCategory().equalsIgnoreCase(selectedCategory));
 
             boolean matchesSearch = searchQuery.isEmpty() ||
                     (item.getName() != null && item.getName().toLowerCase().contains(searchQuery)) ||
@@ -238,18 +153,7 @@ public class StudentHomeFragment extends Fragment implements StudentFoodAdapter.
         }
 
         foodAdapter.setFoodList(filtered);
-        if (filtered.isEmpty()) {
-            if (!"All".equalsIgnoreCase(selectedCategory)) {
-                binding.layoutEmpty.setText("No food items available in \"" + selectedCategory + "\".");
-            } else if (!searchQuery.isEmpty()) {
-                binding.layoutEmpty.setText("No food items matching \"" + searchQuery + "\".");
-            } else {
-                binding.layoutEmpty.setText("No food items available at this time.");
-            }
-            binding.layoutEmpty.setVisibility(View.VISIBLE);
-        } else {
-            binding.layoutEmpty.setVisibility(View.GONE);
-        }
+        binding.layoutEmpty.setVisibility(filtered.isEmpty() ? View.VISIBLE : View.GONE);
     }
 
     @Override

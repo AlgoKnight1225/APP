@@ -7,11 +7,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.bumptech.glide.Glide;
 import com.canteen.foodordering.R;
 import com.canteen.foodordering.databinding.ActivityProductDetailBinding;
 import com.canteen.foodordering.models.CartItem;
 import com.canteen.foodordering.models.FoodItem;
-import com.canteen.foodordering.utils.ImageLoader;
 import com.canteen.foodordering.viewmodels.AuthViewModel;
 import com.canteen.foodordering.viewmodels.CartViewModel;
 import com.canteen.foodordering.viewmodels.FoodViewModel;
@@ -66,7 +66,15 @@ public class ProductDetailActivity extends AppCompatActivity {
         binding.tvDetailReviews.setText("(98 Reviews)");
         binding.tvBasePrice.setText(String.format("₹%.2f", foodItem.getPrice()));
 
-        ImageLoader.loadFoodImage(binding.ivDetailHeroImage, foodItem.getImageUrl());
+        if (foodItem.getImageUrl() != null && !foodItem.getImageUrl().isEmpty()) {
+            Glide.with(this)
+                    .load(foodItem.getImageUrl())
+                    .placeholder(R.drawable.ic_food_placeholder)
+                    .error(R.drawable.ic_food_placeholder)
+                    .into(binding.ivDetailHeroImage);
+        } else {
+            binding.ivDetailHeroImage.setImageResource(R.drawable.ic_food_placeholder);
+        }
 
         updateCalculatedPrice();
     }

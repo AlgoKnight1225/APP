@@ -51,7 +51,6 @@ color transparent
 color white
 drawable bg_banner_gradient
 drawable bg_button_primary
-drawable bg_cafe_theme
 drawable bg_card_starbucks
 drawable bg_chip_selected
 drawable bg_chip_unselected
@@ -77,7 +76,6 @@ drawable ic_filter
 drawable ic_food_placeholder
 drawable ic_history
 drawable ic_launcher_background
-drawable ic_local_offer
 drawable ic_logout
 drawable ic_minus
 drawable ic_non_veg
@@ -94,12 +92,10 @@ drawable ic_veg
 drawable logo
 id adminBottomNavigation
 id adminFragmentContainer
-id appBarLayout
 id bottomBar
 id bottomNavigation
 id btnAddToCart
 id btnAdminLogout
-id btnApplyCoupon
 id btnBack
 id btnBackHome
 id btnChangePassword
@@ -115,23 +111,19 @@ id btnMinus
 id btnPlus
 id btnProceedCheckout
 id btnRegister
-id btnRemoveCoupon
 id btnSave
 id btnSaveAdminPhoto
 id btnSaveProfile
 id btnSendReset
 id cardCartBar
 id cardCheckoutSummary
-id cardCoupon
 id cardImagePreview
 id cbExtraCheese
 id cbExtraMushroom
-id chipGroupCoupons
 id chipGroupStatus
 id divider1
 id etAdminProfileImageUrl
 id etConfirmPassword
-id etCouponCode
 id etDescription
 id etEditName
 id etEditPhone
@@ -165,13 +157,9 @@ id ivStepReady
 id ivStudentProfilePic
 id ivUserAvatar
 id ivVegIndicator
-id layoutAppliedCoupon
 id layoutCategoryChip
-id layoutCollapsibleBanner
-id layoutCouponInput
 id layoutEmpty
 id layoutEmptyCart
-id layoutStickySearch
 id lineConfirmedToPreparing
 id linePlacedToConfirmed
 id linePreparingToReady
@@ -184,7 +172,6 @@ id nav_manage_menu
 id nav_orders
 id nav_profile
 id nav_users
-id nestedScrollView
 id progressBar
 id rbCard
 id rbCash
@@ -198,7 +185,6 @@ id rbWallet
 id rgPayment
 id rgSize
 id rgVegType
-id rowDiscount
 id rvAdminFood
 id rvAdminOrders
 id rvAdminUsers
@@ -208,7 +194,6 @@ id rvFavorites
 id rvFoodItems
 id rvPromoBanners
 id rvStudentOrders
-id scrollCouponSuggestions
 id spinnerCategory
 id spinnerStatus
 id stepCompleted
@@ -219,7 +204,6 @@ id swipeRefreshAdminOrders
 id swipeRefreshLayout
 id switchAvailable
 id tilConfirmPassword
-id tilCouponCode
 id tilDescription
 id tilEmail
 id tilFoodName
@@ -241,8 +225,6 @@ id tvAdminOrderDate
 id tvAdminOrderId
 id tvAdminOrderItems
 id tvAdminOrderTotal
-id tvAppliedCouponCode
-id tvAppliedCouponSavings
 id tvBackToLogin
 id tvBasePrice
 id tvCartBadgeItems
@@ -252,8 +234,6 @@ id tvCartFoodPrice
 id tvCartItemPrice
 id tvCategoryName
 id tvCheckoutTotal
-id tvCouponStatus
-id tvCouponSuggestionsLabel
 id tvCustomerName
 id tvCustomerNamePhone
 id tvCustomerPhone
@@ -262,7 +242,6 @@ id tvDetailName
 id tvDetailRating
 id tvDetailReviews
 id tvDiscountBadge
-id tvDiscountLabel
 id tvFoodCategory
 id tvFoodDescription
 id tvFoodName
@@ -297,10 +276,6 @@ id tvStepPreparing
 id tvStepReady
 id tvStudentHeaderName
 id tvSubtotal
-id tvSummaryDiscount
-id tvSummaryGrandTotal
-id tvSummarySubtotal
-id tvSummaryTax
 id tvTagline
 id tvTax
 id tvTitle

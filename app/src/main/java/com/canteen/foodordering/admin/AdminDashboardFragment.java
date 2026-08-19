@@ -12,12 +12,12 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.bumptech.glide.Glide;
 import com.canteen.foodordering.R;
 import com.canteen.foodordering.auth.LoginActivity;
 import com.canteen.foodordering.databinding.FragmentAdminDashboardBinding;
 import com.canteen.foodordering.models.Order;
 import com.canteen.foodordering.models.User;
-import com.canteen.foodordering.utils.ImageLoader;
 import com.canteen.foodordering.viewmodels.AuthViewModel;
 import com.canteen.foodordering.viewmodels.FoodViewModel;
 import com.canteen.foodordering.viewmodels.OrderViewModel;
@@ -64,7 +64,11 @@ public class AdminDashboardFragment extends Fragment {
 
                 if (!currentImage.trim().isEmpty() && isAdded()) {
                     binding.ivAdminProfilePic.setImageTintList(null);
-                    ImageLoader.loadImage(binding.ivAdminProfilePic, currentImage, R.drawable.ic_person);
+                    Glide.with(requireContext())
+                            .load(currentImage.trim())
+                            .placeholder(R.drawable.ic_person)
+                            .error(R.drawable.ic_person)
+                            .into(binding.ivAdminProfilePic);
                 } else {
                     binding.ivAdminProfilePic.setImageResource(R.drawable.ic_person);
                 }
@@ -117,7 +121,11 @@ public class AdminDashboardFragment extends Fragment {
 
         if (!photoUrl.isEmpty() && isAdded()) {
             binding.ivAdminProfilePic.setImageTintList(null);
-            ImageLoader.loadImage(binding.ivAdminProfilePic, photoUrl, R.drawable.ic_person);
+            Glide.with(requireContext())
+                    .load(photoUrl)
+                    .placeholder(R.drawable.ic_person)
+                    .error(R.drawable.ic_person)
+                    .into(binding.ivAdminProfilePic);
         } else {
             binding.ivAdminProfilePic.setImageResource(R.drawable.ic_person);
         }

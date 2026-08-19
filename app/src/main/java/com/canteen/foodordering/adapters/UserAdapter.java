@@ -7,10 +7,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.canteen.foodordering.R;
 import com.canteen.foodordering.databinding.ItemUserAdminBinding;
 import com.canteen.foodordering.models.User;
-import com.canteen.foodordering.utils.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,7 +60,11 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
 
             if (user.getProfileImage() != null && !user.getProfileImage().trim().isEmpty()) {
                 binding.ivUserAvatar.setImageTintList(null);
-                ImageLoader.loadImage(binding.ivUserAvatar, user.getProfileImage(), R.drawable.ic_person);
+                Glide.with(binding.getRoot().getContext())
+                        .load(user.getProfileImage().trim())
+                        .placeholder(R.drawable.ic_person)
+                        .error(R.drawable.ic_person)
+                        .into(binding.ivUserAvatar);
             } else {
                 binding.ivUserAvatar.setImageResource(R.drawable.ic_person);
             }

@@ -11,60 +11,13 @@
     <!-- Permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.NFC" />
-
-    <uses-feature
-        android:name="android.hardware.nfc"
-        android:required="false" />
-
-    <queries>
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-
-            <data
-                android:mimeType="*/*"
-                android:scheme="*" />
-        </intent>
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-
-            <category android:name="android.intent.category.BROWSABLE" />
-
-            <data
-                android:host="pay"
-                android:mimeType="*/*"
-                android:scheme="upi" />
-        </intent>
-        <intent>
-            <action android:name="android.intent.action.MAIN" />
-        </intent>
-        <intent>
-            <action android:name="android.intent.action.SEND" />
-
-            <data android:mimeType="*/*" />
-        </intent>
-        <intent>
-            <action android:name="rzp.device_token.share" />
-        </intent>
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-
-            <data android:scheme="upi" />
-        </intent>
-    </queries>
-
-    <uses-feature
-        android:glEsVersion="0x00020000"
-        android:required="true" />
-
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
     <permission
         android:name="com.canteen.foodordering.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.canteen.foodordering.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- Normal permission, automatically granted on API 23+ -->
-    <uses-permission android:name="android.permission.READ_BASIC_PHONE_STATE" />
+    <uses-permission android:name="com.canteen.foodordering.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
         android:allowBackup="true"
@@ -77,8 +30,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.CollegeCanteenFoodOrderingApp"
-        android:usesCleartextTraffic="true" >
+        android:theme="@style/Theme.CollegeCanteenFoodOrderingApp" >
 
         <!-- Splash Activity (Launcher) -->
         <activity
@@ -124,13 +76,6 @@
             android:name="com.canteen.foodordering.student.CheckoutActivity"
             android:exported="false"
             android:parentActivityName="com.canteen.foodordering.student.CartActivity" />
-
-        <!-- Razorpay Payment Activity (required by Razorpay SDK) -->
-        <activity
-            android:name="com.razorpay.PaymentActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:exported="false"
-            android:theme="@style/Theme.CollegeCanteenFoodOrderingApp.NoActionBar" />
 
         <!-- Admin Flow Activities -->
         <activity
@@ -224,49 +169,12 @@
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"
                 android:value="androidx.startup" />
             <meta-data
-                android:name="com.razorpay.RazorpayInitializer"
-                android:value="androidx.startup" />
-            <meta-data
-                android:name="com.razorpay.CoreInitializer"
-                android:value="androidx.startup" />
-            <meta-data
                 android:name="androidx.lifecycle.ProcessLifecycleInitializer"
                 android:value="androidx.startup" />
             <meta-data
                 android:name="androidx.profileinstaller.ProfileInstallerInitializer"
                 android:value="androidx.startup" />
         </provider>
-
-        <activity
-            android:name="com.razorpay.CheckoutActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:exported="false"
-            android:theme="@style/CheckoutTheme" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.razorpay.MagicXActivity"
-            android:exported="false"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity
-            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-            android:excludeFromRecents="true"
-            android:exported="false"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <!--
-            Service handling Google Sign-In user revocation. For apps that do not integrate with
-            Google Sign-In, this service will never be started.
-        -->
-        <service
-            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-            android:exported="true"
-            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-            android:visibleToInstantApps="true" /> <!-- Needs to be explicitly declared on P+ -->
-        <uses-library
-            android:name="org.apache.http.legacy"
-            android:required="false" />
 
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
@@ -296,26 +204,6 @@
                 <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
             </intent-filter>
         </receiver>
-
-        <activity
-            android:name="com.razorpay.DeeplinkActivity"
-            android:exported="true"
-            android:theme="@style/CheckoutTheme" >
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="com.canteen.foodordering"
-                    android:scheme="razorpay" />
-            </intent-filter>
-        </activity>
-
-        <receiver
-            android:name="com.razorpay.UpiChooserSelectionReceiver"
-            android:exported="false" />
     </application>
 
 </manifest>

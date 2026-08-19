@@ -4,8 +4,8 @@ package com.canteen.foodordering.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,7 +20,7 @@ import java.lang.String;
 
 public final class ActivityForgotPasswordBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final ScrollView rootView;
 
   @NonNull
   public final MaterialButton btnSendReset;
@@ -34,7 +34,7 @@ public final class ActivityForgotPasswordBinding implements ViewBinding {
   @NonNull
   public final TextView tvBackToLogin;
 
-  private ActivityForgotPasswordBinding(@NonNull FrameLayout rootView,
+  private ActivityForgotPasswordBinding(@NonNull ScrollView rootView,
       @NonNull MaterialButton btnSendReset, @NonNull TextInputEditText etEmail,
       @NonNull ProgressBar progressBar, @NonNull TextView tvBackToLogin) {
     this.rootView = rootView;
@@ -46,7 +46,7 @@ public final class ActivityForgotPasswordBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public FrameLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -95,7 +95,7 @@ public final class ActivityForgotPasswordBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityForgotPasswordBinding((FrameLayout) rootView, btnSendReset, etEmail,
+      return new ActivityForgotPasswordBinding((ScrollView) rootView, btnSendReset, etEmail,
           progressBar, tvBackToLogin);
     }
     String missingId = rootView.getResources().getResourceName(id);

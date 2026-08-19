@@ -5,7 +5,6 @@ public class Constants {
     public static final String COLLECTION_USERS = "users";
     public static final String COLLECTION_FOOD = "food_items";
     public static final String COLLECTION_ORDERS = "orders";
-    public static final String COLLECTION_COUPONS = "coupons";
 
     // User Roles
     public static final String ROLE_STUDENT = "student";
@@ -18,6 +17,6 @@ public class Constants {
     public static final String STATUS_COMPLETED = "COMPLETED";
     public static final String STATUS_CANCELLED = "CANCELLED";
 
-    // Food Categories (Used across Admin & Student)
-    public static final String[] CATEGORIES = {"All", "Coffee & Drinks", "Meals", "Snacks & Bakery", "Breakfast", "Dessert"};
+    // Food Categories (Starbucks style)
+    public static final String[] CATEGORIES = {"All", "Coffee & Drinks", "Meals", "Snacks & Bakery", "Breakfast", "Desserts"};
 }

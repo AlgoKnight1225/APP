@@ -4,8 +4,8 @@ package com.canteen.foodordering.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,7 +21,7 @@ import java.lang.String;
 
 public final class ActivityRegisterBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final ScrollView rootView;
 
   @NonNull
   public final MaterialButton btnRegister;
@@ -62,14 +62,13 @@ public final class ActivityRegisterBinding implements ViewBinding {
   @NonNull
   public final TextView tvLoginLink;
 
-  private ActivityRegisterBinding(@NonNull FrameLayout rootView,
-      @NonNull MaterialButton btnRegister, @NonNull TextInputEditText etConfirmPassword,
-      @NonNull TextInputEditText etEmail, @NonNull TextInputEditText etFullName,
-      @NonNull TextInputEditText etPassword, @NonNull TextInputEditText etPhone,
-      @NonNull ProgressBar progressBar, @NonNull TextInputLayout tilConfirmPassword,
-      @NonNull TextInputLayout tilEmail, @NonNull TextInputLayout tilName,
-      @NonNull TextInputLayout tilPassword, @NonNull TextInputLayout tilPhone,
-      @NonNull TextView tvLoginLink) {
+  private ActivityRegisterBinding(@NonNull ScrollView rootView, @NonNull MaterialButton btnRegister,
+      @NonNull TextInputEditText etConfirmPassword, @NonNull TextInputEditText etEmail,
+      @NonNull TextInputEditText etFullName, @NonNull TextInputEditText etPassword,
+      @NonNull TextInputEditText etPhone, @NonNull ProgressBar progressBar,
+      @NonNull TextInputLayout tilConfirmPassword, @NonNull TextInputLayout tilEmail,
+      @NonNull TextInputLayout tilName, @NonNull TextInputLayout tilPassword,
+      @NonNull TextInputLayout tilPhone, @NonNull TextView tvLoginLink) {
     this.rootView = rootView;
     this.btnRegister = btnRegister;
     this.etConfirmPassword = etConfirmPassword;
@@ -88,7 +87,7 @@ public final class ActivityRegisterBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public FrameLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -191,7 +190,7 @@ public final class ActivityRegisterBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityRegisterBinding((FrameLayout) rootView, btnRegister, etConfirmPassword,
+      return new ActivityRegisterBinding((ScrollView) rootView, btnRegister, etConfirmPassword,
           etEmail, etFullName, etPassword, etPhone, progressBar, tilConfirmPassword, tilEmail,
           tilName, tilPassword, tilPhone, tvLoginLink);
     }

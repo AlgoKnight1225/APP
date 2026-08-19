@@ -12,11 +12,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.bumptech.glide.Glide;
 import com.canteen.foodordering.R;
 import com.canteen.foodordering.auth.LoginActivity;
 import com.canteen.foodordering.databinding.FragmentProfileBinding;
 import com.canteen.foodordering.models.User;
-import com.canteen.foodordering.utils.ImageLoader;
 import com.canteen.foodordering.viewmodels.AuthViewModel;
 
 public class StudentProfileFragment extends Fragment {
@@ -60,7 +60,11 @@ public class StudentProfileFragment extends Fragment {
 
                 if (user.getProfileImage() != null && !user.getProfileImage().trim().isEmpty() && isAdded()) {
                     binding.ivStudentProfilePic.setImageTintList(null);
-                    ImageLoader.loadImage(binding.ivStudentProfilePic, user.getProfileImage(), R.drawable.ic_person);
+                    Glide.with(requireContext())
+                            .load(user.getProfileImage().trim())
+                            .placeholder(R.drawable.ic_person)
+                            .error(R.drawable.ic_person)
+                            .into(binding.ivStudentProfilePic);
                 } else {
                     binding.ivStudentProfilePic.setImageResource(R.drawable.ic_person);
                 }

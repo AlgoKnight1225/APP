@@ -12,11 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.canteen.foodordering.R;
 import com.canteen.foodordering.models.Category;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
-    private final List<Category> categories = new ArrayList<>();
+    private final List<Category> categories;
     private final OnCategoryClickListener listener;
     private int selectedPosition = 0;
 
@@ -24,29 +23,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         void onCategoryClick(Category category);
     }
 
-    public CategoryAdapter(List<Category> initialCategories, OnCategoryClickListener listener) {
+    public CategoryAdapter(List<Category> categories, OnCategoryClickListener listener) {
+        this.categories = categories;
         this.listener = listener;
-        if (initialCategories != null) {
-            this.categories.addAll(initialCategories);
-        }
-    }
-
-    public void setCategories(List<Category> newCategories, String currentSelectedCategory) {
-        this.categories.clear();
-        if (newCategories != null) {
-            this.categories.addAll(newCategories);
-        }
-
-        selectedPosition = 0;
-        if (currentSelectedCategory != null) {
-            for (int i = 0; i < categories.size(); i++) {
-                if (categories.get(i).getName().equalsIgnoreCase(currentSelectedCategory)) {
-                    selectedPosition = i;
-                    break;
-                }
-            }
-        }
-        notifyDataSetChanged();
     }
 
     @NonNull
@@ -63,7 +42,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
         if (position == selectedPosition) {
             holder.itemView.setBackgroundResource(R.drawable.bg_chip_selected);
-            holder.tvCategoryName.setTextColor(ContextCompat.getColor(holder.itemView.getContext(), R.color.primary_dark));
+            holder.tvCategoryName.setTextColor(ContextCompat.getColor(holder.itemView.getContext(), R.color.primary));
             holder.ivCategoryIcon.setColorFilter(ContextCompat.getColor(holder.itemView.getContext(), R.color.primary));
         } else {
             holder.itemView.setBackgroundResource(R.drawable.bg_chip_unselected);
@@ -73,14 +52,11 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
         holder.itemView.setOnClickListener(v -> {
             int previousPosition = selectedPosition;
-            int pos = holder.getAdapterPosition();
-            if (pos != RecyclerView.NO_POSITION && pos < categories.size()) {
-                selectedPosition = pos;
-                notifyItemChanged(previousPosition);
-                notifyItemChanged(selectedPosition);
-                if (listener != null) {
-                    listener.onCategoryClick(categories.get(selectedPosition));
-                }
+            selectedPosition = holder.getAdapterPosition();
+            notifyItemChanged(previousPosition);
+            notifyItemChanged(selectedPosition);
+            if (listener != null) {
+                listener.onCategoryClick(category);
             }
         });
     }

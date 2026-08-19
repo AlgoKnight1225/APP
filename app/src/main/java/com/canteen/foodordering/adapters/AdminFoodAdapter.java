@@ -7,10 +7,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.canteen.foodordering.R;
 import com.canteen.foodordering.databinding.ItemFoodAdminBinding;
 import com.canteen.foodordering.models.FoodItem;
-import com.canteen.foodordering.utils.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,7 +67,15 @@ public class AdminFoodAdapter extends RecyclerView.Adapter<AdminFoodAdapter.Admi
             binding.tvAdminFoodPrice.setText(String.format("₹%.2f", item.getPrice()));
             binding.switchAvailable.setChecked(item.isAvailable());
 
-            ImageLoader.loadFoodImage(binding.ivAdminFood, item.getImageUrl());
+            if (item.getImageUrl() != null && !item.getImageUrl().isEmpty()) {
+                Glide.with(binding.getRoot().getContext())
+                        .load(item.getImageUrl())
+                        .placeholder(R.drawable.ic_food_placeholder)
+                        .error(R.drawable.ic_food_placeholder)
+                        .into(binding.ivAdminFood);
+            } else {
+                binding.ivAdminFood.setImageResource(R.drawable.ic_food_placeholder);
+            }
 
             binding.btnEdit.setOnClickListener(v -> {
                 if (listener != null) {

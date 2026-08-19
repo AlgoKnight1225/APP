@@ -7,10 +7,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.canteen.foodordering.R;
 import com.canteen.foodordering.databinding.ItemPromoBannerBinding;
 import com.canteen.foodordering.models.PromoBanner;
-import com.canteen.foodordering.utils.ImageLoader;
 
 import java.util.List;
 
@@ -54,7 +54,10 @@ public class PromoBannerAdapter extends RecyclerView.Adapter<PromoBannerAdapter.
             binding.tvPromoBadge.setText(banner.getPromoCode() != null ? banner.getPromoCode() : "SPECIAL OFFER");
 
             if (banner.getImageUrl() != null && !banner.getImageUrl().isEmpty()) {
-                ImageLoader.loadImage(binding.ivPromoImage, banner.getImageUrl(), R.drawable.ic_restaurant_menu);
+                Glide.with(binding.getRoot().getContext())
+                        .load(banner.getImageUrl())
+                        .placeholder(R.drawable.ic_restaurant_menu)
+                        .into(binding.ivPromoImage);
             }
         }
     }

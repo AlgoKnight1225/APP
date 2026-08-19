@@ -39,7 +39,7 @@
     <string name="character_counter_content_description">%2$dలో %1$d అక్షరాలు నమోదు చేయబడ్డాయి</string>
     <string name="character_counter_overflowed_content_description">అక్షర పరిధి %2$dలో %1$dను అధిగమించింది</string>
     <string name="clear_text_end_icon_content_description">రాసినదాన్ని తీసివేయండి</string>
-    <string msgid="2523291102206661146" name="common_google_play_services_enable_button">ప్రారంభించండి</string>
+    <string msgid="2523291102206661146" name="common_google_play_services_enable_button">ప్రారంభించు</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">మీరు Google Play సేవలను ప్రారంభిస్తే మినహా %1$s పని చేయదు.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Google Play సేవలను ప్రారంభించండి</string>
     <string msgid="7153882981874058840" name="common_google_play_services_install_button">ఇన్‌స్టాల్ చేయి</string>
@@ -123,5 +123,4 @@
     <string name="password_toggle_content_description">పాస్‌వర్డ్‌ను చూపు</string>
     <string msgid="6264217191555673260" name="search_menu_title">"సెర్చ్"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
-    <string name="wallet_buy_button_place_holder">Googleతో కొనుగోలు చేయి</string>
 </resources>

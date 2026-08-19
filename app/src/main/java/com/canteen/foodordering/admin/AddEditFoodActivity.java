@@ -11,12 +11,12 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.bumptech.glide.Glide;
 import com.canteen.foodordering.R;
 import com.canteen.foodordering.auth.LoginActivity;
 import com.canteen.foodordering.databinding.ActivityAddEditFoodBinding;
 import com.canteen.foodordering.models.FoodItem;
 import com.canteen.foodordering.utils.Constants;
-import com.canteen.foodordering.utils.ImageLoader;
 import com.canteen.foodordering.viewmodels.AuthViewModel;
 import com.canteen.foodordering.viewmodels.FoodViewModel;
 
@@ -80,7 +80,15 @@ public class AddEditFoodActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String url = s.toString().trim();
-                ImageLoader.loadFoodImage(binding.ivProductPreview, url);
+                if (!url.isEmpty()) {
+                    Glide.with(AddEditFoodActivity.this)
+                            .load(url)
+                            .placeholder(R.drawable.ic_food_placeholder)
+                            .error(R.drawable.ic_food_placeholder)
+                            .into(binding.ivProductPreview);
+                } else {
+                    binding.ivProductPreview.setImageResource(R.drawable.ic_food_placeholder);
+                }
             }
 
             @Override
@@ -116,21 +124,19 @@ public class AddEditFoodActivity extends AppCompatActivity {
                 binding.rbNonVeg.setChecked(!editingFoodItem.isVeg());
 
                 if (editingFoodItem.getCategory() != null) {
-                    int index = -1;
-                    for (int i = 0; i < categoriesList.size(); i++) {
-                        String cat = categoriesList.get(i);
-                        if (cat.equalsIgnoreCase(editingFoodItem.getCategory()) ||
-                            (cat.equalsIgnoreCase("Dessert") && editingFoodItem.getCategory().equalsIgnoreCase("Desserts"))) {
-                            index = i;
-                            break;
-                        }
-                    }
+                    int index = categoriesList.indexOf(editingFoodItem.getCategory());
                     if (index >= 0) {
                         binding.spinnerCategory.setSelection(index);
                     }
                 }
 
-                ImageLoader.loadFoodImage(binding.ivProductPreview, editingFoodItem.getImageUrl());
+                if (editingFoodItem.getImageUrl() != null && !editingFoodItem.getImageUrl().isEmpty()) {
+                    Glide.with(this)
+                            .load(editingFoodItem.getImageUrl())
+                            .placeholder(R.drawable.ic_food_placeholder)
+                            .error(R.drawable.ic_food_placeholder)
+                            .into(binding.ivProductPreview);
+                }
             }
         }
     }

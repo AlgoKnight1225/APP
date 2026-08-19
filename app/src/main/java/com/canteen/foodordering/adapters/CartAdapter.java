@@ -7,10 +7,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.canteen.foodordering.R;
 import com.canteen.foodordering.databinding.ItemCartBinding;
 import com.canteen.foodordering.models.CartItem;
-import com.canteen.foodordering.utils.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,7 +65,15 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
             binding.tvCartFoodPrice.setText(String.format("₹%.2f", item.getTotalPrice()));
             binding.tvQuantity.setText(String.valueOf(item.getQuantity()));
 
-            ImageLoader.loadFoodImage(binding.ivCartFood, item.getImageUrl());
+            if (item.getImageUrl() != null && !item.getImageUrl().isEmpty()) {
+                Glide.with(binding.getRoot().getContext())
+                        .load(item.getImageUrl())
+                        .placeholder(R.drawable.ic_food_placeholder)
+                        .error(R.drawable.ic_food_placeholder)
+                        .into(binding.ivCartFood);
+            } else {
+                binding.ivCartFood.setImageResource(R.drawable.ic_food_placeholder);
+            }
 
             binding.btnPlus.setOnClickListener(v -> {
                 if (listener != null) {

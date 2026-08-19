@@ -131,14 +131,12 @@ attr allowStacking
 attr alpha
 attr alphabeticModifiers
 attr altSrc
-attr ambientEnabled
 attr animateCircleAngleTo
 attr animateMenuItems
 attr animateNavigationIcon
 attr animateRelativeTo
 attr animationMode
 attr appBarLayoutStyle
-attr appTheme
 attr applyMotionScene
 attr arcMode
 attr arrowHeadLength
@@ -239,17 +237,6 @@ attr buttonStyle
 attr buttonStyleSmall
 attr buttonTint
 attr buttonTintMode
-attr buyButtonAppearance
-attr buyButtonHeight
-attr buyButtonText
-attr buyButtonWidth
-attr cameraBearing
-attr cameraMaxZoomPreference
-attr cameraMinZoomPreference
-attr cameraTargetLat
-attr cameraTargetLng
-attr cameraTilt
-attr cameraZoom
 attr cardBackgroundColor
 attr cardCornerRadius
 attr cardElevation
@@ -462,7 +449,6 @@ attr customNavigationLayout
 attr customPixelDimension
 attr customReference
 attr customStringValue
-attr customThemeStyle
 attr dayInvalidStyle
 attr daySelectedStyle
 attr dayStyle
@@ -528,7 +514,6 @@ attr endIconTintMode
 attr enforceMaterialTheme
 attr enforceTextAppearance
 attr ensureMinTouchTargetSize
-attr environment
 attr errorAccessibilityLabel
 attr errorAccessibilityLiveRegion
 attr errorContentDescription
@@ -622,8 +607,6 @@ attr fontWeight
 attr forceApplySystemWindowInsetTop
 attr forceDefaultNavigationOnClickListener
 attr foregroundInsidePadding
-attr fragmentMode
-attr fragmentStyle
 attr framePosition
 attr gapBetweenBars
 attr gestureInsetBottomIgnored
@@ -722,10 +705,6 @@ attr labelVisibilityMode
 attr largeFontVerticalOffsetAdjustment
 attr lastBaselineToBottomHeight
 attr lastItemDecorated
-attr latLngBoundsNorthEastLatitude
-attr latLngBoundsNorthEastLongitude
-attr latLngBoundsSouthWestLatitude
-attr latLngBoundsSouthWestLongitude
 attr layout
 attr layoutDescription
 attr layoutDuringTransition
@@ -821,23 +800,14 @@ attr listPreferredItemPaddingEnd
 attr listPreferredItemPaddingLeft
 attr listPreferredItemPaddingRight
 attr listPreferredItemPaddingStart
-attr liteMode
 attr logo
 attr logoAdjustViewBounds
 attr logoDescription
 attr logoScaleType
-attr mapType
 attr marginHorizontal
 attr marginLeftSystemWindowInsets
 attr marginRightSystemWindowInsets
 attr marginTopSystemWindowInsets
-attr maskedWalletDetailsBackground
-attr maskedWalletDetailsButtonBackground
-attr maskedWalletDetailsButtonTextAppearance
-attr maskedWalletDetailsHeaderTextAppearance
-attr maskedWalletDetailsLogoImageType
-attr maskedWalletDetailsLogoTextColor
-attr maskedWalletDetailsTextAppearance
 attr materialAlertDialogBodyTextStyle
 attr materialAlertDialogButtonSpacerVisibility
 attr materialAlertDialogTheme
@@ -1296,7 +1266,6 @@ attr toolbarId
 attr toolbarNavigationButtonStyle
 attr toolbarStyle
 attr toolbarSurfaceStyle
-attr toolbarTextColorStyle
 attr tooltipForegroundColor
 attr tooltipFrameBackground
 attr tooltipStyle
@@ -1327,19 +1296,10 @@ attr triggerId
 attr triggerReceiver
 attr triggerSlack
 attr ttcIndex
-attr uiCompass
-attr uiMapToolbar
-attr uiRotateGestures
-attr uiScrollGestures
-attr uiScrollGesturesDuringRotateOrZoom
-attr uiTiltGestures
-attr uiZoomControls
-attr uiZoomGestures
 attr upDuration
 attr useCompatPadding
 attr useDrawerArrowDrawable
 attr useMaterialThemeColors
-attr useViewLifecycle
 attr values
 attr verticalOffset
 attr verticalOffsetWithText
@@ -1367,14 +1327,11 @@ attr windowFixedWidthMinor
 attr windowMinWidthMajor
 attr windowMinWidthMinor
 attr windowNoTitle
-attr windowTransitionStyle
 attr yearSelectedStyle
 attr yearStyle
 attr yearTodayStyle
-attr zOrderOnTop
 bool abc_action_bar_embed_tabs
 bool abc_config_actionMenuItemAllCaps
-bool isTablet
 bool mtrl_btn_textappearance_all_caps
 color abc_background_cache_hint_selector_material_dark
 color abc_background_cache_hint_selector_material_light
@@ -2202,19 +2159,6 @@ color text_secondary
 color tooltip_background_dark
 color tooltip_background_light
 color transparent
-color wallet_bright_foreground_disabled_holo_light
-color wallet_bright_foreground_holo_dark
-color wallet_bright_foreground_holo_light
-color wallet_dim_foreground_disabled_holo_dark
-color wallet_dim_foreground_holo_dark
-color wallet_highlighted_text_holo_dark
-color wallet_highlighted_text_holo_light
-color wallet_hint_foreground_holo_dark
-color wallet_hint_foreground_holo_light
-color wallet_holo_blue_light
-color wallet_link_text_light
-color wallet_primary_text_holo_light
-color wallet_secondary_text_holo_dark
 color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
@@ -3097,7 +3041,6 @@ drawable avd_hide_password
 drawable avd_show_password
 drawable bg_banner_gradient
 drawable bg_button_primary
-drawable bg_cafe_theme
 drawable bg_card_starbucks
 drawable bg_chip_selected
 drawable bg_chip_unselected
@@ -3143,7 +3086,6 @@ drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_add
-drawable ic_alert
 drawable ic_app_logo
 drawable ic_app_logo_foreground
 drawable ic_arrow_back
@@ -3162,7 +3104,6 @@ drawable ic_food_placeholder
 drawable ic_history
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
-drawable ic_local_offer
 drawable ic_logout
 drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
@@ -3182,7 +3123,6 @@ drawable ic_search_black_24
 drawable ic_shopping_cart
 drawable ic_splash_logo
 drawable ic_star
-drawable ic_tick_mark
 drawable ic_users
 drawable ic_veg
 drawable logo
@@ -3257,15 +3197,6 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
-drawable rzp_border
-drawable rzp_border_bottom
-drawable rzp_green_button
-drawable rzp_loader_circle
-drawable rzp_logo
-drawable rzp_name_logo
-drawable rzp_poweredby
-drawable rzp_secured_by_bg
-drawable rzp_white_border_black_bg
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3349,15 +3280,10 @@ id aligned
 id all
 id allStates
 id always
-id android_pay
-id android_pay_dark
-id android_pay_light
-id android_pay_light_with_border
 id animateToEnd
 id animateToStart
 id antiClockwise
 id anticipate
-id appBarLayout
 id arc
 id asConfigured
 id async
@@ -3371,7 +3297,6 @@ id beginOnFirstDraw
 id beginning
 id bestChoice
 id blocking
-id book_now
 id bottom
 id bottomBar
 id bottomNavigation
@@ -3386,7 +3311,6 @@ id browser_actions_menu_items
 id browser_actions_menu_view
 id btnAddToCart
 id btnAdminLogout
-id btnApplyCoupon
 id btnBack
 id btnBackHome
 id btnChangePassword
@@ -3402,22 +3326,16 @@ id btnMinus
 id btnPlus
 id btnProceedCheckout
 id btnRegister
-id btnRemoveCoupon
 id btnSave
 id btnSaveAdminPhoto
 id btnSaveProfile
 id btnSendReset
 id buttonPanel
-id buyButton
-id buy_now
-id buy_with
-id buy_with_google
 id cache_measures
 id callMeasure
 id cancel_button
 id cardCartBar
 id cardCheckoutSummary
-id cardCoupon
 id cardImagePreview
 id carryVelocity
 id cbExtraCheese
@@ -3430,14 +3348,11 @@ id center_vertical
 id chain
 id chain2
 id chains
-id check_list
 id checkbox
 id checked
-id chipGroupCoupons
 id chipGroupStatus
 id chronometer
 id circle_center
-id classic
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -3482,8 +3397,6 @@ id disablePostScroll
 id disableScroll
 id disjoint
 id divider1
-id donate_with
-id donate_with_google
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -3507,7 +3420,6 @@ id enterAlways
 id enterAlwaysCollapsed
 id etAdminProfileImageUrl
 id etConfirmPassword
-id etCouponCode
 id etDescription
 id etEditName
 id etEditPhone
@@ -3547,26 +3459,18 @@ id ghost_view
 id ghost_view_holder
 id glide_custom_view_target_tag
 id gone
-id googleMaterial2
-id google_wallet_classic
-id google_wallet_grayscale
-id google_wallet_monochrome
 id graph
 id graph_wrap
-id grayscale
 id group_divider
 id grouping
 id groups
 id headerLayout
 id header_title
 id hideable
-id holo_dark
-id holo_light
 id home
 id homeAsUp
 id honorRequest
 id horizontal_only
-id hybrid
 id icon
 id icon_group
 id icon_only
@@ -3600,18 +3504,13 @@ id ivStepReady
 id ivStudentProfilePic
 id ivUserAvatar
 id ivVegIndicator
-id iv_check_mark
 id jumpToEnd
 id jumpToStart
 id labeled
 id layout
-id layoutAppliedCoupon
 id layoutCategoryChip
-id layoutCollapsibleBanner
-id layoutCouponInput
 id layoutEmpty
 id layoutEmptyCart
-id layoutStickySearch
 id left
 id leftToRight
 id legacy
@@ -3625,14 +3524,11 @@ id lineReadyToCompleted
 id linear
 id listMode
 id list_item
-id ll_loader
-id logo_only
 id m3_side_sheet
 id marquee
 id masked
 id match_constraint
 id match_parent
-id material
 id material_clock_display
 id material_clock_display_and_toggle
 id material_clock_face
@@ -3657,7 +3553,6 @@ id matrix
 id message
 id middle
 id mini
-id monochrome
 id month_grid
 id month_navigation_bar
 id month_navigation_fragment_toggle
@@ -3704,7 +3599,6 @@ id navigation_bar_item_labels_group
 id navigation_bar_item_large_label_view
 id navigation_bar_item_small_label_view
 id navigation_header_container
-id nestedScrollView
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
@@ -3752,7 +3646,6 @@ id pooling_container_listener_holder_tag
 id position
 id postLayout
 id pressed
-id production
 id progressBar
 id progress_circular
 id progress_horizontal
@@ -3778,7 +3671,6 @@ id rightToLeft
 id right_icon
 id right_side
 id rounded
-id rowDiscount
 id row_index_key
 id rvAdminFood
 id rvAdminOrders
@@ -3789,19 +3681,12 @@ id rvFavorites
 id rvFoodItems
 id rvPromoBanners
 id rvStudentOrders
-id rzp_innerbox
-id rzp_outerbox
-id rzp_securedpayments
-id rzp_theMainMagicView
-id sandbox
-id satellite
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
 id scale
 id screen
 id scroll
-id scrollCouponSuggestions
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
@@ -3818,7 +3703,6 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
-id selectionDetails
 id selection_type
 id sharedValueSet
 id sharedValueUnset
@@ -3861,7 +3745,6 @@ id stepPreparing
 id stepReady
 id stop
 id stretch
-id strict_sandbox
 id submenuarrow
 id submit_area
 id supportScrollUp
@@ -3882,8 +3765,6 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
-id terrain
-id test
 id text
 id text2
 id textEnd
@@ -3901,7 +3782,6 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id tilConfirmPassword
-id tilCouponCode
 id tilDescription
 id tilEmail
 id tilFoodName
@@ -3939,8 +3819,6 @@ id tvAdminOrderDate
 id tvAdminOrderId
 id tvAdminOrderItems
 id tvAdminOrderTotal
-id tvAppliedCouponCode
-id tvAppliedCouponSavings
 id tvBackToLogin
 id tvBasePrice
 id tvCartBadgeItems
@@ -3950,8 +3828,6 @@ id tvCartFoodPrice
 id tvCartItemPrice
 id tvCategoryName
 id tvCheckoutTotal
-id tvCouponStatus
-id tvCouponSuggestionsLabel
 id tvCustomerName
 id tvCustomerNamePhone
 id tvCustomerPhone
@@ -3960,7 +3836,6 @@ id tvDetailName
 id tvDetailRating
 id tvDetailReviews
 id tvDiscountBadge
-id tvDiscountLabel
 id tvFoodCategory
 id tvFoodDescription
 id tvFoodName
@@ -3995,10 +3870,6 @@ id tvStepPreparing
 id tvStepReady
 id tvStudentHeaderName
 id tvSubtotal
-id tvSummaryDiscount
-id tvSummaryGrandTotal
-id tvSummarySubtotal
-id tvSummaryTax
 id tvTagline
 id tvTax
 id tvTitle
@@ -4012,8 +3883,6 @@ id tvUserEmailPhone
 id tvUserName
 id tvUserOrdersCount
 id tvUserRole
-id tv_sub_item
-id tv_title
 id unchecked
 id uniform
 id unlabeled
@@ -4256,15 +4125,10 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
-layout rzp_loader
-layout rzp_magic_base
-layout sdk_integration_status
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
-layout single_item
 layout support_simple_spinner_dropdown_item
-layout wallet_test_layout
 menu bottom_nav_admin
 menu bottom_nav_student
 mipmap ic_launcher
@@ -4272,8 +4136,6 @@ mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
 raw firebase_common_keep
-raw otpelf
-raw rzp_config_checkout
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -4494,7 +4356,6 @@ string signup
 string status_bar_notification_info_overflow
 string update_status
 string view_cart
-string wallet_buy_button_place_holder
 string welcome_back
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
@@ -4787,7 +4648,6 @@ style Base_Widget_MaterialComponents_TextView
 style CardView
 style CardView_Dark
 style CardView_Light
-style CheckoutTheme
 style MaterialAlertDialog_Material3
 style MaterialAlertDialog_Material3_Animation
 style MaterialAlertDialog_Material3_Body_Text
@@ -5244,10 +5104,6 @@ style ThemeOverlay_MaterialComponents_TimePicker_Display_TextInputEditText
 style ThemeOverlay_MaterialComponents_Toolbar_Popup_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Surface
-style WalletFragmentDefaultButtonTextAppearance
-style WalletFragmentDefaultDetailsHeaderTextAppearance
-style WalletFragmentDefaultDetailsTextAppearance
-style WalletFragmentDefaultStyle
 style Widget_App_BottomNavActiveIndicator
 style Widget_AppCompat_ActionBar
 style Widget_AppCompat_ActionBar_Solid
@@ -5677,7 +5533,6 @@ styleable ConstraintSet android_orientation android_id android_visibility androi
 styleable CoordinatorLayout keylines statusBarBackground
 styleable CoordinatorLayout_Layout android_layout_gravity layout_anchor layout_anchorGravity layout_behavior layout_dodgeInsetEdges layout_insetEdge layout_keyline
 styleable CustomAttribute attributeName customBoolean customColorDrawableValue customColorValue customDimension customFloatValue customIntegerValue customPixelDimension customReference customStringValue methodName
-styleable CustomWalletTheme customThemeStyle toolbarTextColorStyle windowTransitionStyle
 styleable DrawerArrowToggle arrowHeadLength arrowShaftLength barLength color drawableSize gapBetweenBars spinBars thickness
 styleable DrawerLayout elevation
 styleable ExtendedFloatingActionButton collapsedSize elevation extendMotionSpec extendStrategy hideMotionSpec showMotionSpec shrinkMotionSpec
@@ -5708,7 +5563,6 @@ styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width 
 styleable LinearProgressIndicator indeterminateAnimationType indicatorDirectionLinear
 styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerticalOffset
 styleable LoadingImageView circleCrop imageAspectRatio imageAspectRatioAdjust
-styleable MapAttrs ambientEnabled cameraBearing cameraMaxZoomPreference cameraMinZoomPreference cameraTargetLat cameraTargetLng cameraTilt cameraZoom latLngBoundsNorthEastLatitude latLngBoundsNorthEastLongitude latLngBoundsSouthWestLatitude latLngBoundsSouthWestLongitude liteMode mapType uiCompass uiMapToolbar uiRotateGestures uiScrollGestures uiScrollGesturesDuringRotateOrZoom uiTiltGestures uiZoomControls uiZoomGestures useViewLifecycle zOrderOnTop
 styleable MaterialAlertDialog backgroundInsetBottom backgroundInsetEnd backgroundInsetStart backgroundInsetTop backgroundTint
 styleable MaterialAlertDialogTheme materialAlertDialogBodyTextStyle materialAlertDialogButtonSpacerVisibility materialAlertDialogTheme materialAlertDialogTitleIconStyle materialAlertDialogTitlePanelStyle materialAlertDialogTitleTextStyle
 styleable MaterialAutoCompleteTextView android_inputType android_popupElevation dropDownBackgroundTint simpleItemLayout simpleItemSelectedColor simpleItemSelectedRippleColor simpleItems
@@ -5787,10 +5641,7 @@ styleable ViewBackgroundHelper android_background backgroundTint backgroundTintM
 styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
 styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration ifTagNotSet ifTagSet motionInterpolator motionTarget onStateTransition pathMotionArc setsTag transitionDisable upDuration viewTransitionMode
-styleable WalletFragmentOptions appTheme environment fragmentMode fragmentStyle
-styleable WalletFragmentStyle buyButtonAppearance buyButtonHeight buyButtonText buyButtonWidth maskedWalletDetailsBackground maskedWalletDetailsButtonBackground maskedWalletDetailsButtonTextAppearance maskedWalletDetailsHeaderTextAppearance maskedWalletDetailsLogoImageType maskedWalletDetailsLogoTextColor maskedWalletDetailsTextAppearance
 styleable include constraintSet
 xml backup_rules
 xml data_extraction_rules
-xml file_provider_path_checkout
 xml image_share_filepaths

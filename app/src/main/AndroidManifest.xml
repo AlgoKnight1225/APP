@@ -15,7 +15,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CollegeCanteenFoodOrderingApp"
-        android:usesCleartextTraffic="true"
         tools:targetApi="31">
 
         <!-- Splash Activity (Launcher) -->
@@ -61,14 +60,6 @@
             android:name=".student.CheckoutActivity"
             android:exported="false"
             android:parentActivityName=".student.CartActivity" />
-
-        <!-- Razorpay Payment Activity (required by Razorpay SDK) -->
-        <activity
-            android:name="com.razorpay.PaymentActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:exported="false"
-            android:theme="@style/Theme.CollegeCanteenFoodOrderingApp.NoActionBar"
-            tools:replace="android:theme" />
 
         <!-- Admin Flow Activities -->
         <activity

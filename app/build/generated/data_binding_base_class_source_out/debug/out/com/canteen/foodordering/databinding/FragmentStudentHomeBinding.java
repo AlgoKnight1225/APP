@@ -10,13 +10,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.canteen.foodordering.R;
-import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -24,10 +21,7 @@ import java.lang.String;
 
 public final class FragmentStudentHomeBinding implements ViewBinding {
   @NonNull
-  private final CoordinatorLayout rootView;
-
-  @NonNull
-  public final AppBarLayout appBarLayout;
+  private final LinearLayout rootView;
 
   @NonNull
   public final EditText etSearchFood;
@@ -36,16 +30,7 @@ public final class FragmentStudentHomeBinding implements ViewBinding {
   public final FloatingActionButton fabCart;
 
   @NonNull
-  public final LinearLayout layoutCollapsibleBanner;
-
-  @NonNull
   public final TextView layoutEmpty;
-
-  @NonNull
-  public final LinearLayout layoutStickySearch;
-
-  @NonNull
-  public final NestedScrollView nestedScrollView;
 
   @NonNull
   public final ProgressBar progressBar;
@@ -62,21 +47,15 @@ public final class FragmentStudentHomeBinding implements ViewBinding {
   @NonNull
   public final TextView tvStudentHeaderName;
 
-  private FragmentStudentHomeBinding(@NonNull CoordinatorLayout rootView,
-      @NonNull AppBarLayout appBarLayout, @NonNull EditText etSearchFood,
-      @NonNull FloatingActionButton fabCart, @NonNull LinearLayout layoutCollapsibleBanner,
-      @NonNull TextView layoutEmpty, @NonNull LinearLayout layoutStickySearch,
-      @NonNull NestedScrollView nestedScrollView, @NonNull ProgressBar progressBar,
-      @NonNull RecyclerView rvCategories, @NonNull RecyclerView rvFoodItems,
-      @NonNull RecyclerView rvPromoBanners, @NonNull TextView tvStudentHeaderName) {
+  private FragmentStudentHomeBinding(@NonNull LinearLayout rootView, @NonNull EditText etSearchFood,
+      @NonNull FloatingActionButton fabCart, @NonNull TextView layoutEmpty,
+      @NonNull ProgressBar progressBar, @NonNull RecyclerView rvCategories,
+      @NonNull RecyclerView rvFoodItems, @NonNull RecyclerView rvPromoBanners,
+      @NonNull TextView tvStudentHeaderName) {
     this.rootView = rootView;
-    this.appBarLayout = appBarLayout;
     this.etSearchFood = etSearchFood;
     this.fabCart = fabCart;
-    this.layoutCollapsibleBanner = layoutCollapsibleBanner;
     this.layoutEmpty = layoutEmpty;
-    this.layoutStickySearch = layoutStickySearch;
-    this.nestedScrollView = nestedScrollView;
     this.progressBar = progressBar;
     this.rvCategories = rvCategories;
     this.rvFoodItems = rvFoodItems;
@@ -86,7 +65,7 @@ public final class FragmentStudentHomeBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public CoordinatorLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -111,12 +90,6 @@ public final class FragmentStudentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.appBarLayout;
-      AppBarLayout appBarLayout = ViewBindings.findChildViewById(rootView, id);
-      if (appBarLayout == null) {
-        break missingId;
-      }
-
       id = R.id.etSearchFood;
       EditText etSearchFood = ViewBindings.findChildViewById(rootView, id);
       if (etSearchFood == null) {
@@ -129,27 +102,9 @@ public final class FragmentStudentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.layoutCollapsibleBanner;
-      LinearLayout layoutCollapsibleBanner = ViewBindings.findChildViewById(rootView, id);
-      if (layoutCollapsibleBanner == null) {
-        break missingId;
-      }
-
       id = R.id.layoutEmpty;
       TextView layoutEmpty = ViewBindings.findChildViewById(rootView, id);
       if (layoutEmpty == null) {
-        break missingId;
-      }
-
-      id = R.id.layoutStickySearch;
-      LinearLayout layoutStickySearch = ViewBindings.findChildViewById(rootView, id);
-      if (layoutStickySearch == null) {
-        break missingId;
-      }
-
-      id = R.id.nestedScrollView;
-      NestedScrollView nestedScrollView = ViewBindings.findChildViewById(rootView, id);
-      if (nestedScrollView == null) {
         break missingId;
       }
 
@@ -183,10 +138,8 @@ public final class FragmentStudentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentStudentHomeBinding((CoordinatorLayout) rootView, appBarLayout,
-          etSearchFood, fabCart, layoutCollapsibleBanner, layoutEmpty, layoutStickySearch,
-          nestedScrollView, progressBar, rvCategories, rvFoodItems, rvPromoBanners,
-          tvStudentHeaderName);
+      return new FragmentStudentHomeBinding((LinearLayout) rootView, etSearchFood, fabCart,
+          layoutEmpty, progressBar, rvCategories, rvFoodItems, rvPromoBanners, tvStudentHeaderName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

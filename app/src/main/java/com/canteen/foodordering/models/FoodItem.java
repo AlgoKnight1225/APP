@@ -81,28 +81,12 @@ public class FoodItem implements Serializable {
         this.category = category;
     }
 
-    @com.google.firebase.firestore.PropertyName("imageUrl")
     public String getImageUrl() {
         return imageUrl;
     }
 
-    @com.google.firebase.firestore.PropertyName("imageUrl")
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
-    }
-
-    @com.google.firebase.firestore.PropertyName("image_url")
-    public void setImage_url(String imageUrl) {
-        if (this.imageUrl == null || this.imageUrl.trim().isEmpty()) {
-            this.imageUrl = imageUrl;
-        }
-    }
-
-    @com.google.firebase.firestore.PropertyName("image")
-    public void setImage(String imageUrl) {
-        if (this.imageUrl == null || this.imageUrl.trim().isEmpty()) {
-            this.imageUrl = imageUrl;
-        }
     }
 
     public boolean isAvailable() {
