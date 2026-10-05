@@ -3041,6 +3041,7 @@ drawable avd_hide_password
 drawable avd_show_password
 drawable bg_banner_gradient
 drawable bg_button_primary
+drawable bg_cafe_theme
 drawable bg_card_starbucks
 drawable bg_chip_selected
 drawable bg_chip_unselected
@@ -3104,6 +3105,7 @@ drawable ic_food_placeholder
 drawable ic_history
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
+drawable ic_local_offer
 drawable ic_logout
 drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
@@ -3323,6 +3325,7 @@ id btnIncreaseQty
 id btnLogin
 id btnLogout
 id btnMinus
+id btnOrderItem
 id btnPlus
 id btnProceedCheckout
 id btnRegister

@@ -169,6 +169,7 @@ public class ProductDetailActivity extends AppCompatActivity {
 
         String customizedName = foodItem.getName() + " (" + customizations.toString() + ")";
 
+        // Each CartItem gets its own unique cartItemId (UUID) — never overwrites previous items
         CartItem cartItem = new CartItem(
                 foodItem.getId(),
                 customizedName,
@@ -177,8 +178,9 @@ public class ProductDetailActivity extends AppCompatActivity {
                 foodItem.getImageUrl()
         );
 
-        cartViewModel.addCartItem(cartItem);
-        Toast.makeText(this, foodItem.getName() + " added to Cart! 🛒", Toast.LENGTH_SHORT).show();
+        // Save to Firebase as a separate document — not in-memory CartManager
+        cartViewModel.addPendingCartItem(cartItem);
+        Toast.makeText(this, foodItem.getName() + " saved to Cart! 🛒", Toast.LENGTH_SHORT).show();
         finish();
     }
 }

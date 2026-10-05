@@ -1,7 +1,6 @@
 package com.canteen.foodordering.adapters;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -20,8 +19,14 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     private final OnCartItemChangeListener listener;
 
     public interface OnCartItemChangeListener {
-        void onQuantityChanged(String foodId, int newQuantity);
-        void onItemRemoved(String foodId);
+        /** Called when +/- is tapped — pass cartItemId (not foodId). */
+        void onQuantityChanged(String cartItemId, int newQuantity);
+
+        /** Called when the delete icon is tapped — removes ONLY this item. */
+        void onItemRemoved(String cartItemId);
+
+        /** Called when the ORDER button is tapped for a specific saved item. */
+        void onOrderItem(CartItem cartItem);
     }
 
     public CartAdapter(OnCartItemChangeListener listener) {
@@ -75,22 +80,34 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
                 binding.ivCartFood.setImageResource(R.drawable.ic_food_placeholder);
             }
 
+            // + button — update quantity for THIS item only (by cartItemId)
             binding.btnPlus.setOnClickListener(v -> {
                 if (listener != null) {
-                    listener.onQuantityChanged(item.getFoodId(), item.getQuantity() + 1);
+                    listener.onQuantityChanged(item.getCartItemId(), item.getQuantity() + 1);
                 }
             });
 
+            // - button — update quantity for THIS item only (by cartItemId)
             binding.btnMinus.setOnClickListener(v -> {
                 if (listener != null) {
-                    listener.onQuantityChanged(item.getFoodId(), item.getQuantity() - 1);
+                    listener.onQuantityChanged(item.getCartItemId(), item.getQuantity() - 1);
                 }
             });
 
+            // Delete icon — remove ONLY this item (by cartItemId)
             if (binding.btnDelete != null) {
                 binding.btnDelete.setOnClickListener(v -> {
                     if (listener != null) {
-                        listener.onItemRemoved(item.getFoodId());
+                        listener.onItemRemoved(item.getCartItemId());
+                    }
+                });
+            }
+
+            // ORDER button — order ONLY this specific saved item
+            if (binding.btnOrderItem != null) {
+                binding.btnOrderItem.setOnClickListener(v -> {
+                    if (listener != null) {
+                        listener.onOrderItem(item);
                     }
                 });
             }

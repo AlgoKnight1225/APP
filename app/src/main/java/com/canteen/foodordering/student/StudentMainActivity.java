@@ -38,20 +38,22 @@ public class StudentMainActivity extends AppCompatActivity {
     }
 
     private void observeCart() {
-        cartViewModel.getItemCountLiveData().observe(this, count -> {
+        // Listen to Firebase pendingCart so the cart bar updates when items are added
+        cartViewModel.listenToPendingCart();
+        cartViewModel.getPendingCartLiveData().observe(this, items -> {
             if (isFinishing()) return;
-            if (count != null && count > 0) {
+            if (items != null && !items.isEmpty()) {
+                int count = 0;
+                double total = 0;
+                for (com.canteen.foodordering.models.CartItem item : items) {
+                    count += item.getQuantity();
+                    total += item.getTotalPrice();
+                }
                 binding.cardCartBar.setVisibility(View.VISIBLE);
                 binding.tvCartBadgeItems.setText(count + (count == 1 ? " Item" : " Items"));
+                binding.tvCartBadgeTotal.setText(String.format("\u20B9%.2f", total));
             } else {
                 binding.cardCartBar.setVisibility(View.GONE);
-            }
-        });
-
-        cartViewModel.getTotalAmountLiveData().observe(this, total -> {
-            if (isFinishing()) return;
-            if (total != null) {
-                binding.tvCartBadgeTotal.setText(String.format("₹%.2f", total));
             }
         });
     }

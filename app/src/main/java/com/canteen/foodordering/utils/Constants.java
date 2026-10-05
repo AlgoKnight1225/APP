@@ -5,6 +5,8 @@ public class Constants {
     public static final String COLLECTION_USERS = "users";
     public static final String COLLECTION_FOOD = "food_items";
     public static final String COLLECTION_ORDERS = "orders";
+    public static final String COLLECTION_COUPONS = "coupons";
+    public static final String COLLECTION_PENDING_CART = "pendingCart";
 
     // User Roles
     public static final String ROLE_STUDENT = "student";

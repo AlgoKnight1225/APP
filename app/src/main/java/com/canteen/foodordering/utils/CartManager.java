@@ -65,24 +65,15 @@ public class CartManager {
 
     public void addCartItem(CartItem cartItem) {
         if (cartItem == null || cartItem.getFoodId() == null) return;
-        boolean exists = false;
-        for (CartItem item : cartItems) {
-            if (item.getFoodId().equals(cartItem.getFoodId()) && item.getFoodName().equals(cartItem.getFoodName())) {
-                item.setQuantity(item.getQuantity() + cartItem.getQuantity());
-                exists = true;
-                break;
-            }
-        }
-        if (!exists) {
-            cartItems.add(cartItem);
-        }
+        // Always add as a new separate cart row — never merge/overwrite
+        cartItems.add(cartItem);
         notifyObservers();
     }
 
-    public void updateQuantity(String foodId, int quantity) {
-        if (foodId == null) return;
+    public void updateQuantity(String cartItemId, int quantity) {
+        if (cartItemId == null) return;
         for (int i = 0; i < cartItems.size(); i++) {
-            if (cartItems.get(i).getFoodId().equals(foodId)) {
+            if (cartItemId.equals(cartItems.get(i).getCartItemId())) {
                 if (quantity <= 0) {
                     cartItems.remove(i);
                 } else {
@@ -94,10 +85,10 @@ public class CartManager {
         notifyObservers();
     }
 
-    public void removeItem(String foodId) {
-        if (foodId == null) return;
+    public void removeItem(String cartItemId) {
+        if (cartItemId == null) return;
         for (int i = 0; i < cartItems.size(); i++) {
-            if (cartItems.get(i).getFoodId().equals(foodId)) {
+            if (cartItemId.equals(cartItems.get(i).getCartItemId())) {
                 cartItems.remove(i);
                 break;
             }

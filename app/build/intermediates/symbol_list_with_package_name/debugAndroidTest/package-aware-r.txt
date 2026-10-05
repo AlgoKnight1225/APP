@@ -1,3 +1,0 @@
-com.canteen.foodordering.test
-style WhiteBackgroundDialogTheme
-style WhiteBackgroundTheme

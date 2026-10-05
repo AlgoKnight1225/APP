@@ -19,6 +19,7 @@ import com.canteen.foodordering.adapters.CategoryAdapter;
 import com.canteen.foodordering.adapters.PromoBannerAdapter;
 import com.canteen.foodordering.adapters.StudentFoodAdapter;
 import com.canteen.foodordering.databinding.FragmentStudentHomeBinding;
+import com.canteen.foodordering.models.CartItem;
 import com.canteen.foodordering.models.Category;
 import com.canteen.foodordering.models.FoodItem;
 import com.canteen.foodordering.models.PromoBanner;
@@ -167,8 +168,16 @@ public class StudentHomeFragment extends Fragment implements StudentFoodAdapter.
 
     @Override
     public void onAddToCartClick(FoodItem foodItem) {
-        cartViewModel.addItem(foodItem);
-        Toast.makeText(requireContext(), foodItem.getName() + " added to cart", Toast.LENGTH_SHORT).show();
+        // Save as a new independent Firebase document (never overwrites existing items)
+        CartItem cartItem = new CartItem(
+                foodItem.getId(),
+                foodItem.getName() + " (Regular)",
+                foodItem.getPrice(),
+                1,
+                foodItem.getImageUrl()
+        );
+        cartViewModel.addPendingCartItem(cartItem);
+        Toast.makeText(requireContext(), foodItem.getName() + " saved to Cart! 🛒", Toast.LENGTH_SHORT).show();
     }
 
     @Override
